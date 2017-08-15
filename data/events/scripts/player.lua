@@ -626,7 +626,7 @@ function Player:onGainExperience(source, exp, rawExp)
 		self:setStoreXpBoost(0) -- reset xp boost to 0
 	end
 
-	-- More compact, after checking before (reset) it only of xp if you have: v
+	-- More compact, after checking before (reset) it only of xp if you have
 	if (self:getStoreXpBoost() > 0) then
 		exp = exp + (exp * (self:getStoreXpBoost()/100)) -- Exp Boost
 	end
@@ -689,6 +689,7 @@ function Player:onGainSkillTries(skill, tries)
 	if APPLY_SKILL_MULTIPLIER == false then
 		return tries
 	end
+
 	if skill == SKILL_MAGLEVEL then
 		return tries * configManager.getNumber(configKeys.RATE_MAGIC)
 	end

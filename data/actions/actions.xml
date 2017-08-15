@@ -376,7 +376,7 @@
 	<!-- The Ape City Quest -->
 	<action actionid="12129" script="quests/theapecity/Mission9TheDeepestCatacombsLever.lua" />
 	<action uniqueid="12131" script="quests/theapecity/Mission9TheDeepestCatacombsLever.lua" />
-	<action itemid="4846" 	 script="quests/theapecity/Mission9TheDeepestCatacombsSnakedestroyer.lua" />
+	<action itemid="4846" script="quests/theapecity/Mission9TheDeepestCatacombsSnakedestroyer.lua" />
 
 	<!-- The Ancient Tombs Quest -->
 	<action actionid="12107" script="quests/theancienttombs/OasisTombLeverDoor.lua" />
