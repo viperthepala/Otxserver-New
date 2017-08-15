@@ -4159,6 +4159,10 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 			}
 		}
 
+		if (spectators.empty()) {
+			map.getSpectators(spectators, targetPos, true, true);
+		}
+
 		addCreatureHealth(spectators, target);
 
 		message.primary.value = damage.primary.value;
@@ -4500,9 +4504,11 @@ void Game::internalDecayItem(Item* item)
 					player->setVarSkill(static_cast<skills_t>(i), -it.abilities->skills[i]);
 				}
 			}
+
 			if (needUpdateSkills) {
 				player->sendSkills();
 			}
+
 			bool needUpdateStats = false;
 			for (int32_t s = STAT_FIRST; s <= STAT_LAST; ++s) {
 				if (it.abilities && it.abilities->stats[s] != 0) {
@@ -4515,10 +4521,11 @@ void Game::internalDecayItem(Item* item)
 					player->setVarStats(static_cast<stats_t>(s), -static_cast<int32_t>(player->getDefaultStats(static_cast<stats_t>(s)) * ((it.abilities->statsPercent[s] - 100) / 100.f)));
 				}
 			}
-			
+
 			if (needUpdateStats) {
 				player->sendStats();
 			}
+
 			if (needUpdateSkills) {
 				player->sendSkills();
 			}
