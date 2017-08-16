@@ -383,8 +383,15 @@
 	</item>
 	<!-- Boots-->
 	<item id="9931" article="a" name="coconut shoes">
+		<attribute key="description" value="Faster regeneration and infinity." />
+		<attribute key="weight" value="770" />
+		<attribute key="speed" value="20" />
+		<attribute key="healthGain" value="2" />
+		<attribute key="healthTicks" value="1000" />
+		<attribute key="manaGain" value="4" />
+		<attribute key="manaTicks" value="1000" />
+		<attribute key="showattributes" value="1" />
 		<attribute key="slotType" value="feet" />
-		<attribute key="weight" value="600" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
 	<item id="3982" name="crocodile boots">
@@ -4707,16 +4714,15 @@
 		<attribute key="weight" value="90" />
 		<attribute key="slotType" value="ring" />
 	</item>
-	<item id="2358" name="boots of salvation">
-		<attribute key="description" value="Faster regeneration and infinity." />
-		<attribute key="weight" value="770" />
-		<attribute key="speed" value="40" />
-		<attribute key="healthGain" value="30" />
-		<attribute key="healthTicks" value="1000" />
-		<attribute key="manaGain" value="60" />
-		<attribute key="manaTicks" value="1000" />
-		<attribute key="showattributes" value="1" />
+	<item id="2358" name="Jason Boots">
+		<attribute key="weight" value="800" />
 		<attribute key="slotType" value="feet" />
+		<attribute key="healthGain" value="3" />
+		<attribute key="healthTicks" value="2000" />
+		<attribute key="manaGain" value="6" />
+		<attribute key="manaTicks" value="1000" />
+		<attribute key="speed" value="80" />
+		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="26131" name="Tiara of Power (faster regeneration)">
 		<attribute key="weight" value="1100" />
@@ -36889,7 +36895,13 @@
 	<item fromid="27181" toid="27184" name="chair(nostalgia)" />
 	<item id="27185" name="coat(nostalgia)" />
 	<item id="27186" name="copper shield(nostalgia)" />
-	<item id="27187" name="crown armor(nostalgia)" />
+	
+	<item id="27187" article="a" name="crown armor (nostalgia)">
+		<attribute key="weight" value="9900" />
+		<attribute key="armor" value="13" />
+		<attribute key="slotType" value="body" />
+		
+	</item>
 	<item id="27188" name="crown helmet(nostalgia)" />
 	<item id="27189" name="crown legs(nostalgia)" />
 	<item id="27190" name="crown shield(nostalgia)" />
@@ -37399,7 +37411,7 @@
 		<attribute key="wrapableTo" value="26054" />
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill health potions." />
-		<attribute key="weight" value="12500" />
+		<attribute key="weight" value="2500" />
 	</item>
 	<item id="28578" article="a" name="strong health potion keg">
 		<attribute key="wrapableTo" value="26054" />
@@ -37429,7 +37441,7 @@
 		<attribute key="wrapableTo" value="26054" />
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill mana potions." />
-		<attribute key="weight" value="12500" />
+		<attribute key="weight" value="2500" />
 	</item>
 	<item id="28583" article="a" name="strong mana potion keg">
 		<attribute key="wrapableTo" value="26054" />

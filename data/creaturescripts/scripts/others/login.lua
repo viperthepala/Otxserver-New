@@ -179,13 +179,13 @@ function onLogin(player)
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Kazordoon Today.')
 	end
 
-	player:sendTextMessage(messageType or MESSAGE_STATUS_CONSOLE_ORANGE, 'Welcome to OTXServer Global!')
-	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, '[BUGS?] http://www.github.com/malucooo/otxserver-new/issues')
-	player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, '[GUILD LEADER COMMAND] Will change all outfits from members !outfit.')
-
+	player:sendTextMessage(messageType or MESSAGE_STATUS_CONSOLE_ORANGE, 'Welcome to Jason Global!')
+	player:sendTextMessage(messageType or MESSAGE_STATUS_CONSOLE_ORANGE, '[!autoloot add, item] [!autoloot remove, item] [!autoloot show] [!autoloot clear]')
+	
 	-- Events
 	for i = 1, #events do
 		player:registerEvent(events[i])
+		player:registerEvent("AutoLoot")
 	end
 
 	if player:getStorageValue(Storage.combatProtectionStorage) <= os.time() then

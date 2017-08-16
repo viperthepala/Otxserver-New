@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
+	<event type="kill" name="AutoLoot" script="autoloot.lua" />
 	<!-- Roshamuul-->
 	<event type="kill" name="lowerRoshamuul" script="lowerRoshamuul.lua"/>
 	<event type="healthchange" name="HealGaz" script="gaz'haragoth heal.lua"/>	
