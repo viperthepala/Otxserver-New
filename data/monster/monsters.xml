@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<!-- NOVOS SUMMONS -->
+	<monster name="Emberwing" file="summons/Emberwing.xml" />
+	<monster name="Thundergiant" file="summons/Thundergiant.xml" />
+	<monster name="Skullfrost" file="summons/Skullfrost.xml" />
+	<monster name="Grovebeast" file="summons/Grovebeast.xml" />
 	<!-- NOVOS -->
 	<!-- NOVOS 11.2 bosses -->
 	<monster name="Lady Tenebris" file="11.2/bosses/Lady Tenebris.xml" />
