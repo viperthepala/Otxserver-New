@@ -32,51 +32,52 @@ end
 
 local function changeVocation(player, fromVocation, toVocation)
     local vocationsItems = {
-        -- sorcerer
+		-- sorcerer
         [1] = {
             [CONST_SLOT_LEFT] = {23719, 1, true}, -- the scorcher
             [CONST_SLOT_RIGHT] = {2175, 1, true}, -- spellbook
-			[11] = {8704, 2, false, limitStorage = 10030, limit = 1}, -- potion
-			[12] = {7620, 10, false, limitStorage = 10031, limit = 1}, -- potion
-			--[13] = {id, qtd, false, limitStorage = 10032, limit = 1}, -- 2 lightest missile runes
-			--[14] = {id, qtd, false, limitStorage = 10033, limit = 1} -- 2 light stone shower runes
+			[11] = {8704, 2, true, limitStorage = 10030, limit = 1}, -- potion
+			[12] = {7620, 10, true, limitStorage = 10031, limit = 1}, -- potion
+			[13] = {23723, 2, true, limitStorage = 10032, limit = 1}, -- 2 lightest missile runes
+			[14] = {23722, 2, true, limitStorage = 10033, limit = 1} -- 2 light stone shower runes
         },
         -- druid
         [2] = {
             [CONST_SLOT_LEFT] = {23721, 1, true}, -- the chiller
             [CONST_SLOT_RIGHT] = {2175, 1, true}, -- spellbook
-			[11] = {8704, 2, false, limitStorage = 10034, limit = 1}, -- potion
-			[12] = {7620, 10, false, limitStorage = 10035, limit = 1}, -- potion
-			--[13] = {id, qtd, false, limitStorage = 10036, limit = 1}, -- 2 lightest missile runes
-			--[14] = {id, qtd, false, limitStorage = 10037, limit = 1} -- 2 light stone shower runes
+			[11] = {8704, 2, true, limitStorage = 10034, limit = 1}, -- potion
+			[12] = {7620, 10, true, limitStorage = 10035, limit = 1}, -- potion
+			[13] = {23723, 2, true, limitStorage = 10036, limit = 1}, -- 2 lightest missile runes
+			[14] = {23722, 2, true, limitStorage = 10037, limit = 1} -- 2 light stone shower runes
         },
         -- paladin
         [3] = {
             [CONST_SLOT_LEFT] = {2456, 1, true}, -- bow
-            [CONST_SLOT_AMMO] = {23839, 100, true}, -- 100 arrows
-            [11] = {8704, 7, false, limitStorage = 10038, limit = 1}, -- potion
-			[12] = {7620, 5, false, limitStorage = 10039, limit = 1}, -- potion
-			--[13] = {id, qtd, false, limitStorage = 10040, limit = 1}, -- 1 lightest missile rune
-			--[14] = {id, qtd, false, limitStorage = 10041, limit = 1} -- 1 light stone shower rune
+            [CONST_SLOT_AMMO] = {23839, 50, true}, -- 100 arrows
+            [11] = {8704, 7, true, limitStorage = 10038, limit = 1}, -- potion
+			[12] = {7620, 5, true, limitStorage = 10039, limit = 1}, -- potion
+			[13] = {23723, 1, true, limitStorage = 10040, limit = 1}, -- 1 lightest missile rune
+			[14] = {23722, 1, true, limitStorage = 10041, limit = 1} -- 1 light stone shower rune
         },
         -- knight
         [4] = {
             [CONST_SLOT_LEFT] = {2379, 1, true}, -- dagger
             [CONST_SLOT_RIGHT] = {2512, 1, true}, -- wooden shield
-			[11] = {8704, 10, false, limitStorage = 10042, limit = 1}, -- potion
-			[12] = {7620, 2, false, limitStorage = 10043, limit = 1}, -- potion
-			--[13] = {id, qtd, false, limitStorage = 10044, limit = 1}, -- 1 lightest missile rune
-			--[14] = {id, qtd, false, limitStorage = 10045, limit = 1} -- 1 light stone shower rune
+			[11] = {8704, 10, true, limitStorage = 10042, limit = 1}, -- potion
+			[12] = {7620, 2, true, limitStorage = 10043, limit = 1}, -- potion
+			[13] = {23723, 1, true, limitStorage = 10044, limit = 1}, -- 1 lightest missile rune
+			[14] = {23722, 1, true, limitStorage = 10045, limit = 1} -- 1 light stone shower rune
         }
     }
  
     local vocationsOutfits = {
-        -- sorcerer
+       	-- sorcerer
         [1] = {
             lookBody = 109,
             lookAddons = 0,
             lookTypeName = {Mage}, -- {male, female}
-            lookTypeEx = 0,
+            lookTypeEx = 130,
+			lookTypeFm = 138,
             lookHead = 95,
             lookMount = 0,
             lookLegs = 112,
@@ -87,7 +88,8 @@ local function changeVocation(player, fromVocation, toVocation)
             lookBody = 123,
             lookAddons = 0,
             lookTypeName = {Mage}, -- {male, female}
-            lookTypeEx = 0,
+            lookTypeEx = 130,
+			lookTypeFm = 138,
             lookHead = 95,
             lookMount = 0,
             lookLegs = 9,
@@ -98,7 +100,8 @@ local function changeVocation(player, fromVocation, toVocation)
             lookBody = 117,
             lookAddons = 0,
             lookTypeName = {Hunter}, -- {male, female}
-            lookTypeEx = 0,
+            lookTypeEx = 129,
+			lookTypeFm = 137,
             lookHead = 95,
             lookMount = 0,
             lookLegs = 98,
@@ -109,7 +112,8 @@ local function changeVocation(player, fromVocation, toVocation)
             lookBody = 38,
             lookAddons = 0,
             lookTypeName = {Knight}, -- {male, female}
-            lookTypeEx = 0,
+            lookTypeEx = 131,
+			lookTypeFm = 139,
             lookHead = 95,
             lookMount = 0,
             lookLegs = 94,
@@ -117,8 +121,8 @@ local function changeVocation(player, fromVocation, toVocation)
         }
     }
  
-    for voc = 1, 4 do
-        for slot, info in pairs(vocationsItems[voc]) do
+    for toVocation = 1, 4 do
+        for slot, info in pairs(vocationsItems[toVocation]) do
             local itemCount = player:getItemCount(info[1])
             if itemCount > 0 and info[3] then
                 player:removeItem(info[1], itemCount)
@@ -160,19 +164,59 @@ local function changeVocation(player, fromVocation, toVocation)
         end
     end
  
---[[    local outfit = vocationsOutfits[toVocation]
-    player:setOutfit(
+   local outfit = vocationsOutfits[toVocation]
+    if toVocation ~= 0 then	
+	if player:getSex() == PLAYERSEX_MALE then
+		player:setOutfit(
         {
             lookBody = outfit.lookBody,
             lookAddons = outfit.lookAddons,
             lookTypeName = outfit.lookTypeName,
-            lookTypeEx = outfit.lookTypeEx,
+            lookType = outfit.lookTypeEx,
             lookHead = outfit.lookHead,
             lookMount = outfit.lookMount,
             lookLegs = outfit.lookLegs,
             lookFeet = outfit.lookFeet,
         }
-		)]]--
+		)
+		else
+		player:setOutfit(
+        {
+            lookBody = outfit.lookBody,
+            lookAddons = outfit.lookAddons,
+            lookTypeName = outfit.lookTypeName,
+            lookType = outfit.lookTypeFm,
+            lookHead = outfit.lookHead,
+            lookMount = outfit.lookMount,
+            lookLegs = outfit.lookLegs,
+            lookFeet = outfit.lookFeet,
+        }
+		)
+		end
+		end
+		
+		--
+		-- done
+		local position = player:getPosition()
+		position:getNextPosition(player:getDirection())
+		player:teleportTo(position)
+		player:setVocation(toVocation)
+		--recalculate cap hp and mana
+		--
+		player:setMaxHealth(130 + (player:getVocation():getHealthGain() * player:getLevel()))
+		player:addHealth(player:getMaxHealth())
+		player:setMaxMana(0 + (player:getVocation():getManaGain() * player:getLevel()))
+		player:addMana(player:getMaxMana())
+		player:setCapacity(40000 + (player:getVocation():getCapacityGain() * player:getLevel()))
+		
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format('Congratulations! Now you are %s.', player:getVocation():getName()))
+		
+		if fromVocation ~= 0 then
+		local resultId = db.storeQuery("SELECT `id` FROM `players` WHERE `name` = " .. db.escapeString(player:getName():lower()))
+		local accountId = result.getDataInt(resultId, "id")
+		player:remove()
+		db.query("UPDATE `players` SET `maglevel` = '0', `manaspent` = '0', `skill_fist` = '10', `skill_fist_tries` = '0', `skill_club` = '10', `skill_club_tries` = '0', `skill_sword` = '10', `skill_sword_tries` = '0', `skill_axe` = '10', `skill_axe_tries` = '0', `skill_dist` = '10', `skill_dist_tries` = '0', `skill_shielding` = '10', `skill_shielding_tries` = '0', `skill_fishing` = '10', `skill_fishing_tries` = '0' WHERE `players`.`id` = " .. accountId)
+		end
 end
 
 local centerPosition = Position(32065, 31891, 5)
@@ -184,9 +228,10 @@ function onStepIn(creature, item, position, fromPosition)
         local fromVocation = player:getVocation():getId()
         if fromVocation ~= toVocation and (centerPosition:getDistance(fromPosition) < centerPosition:getDistance(position)) then
             getFirstItems(player)
+			player:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
 			changeVocation(player, fromVocation, toVocation)
-            player:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
-        end
+		end
+		
     end
     return true
 end

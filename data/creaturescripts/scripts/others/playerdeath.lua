@@ -15,7 +15,7 @@ function onDeath(player, corpse, killer, mostDamageKiller, unjustified, mostDama
 	if not deathListEnabled then
 		return
 	end
-
+	
 	local byPlayer = 0
 	local killerName
 	if killer ~= nil then

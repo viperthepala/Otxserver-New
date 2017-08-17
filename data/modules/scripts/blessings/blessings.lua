@@ -11,11 +11,11 @@ BlessingsDialog = {
 
 function onRecvbyte(player, msg, byte)
 	if (byte == 207) then
-		if (player:getClient().os ~= CLIENTOS_NEW_WINDOWS or player:getClient().os ~= CLIENTOS_FLASH) then
+		if (player:getClient().os ~= CLIENTOS_NEW_WINDOWS and player:getClient().os ~= CLIENTOS_FLASH) then
 			player:sendCancelMessage("Only work with Flash Client & 11.0")
 			return false
 		end
-		
+
 		sendBlessingsDialog(player)
 	end
 end
@@ -66,6 +66,6 @@ function sendBlessingsDialog(player)
 		msg:addByte(0) -- Color message (1 - Red | 0 = White loss)
 		msg:addString("Que delicia de bless cara...") -- History message
 	end
-	
+
 	msg:sendToPlayer(player)
 end

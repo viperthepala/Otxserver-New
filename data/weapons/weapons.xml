@@ -2,7 +2,7 @@
 <weapons>
 	<!-- Rods -->
 	<wand id="23721" level="1" mana="1" min="3" max="7" type="ice"> <!-- The Chiller -->
-		<vocation name="None" />
+		<vocation name="Druid" />
 	</wand>
 	<wand id="2182" level="7" mana="2" min="8" max="18" type="earth"> <!-- Snakebit Rod -->
 		<vocation name="Druid" />
@@ -115,7 +115,7 @@
 
 	<!-- Wands -->
 	<wand id="23719" level="1" mana="1" min="3" max="7" type="fire"> <!-- The Scorcher -->
-		<vocation name="None" />
+		<vocation name="Sorcerer" />
 	</wand>
 	<wand id="2190" level="7" mana="2" min="8" max="18" type="energy"> <!-- Wand of Vortex -->
 		<vocation name="Sorcerer" />
@@ -1311,4 +1311,7 @@
 	<distance id="18437" action="removecount" unproperly="1" level="70" /> <!-- Envenomed Arrow -->
 	<distance id="23529" breakchance="2" unproperly="1" level="60" /> <!-- Glooth Spear -->
 	<distance id="23839" action="removecount" unproperly="0" level="1" /> <!-- Simple Arrow -->
+	<distance id="29052" action="removecount" unproperly="1" level="150" script="diamond_arrow.lua" />	<!-- Diamond Arrow -->
+	<distance id="29053" action="removecount" unproperly="1" level="150" />	<!-- Spectral Bolt -->
+	<distance id="29054" breakchance="30" unproperly="1" level="150" />	<!-- Assassin Star -->
 </weapons>

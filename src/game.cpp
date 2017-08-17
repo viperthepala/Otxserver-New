@@ -123,8 +123,10 @@ void Game::setGameState(GameState_t newState)
 			quests.loadFromXml();
 			mounts.loadFromXml();
 
-			gameStore.loadFromXml();
-			gameStore.startup();
+			if (!g_config.getBoolean(ConfigManager::STOREMODULES)) {
+				gameStore.loadFromXml();
+				gameStore.startup();
+			}
 
 			loadMotdNum();
 			loadPlayersRecord();
@@ -1600,7 +1602,7 @@ Item* Game::transformItem(Item* item, uint16_t newId, int32_t newCount /*= -1*/)
 					newItemId = curType.decayTo;
 				}
 
-				if (newItemId < 0) {
+				if (newItemId <= 0) {
 					internalRemoveItem(item);
 					return nullptr;
 				} else if (newItemId != newId) {
@@ -2261,7 +2263,7 @@ void Game::playerWrapableItem(uint32_t playerId, const Position& pos, uint8_t st
 
 	House* house = map.houses.getHouseByPlayerId(player->getGUID());
 	if (!house) {
-		player->sendCancelMessage("You don't owner this house, you need own one house to use this.");
+		player->sendCancelMessage("You don't own a house, you need own a house to use this.");
 		return;
 	}
 
@@ -2304,16 +2306,29 @@ void Game::playerWrapableItem(uint32_t playerId, const Position& pos, uint8_t st
 	// FOR ITEMS THAT DO NOT LOSE ACTIONID TO TRANSFORM
 	if (!iiType.wrapContainer) {
 		if (newWrapId != 0 && item->getID() != TRANSFORM_BOX_ID) {
+			uint16_t hiddenCharges = 0;
+			if (isCaskItem(item->getID())) {
+				hiddenCharges = item->getSubType();
+			}
+
 			transformItem(item, newWrapId)->setActionId(item->getID());
 			item->setSpecialDescription("Unwrap it in your own house to create a <" + itemName + ">.");
+			if (hiddenCharges > 0) { //saving the cask charges
+				item->setDate(hiddenCharges);
+			}
 			addMagicEffect(item->getPosition(), CONST_ME_POFF);
 			startDecay(item);
 		}
 
 		if ((item->getActionId() != 0) && !newWrapId && item->getID() == TRANSFORM_BOX_ID) {
+			uint16_t hiddenCharges = item->getDate();
+			uint16_t boxActionId = item->getActionId();
 			transformItem(item, item->getActionId()); // transforms the item
 			item->setSpecialDescription("Wrap it in your own house to create a <" + itemName + ">.");
 			addMagicEffect(item->getPosition(), CONST_ME_POFF);
+			if (hiddenCharges > 0 && isCaskItem(boxActionId)) {
+				item->setSubType(hiddenCharges);
+			}
 			startDecay(item);
 		}
 	} else {
@@ -2328,8 +2343,13 @@ void Game::playerWrapableItem(uint32_t playerId, const Position& pos, uint8_t st
 			}
 
 			if ((item->getActionId() != 0) && !newWrapId && item->getID() == TRANSFORM_BOX_ID) {
+				uint16_t hiddenCharges = item->getDate();
+				uint16_t boxActionId = item->getActionId();
 				transformItem(item, item->getActionId())->setSpecialDescription("Wrap it in your own house to create a <" + itemName + ">.");
 				addMagicEffect(item->getPosition(), CONST_ME_POFF);
+				if (hiddenCharges > 0 && isCaskItem(boxActionId)) {
+					item->setSubType(hiddenCharges);
+				}
 				startDecay(item);
 			}
 		}
@@ -4139,6 +4159,10 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 			}
 		}
 
+		if (spectators.empty()) {
+			map.getSpectators(spectators, targetPos, true, true);
+		}
+
 		addCreatureHealth(spectators, target);
 
 		message.primary.value = damage.primary.value;
@@ -4471,6 +4495,41 @@ void Game::internalDecayItem(Item* item)
 {
 	const ItemType& it = Item::items[item->getID()];
 	if (it.decayTo != 0) {
+		Player* player = item->getHoldingPlayer();
+		if (player) {
+			bool needUpdateSkills = false;
+			for (int32_t i = SKILL_FIRST; i <= SKILL_LAST; ++i) {
+				if (it.abilities && it.abilities->skills[i] != 0) {
+					needUpdateSkills = true;
+					player->setVarSkill(static_cast<skills_t>(i), -it.abilities->skills[i]);
+				}
+			}
+
+			if (needUpdateSkills) {
+				player->sendSkills();
+			}
+
+			bool needUpdateStats = false;
+			for (int32_t s = STAT_FIRST; s <= STAT_LAST; ++s) {
+				if (it.abilities && it.abilities->stats[s] != 0) {
+					needUpdateStats = true;
+					needUpdateSkills = true;
+					player->setVarStats(static_cast<stats_t>(s), -it.abilities->stats[s]);
+				}
+				if (it.abilities && it.abilities->statsPercent[s] != 0) {
+					needUpdateStats = true;
+					player->setVarStats(static_cast<stats_t>(s), -static_cast<int32_t>(player->getDefaultStats(static_cast<stats_t>(s)) * ((it.abilities->statsPercent[s] - 100) / 100.f)));
+				}
+			}
+
+			if (needUpdateStats) {
+				player->sendStats();
+			}
+
+			if (needUpdateSkills) {
+				player->sendSkills();
+			}
+		}
 		Item* newItem = transformItem(item, it.decayTo);
 		startDecay(newItem);
 	} else {

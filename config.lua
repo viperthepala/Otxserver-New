@@ -38,13 +38,16 @@ maxPacketsPerSecond = 25
 
 -- Version Manual
 clientVersionMin = 1100
-clientVersionMax = 1132
-clientVersionStr = "Only clients with protocol 10.00 or 11.00 is allowed!"
+clientVersionMax = 1143
+clientVersionStr = "Only clients with protocol version 10.00 or 11.43 are allowed!"
 
 -- Depot Limit
 freeDepotLimit = 2000
 premiumDepotLimit = 10000
 depotBoxes = 17
+
+-- GameStore
+gamestoreByModules = true
 
 -- Casting System 
 enableLiveCasting = true
@@ -94,7 +97,7 @@ emoteSpells = false
 classicEquipmentSlots = false
 allowWalkthrough = true
 coinPacketSize = 25
-coinImagesURL = "http://some.url/images/store/"
+coinImagesURL = "http://localhost/store/"
 classicAttackSpeed = false
 
 -- Rates

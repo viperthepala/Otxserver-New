@@ -1552,7 +1552,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `prey_stamina_2` int(11) DEFAULT NULL,
   `prey_stamina_3` int(11) DEFAULT NULL,
   `prey_column` smallint(6) NOT NULL DEFAULT '1',
-  `bonus_reroll` int(11) DEFAULT NULL,
+  `bonus_reroll` int(11) NOT NULL DEFAULT '0',
   `xpboost_stamina` smallint(5) DEFAULT NULL,
   `xpboost_value` tinyint(4) DEFAULT NULL,
   `marriage_status` bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -1898,21 +1898,23 @@ CREATE TABLE IF NOT EXISTS `sellchar` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `server_config`
+-- Estrutura da tabela `server_config`
 --
 
-CREATE TABLE IF NOT EXISTS `server_config` (
+CREATE TABLE `server_config` (
   `config` varchar(50) NOT NULL,
   `value` varchar(256) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `server_config`
+-- Extraindo dados da tabela `server_config`
 --
 
 INSERT INTO `server_config` (`config`, `value`) VALUES
-('motd_hash', 'e667ba697c4dfad02c52fa6d34a7a17a33c01f4f'),
-('motd_num', '1'),
+('db_version', '24'),
+('double', 'desactived'),
+('motd_hash', 'd40f8dcfa99c13f947571211f86d3e1edd1b329c'),
+('motd_num', '2'),
 ('players_record', '1');
 
 -- --------------------------------------------------------
@@ -1927,7 +1929,7 @@ CREATE TABLE IF NOT EXISTS `store_history` (
   `description` varchar(3500) NOT NULL,
   `coin_amount` int(12) NOT NULL,
   `time` bigint(20) unsigned NOT NULL,
-  `timestamp` int(11) NOT NULL,
+  `timestamp` int(11) NOT NULL DEFAULT 0,
   `id` int(11) NOT NULL,
   `coins` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

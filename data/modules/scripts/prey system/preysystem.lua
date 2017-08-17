@@ -1,7 +1,7 @@
 PreySystem = {
 	Developer = "Charles (Cjaker)",
 	Version = "3.0",
-	LastUpdate = "15/07/2017 - 09:02 (AM)",
+	LastUpdate = "23/07/2017 - 10:58 (AM)",
 	Missing = {}
 }
 
@@ -256,6 +256,10 @@ function sendPreyData(player, indexColumn)
 		-- STATE_SELECTION_CHANGE_MONSTER
 		changeStateToSelectionChangeMonster(player, indexColumn)
 	else
+		if (player:getBonusMonster(indexColumn) ~= "") then
+			player:removePreyMonster(player:getBonusMonster(indexColumn))
+			player:removeBonus(indexColumn)
+		end
 		-- STATE_SELECTION
 		changeStateToSelection(player, indexColumn)
 	end
@@ -428,7 +432,6 @@ function SelectPrey(player, PreyColumn, mType)
 		return sendError(player, "[ERROR] You can't select a prey with bonus active.")
 	end
 
-	player:removePreyMonster(mType:getName())
 	player:setPreyStamina(PreyColumn, 7200)
 
 	msg:addByte(StateTypes.STATE_ACTIVE)
@@ -630,7 +633,7 @@ function Player.removePreyMonster(self, name)
 end
 
 function Player.addPreySlot(self)
-	db.query("UPDATE players SET prey_column = 10 WHERE id = " ..self:getGuid())
+	db.query("UPDATE players SET prey_column = 2 WHERE id = " ..self:getGuid())
 	sendPreyData(self, 2)
 end
 
