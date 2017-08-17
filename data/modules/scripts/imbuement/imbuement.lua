@@ -2,7 +2,7 @@ ImbuingSystem = {
 	Developer = "Charles (Cjaker)",
 	Version = "1.0",
 	LastUpdate = "24/05/2017 - 03:50 (AM)",
-	FixedBy = "Leu (jlvc) and Clenir (Mikii)"
+	FixedBy = "Leu (jlcvp) and Clenir (Mikii)"
 }
 
 --[[
@@ -433,13 +433,6 @@ function Player.applyImbuement(self, msg)
 		ValorTotal = ImbuingInfo[VerificaLeveldeRemocao].Price
 	end
 
-	-- Verifica se o Player Tem o valor no Banco antes da Remoção.		
-	if (not self:removeMoneyNpc(ValorTotal)) then
-		Player.closeImbuementWindow(self)
-		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have enough money.")
-		return false
-	end
-
 	-- Verifica se o Player Tem os Itens Necessários antes da Remoção.
 	for i = 1, VerificaLeveldeRemocao do
 			local ItemId = myImbuement.Items[i][1]
@@ -479,8 +472,11 @@ function Player.applyImbuement(self, msg)
 		end
 	end
 	-- Remove o dinheiro.
-	self:setBankBalance(self:getBankBalance() - ValorTotal)
-
+	if (not self:removeMoneyNpc(ValorTotal)) then
+		Player.closeImbuementWindow(self)
+		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have enough money.")
+		return false
+	end
 	-- Faz a contagem de % para o item quebrar caso nao esteja usando Proteção .
 	if (useProtection == 0) then
 		local ParseAcerto = ImbuingInfo[VerificaLeveldeRemocao].Percent
