@@ -31,6 +31,7 @@
 		<vocation name="Royal Paladin" />
 	</conjure>
 	<!-- end of under construction -->
+
 	<instant group="attack" spellid="62" name="Annihilation" words="exori gran ico" lvl="110" mana="300" prem="1" range="1" needtarget="1" blockwalls="1" needweapon="1" exhaustion="10000" groupcooldown="4000" needlearn="0" script="attack/annihilation.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" />
