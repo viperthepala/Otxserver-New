@@ -1971,7 +1971,7 @@ void ProtocolGame::sendQuestTracker()
 {
 	NetworkMessage msg;
 	msg.addByte(0xD0); // byte quest tracker
-	msg.addByte(1); // send quests of quest log for 1 - 0 debug
+	msg.addByte(1); // send quests of quest log ??
 	msg.add<uint16_t>(1); // unknown
 	writeToOutputBuffer(msg);
 }
