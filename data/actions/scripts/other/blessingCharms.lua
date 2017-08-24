@@ -12,7 +12,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 
-	if player:hasBlessing(useItem.blessId) then
+	if player:hasBlessing(useItem.blessId, 1) then
 		player:say('You already possess this blessing.', TALKTYPE_MONSTER_SAY)
 		return true
 	end
