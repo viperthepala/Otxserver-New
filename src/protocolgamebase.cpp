@@ -149,10 +149,7 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 		AddOutfit(msg, outfit);
 	}
 
-	LightInfo lightInfo;
-	creature->getCreatureLight(lightInfo);
-	msg.addByte(player->isAccessPlayer() ? 0xFF : lightInfo.level);
-	msg.addByte(lightInfo.color);
+	sendWorldLight(g_game.getWorldLightInfo());
 
 	msg.add<uint16_t>(creature->getStepSpeed() / 2);
 
@@ -322,7 +319,7 @@ void ProtocolGameBase::sendPreyData()
 	writeToOutputBuffer(msg);
 }
 
-void ProtocolGameBase::AddWorldLight(NetworkMessage& msg, const LightInfo& lightInfo)
+void ProtocolGameBase::AddWorldLight(NetworkMessage& msg, LightInfo lightInfo)
 {
 	msg.addByte(0x82);
 	msg.addByte((player->isAccessPlayer() ? 0xFF : lightInfo.level));
@@ -331,8 +328,7 @@ void ProtocolGameBase::AddWorldLight(NetworkMessage& msg, const LightInfo& light
 
 void ProtocolGameBase::AddCreatureLight(NetworkMessage& msg, const Creature* creature)
 {
-	LightInfo lightInfo;
-	creature->getCreatureLight(lightInfo);
+	LightInfo lightInfo = creature->getCreatureLight();
 
 	msg.addByte(0x8D);
 	msg.add<uint32_t>(creature->getID());
@@ -753,9 +749,7 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	sendStoreHighlight();
 
 	//gameworld light-settings
-	LightInfo lightInfo;
-	g_game.getWorldLightInfo(lightInfo);
-	sendWorldLight(lightInfo);
+	sendWorldLight(g_game.getWorldLightInfo());
 
 	//player light level
 	sendCreatureLight(creature);
@@ -911,7 +905,7 @@ void ProtocolGameBase::sendCreatureLight(const Creature* creature)
 	writeToOutputBuffer(msg);
 }
 
-void ProtocolGameBase::sendWorldLight(const LightInfo& lightInfo)
+void ProtocolGameBase::sendWorldLight(LightInfo lightInfo)
 {
 	NetworkMessage msg;
 	AddWorldLight(msg, lightInfo);
