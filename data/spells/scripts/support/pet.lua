@@ -18,7 +18,7 @@ function transport(pet1, cid)
 		end
 	end
 
-	addEvent(transport, 1*1*1000, pet1, cid)
+	addEvent(transport, 1*2*1000, pet1, cid)
 end
 
 local combat = createCombatObject()
@@ -30,6 +30,9 @@ setCombatArea(combat, area)
 
 local maxsummons = 1
 function onCastSpell(cid, var)
+	if Tile(posit):hasFlag(TILESTATE_PROTECTIONZONE) then -- dont cast on PZ
+	return
+	end
 	doCreatureSay(cid, "My Power your Power", TALKTYPE_ORANGE_1)
 	local summoncount = getCreatureSummons(cid)
 	if #summoncount < 1 then
@@ -48,7 +51,7 @@ function onCastSpell(cid, var)
 			local pet1 = Game.createMonster(pet, getCreaturePosition(cid))
 			pet1:setMaster(cid)
 			addEvent(rem, 15*60*1000, pet1.uid)
-			addEvent(transport, 1*10*1000, pet1.uid, cid.uid)
+			addEvent(transport, 1*2*1000, pet1.uid, cid.uid)
 			if pet1 == false then
 				return combat:execute(creature, var)
 			end
