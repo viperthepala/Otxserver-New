@@ -760,7 +760,7 @@ void ProtocolGame::parseLookAt(NetworkMessage& msg)
 
 void ProtocolGame::parseLookInBattleList(NetworkMessage& msg)
 {
-	const uint32_t creatureId = msg.get<uint32_t>();
+	uint32_t creatureId = msg.get<uint32_t>();
 	addGameTaskTimed(DISPATCHER_TASK_EXPIRATION, &Game::playerLookInBattleList, player->getID(), creatureId);
 }
 
