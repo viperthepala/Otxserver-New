@@ -42,8 +42,6 @@ clientVersionMax = 1143
 clientVersionStr = "Only clients with protocol version 10.00 or 11.43 are allowed!"
 
 -- Depot Limit
-freeDepotLimit = 2000
-premiumDepotLimit = 10000
 depotBoxes = 17
 
 -- GameStore

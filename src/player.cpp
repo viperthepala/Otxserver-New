@@ -818,7 +818,7 @@ DepotLocker* Player::getDepotLocker(uint32_t depotId)
 		for (uint8_t i = g_config.getNumber(ConfigManager::DEPOT_BOXES); i > 0; i--) {
 			if (DepotChest* depotBox = getDepotChest(i, false)) {
 				depotBox->setParent(it->second->getItemByIndex(0)->getContainer());
-			}
+s 			}
 		}
 		return it->second;
 	}
@@ -4711,9 +4711,9 @@ size_t Player::getMaxDepotItems() const
 	if (group->maxDepotItems != 0) {
 		return group->maxDepotItems;
 	} else if (isPremium()) {
-		return g_config.getNumber(ConfigManager::PREMIUM_DEPOT_LIMIT); // its better add limit for max 3000 ea depotId
+		return 3000; // its better add limit for max 3000 ea depotId
 	}
-	return g_config.getNumber(ConfigManager::FREE_DEPOT_LIMIT);
+	return 2000;
 }
 
 std::forward_list<Condition*> Player::getMuteConditions() const
