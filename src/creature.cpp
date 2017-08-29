@@ -1422,18 +1422,15 @@ int64_t Creature::getEventStepTicks(bool onlyDelay) const
 	return ret;
 }
 
-LightInfo Creature::getCreatureLight() const
+void Creature::getCreatureLight(LightInfo& light) const
 {
-	return internalLight;
-}
-
-void Creature::setCreatureLight(LightInfo light) {
-	internalLight = std::move(light);
+	light = internalLight;
 }
 
 void Creature::setNormalCreatureLight()
 {
-	internalLight = {};
+	internalLight.level = 0;
+	internalLight.color = 0;
 }
 
 bool Creature::registerCreatureEvent(const std::string& name)

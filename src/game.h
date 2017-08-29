@@ -230,7 +230,7 @@ class Game
 			return playersRecord;
 		}
 
-		LightInfo getWorldLightInfo() const;
+		void getWorldLightInfo(LightInfo& lightInfo) const;
 
 		ReturnValue internalMoveCreature(Creature* creature, Direction direction, uint32_t flags = 0);
 		ReturnValue internalMoveCreature(Creature& creature, Tile& toTile, uint32_t flags = 0);

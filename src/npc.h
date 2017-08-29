@@ -118,7 +118,7 @@ class Npc final : public Creature
 		}
 
 		bool isPushable() const final {
-			return pushable && walkTicks != 0;
+			return walkTicks > 0;
 		}
 
 		void setID() final {
@@ -244,7 +244,6 @@ class Npc final : public Creature
 		bool ignoreHeight;
 		bool loaded;
 		bool isIdle;
-		bool pushable;
 
 		static NpcScriptInterface* scriptInterface;
 

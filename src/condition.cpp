@@ -423,7 +423,7 @@ void ConditionAttributes::updatePercentStats(Player* player)
 				break;
 
 			case STAT_MAGICPOINTS:
-				stats[i] = static_cast<int32_t>(player->getBaseMagicLevel() * ((statsPercent[i] - 100) / 100.f));
+				stats[i] = static_cast<int32_t>(player->getMagicLevel() * ((statsPercent[i] - 100) / 100.f));
 				break;
 		}
 	}
@@ -1509,11 +1509,12 @@ bool ConditionLight::executeCondition(Creature* creature, int32_t interval)
 
 	if (internalLightTicks >= lightChangeInterval) {
 		internalLightTicks = 0;
-		LightInfo lightInfo = creature->getCreatureLight();
+		LightInfo creatureLight;
+		creature->getCreatureLight(creatureLight);
 
-		if (lightInfo.level > 0) {
-			--lightInfo.level;
-			creature->setCreatureLight(lightInfo);
+		if (creatureLight.level > 0) {
+			--creatureLight.level;
+			creature->setCreatureLight(creatureLight);
 			g_game.changeLight(creature);
 		}
 	}

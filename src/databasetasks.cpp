@@ -85,13 +85,9 @@ void DatabaseTasks::runTask(const DatabaseTask& task)
 
 void DatabaseTasks::flush()
 {
-	std::unique_lock<std::mutex> guard{ taskLock };
 	while (!tasks.empty()) {
-		auto task = std::move(tasks.front());
+		runTask(tasks.front());
 		tasks.pop_front();
-		guard.unlock();
-		runTask(task);
-		guard.lock();
 	}
 }
 
@@ -99,7 +95,7 @@ void DatabaseTasks::shutdown()
 {
 	taskLock.lock();
 	setState(THREAD_STATE_TERMINATED);
-	taskLock.unlock();
 	flush();
+	taskLock.unlock();
 	taskSignal.notify_one();
 }

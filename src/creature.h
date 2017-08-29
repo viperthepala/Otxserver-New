@@ -386,9 +386,11 @@ class Creature : virtual public Thing
 		virtual void onAttackedCreatureChangeZone(ZoneType_t zone);
 		virtual void onIdleStatus();
 
-		virtual LightInfo getCreatureLight() const;
+		virtual void getCreatureLight(LightInfo& light) const;
 		virtual void setNormalCreatureLight();
-		void setCreatureLight(LightInfo lightInfo);
+		void setCreatureLight(LightInfo light) {
+			internalLight = light;
+		}
 
 		virtual void onThink(uint32_t interval);
 		void onAttacking(uint32_t interval);

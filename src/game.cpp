@@ -193,8 +193,6 @@ void Game::saveGameState()
 
 	Map::save();
 
-	g_databaseTasks.flush();
-
 	if (gameState == GAME_STATE_MAINTAIN) {
 		setGameState(GAME_STATE_NORMAL);
 	}
@@ -4631,7 +4629,8 @@ void Game::checkLight()
 	}
 
 	if (lightChange) {
-		LightInfo lightInfo = getWorldLightInfo();
+		LightInfo lightInfo;
+		getWorldLightInfo(lightInfo);
 
 		for (const auto& it : players) {
 			it.second->sendWorldLight(lightInfo);
@@ -4639,9 +4638,10 @@ void Game::checkLight()
 	}
 }
 
-LightInfo Game::getWorldLightInfo() const
+void Game::getWorldLightInfo(LightInfo& lightInfo) const
 {
-	return {lightLevel, 0xD7};
+	lightInfo.level = lightLevel;
+	lightInfo.color = 0xD7;
 }
 
 void Game::shutdown()

@@ -337,34 +337,32 @@ void Player::getShieldAndWeapon(const Item*& shield, const Item*& weapon) const
 
 int32_t Player::getDefense() const
 {
-	int32_t defenseSkill = getSkillLevel(SKILL_FIST);
-	int32_t defenseValue = 7;
+	int32_t baseDefense = 5;
+	int32_t defenseValue = 0;
+	int32_t defenseSkill = 0;
+	int32_t extraDefense = 0;
+	float defenseFactor = getDefenseFactor();
 	const Item* weapon;
 	const Item* shield;
 	getShieldAndWeapon(shield, weapon);
 
 	if (weapon) {
-		defenseValue = weapon->getDefense() + weapon->getExtraDefense();
+		defenseValue = baseDefense + weapon->getDefense();
+		extraDefense = weapon->getExtraDefense();
 		defenseSkill = getWeaponSkill(weapon);
 	}
 
-	if (shield) {
-		defenseValue = weapon != nullptr ? shield->getDefense() + weapon->getExtraDefense() : shield->getDefense();
+	if (shield && shield->getDefense() >= defenseValue) {
+		defenseValue = baseDefense + shield->getDefense() + extraDefense;
 		defenseSkill = getSkillLevel(SKILL_SHIELD);
 	}
 
 	if (defenseSkill == 0) {
-		switch (fightMode) {
-			case FIGHTMODE_ATTACK:
-			case FIGHTMODE_BALANCED:
-				return 1;
-
-			case FIGHTMODE_DEFENSE:
-				return 2;
-		}
+		return 0;
 	}
 
-	return (defenseSkill / 4. + 2.23) * defenseValue * 0.15 * getDefenseFactor() * vocation->defenseMultiplier;
+	defenseValue = static_cast<int32_t>(defenseValue * vocation->defenseMultiplier);
+	return static_cast<int32_t>(std::ceil((static_cast<float>(defenseSkill * (defenseValue * 0.015)) + (defenseValue * 0.1)) * defenseFactor));
 }
 
 float Player::getAttackFactor() const
@@ -380,9 +378,15 @@ float Player::getAttackFactor() const
 float Player::getDefenseFactor() const
 {
 	switch (fightMode) {
-		case FIGHTMODE_ATTACK: return (OTSYS_TIME() - lastAttack) < getAttackSpeed() ? 0.5f : 1.0f;
-		case FIGHTMODE_BALANCED: return (OTSYS_TIME() - lastAttack) < getAttackSpeed() ? 0.75f : 1.0f;
-		case FIGHTMODE_DEFENSE: return 1.0f;
+		case FIGHTMODE_ATTACK: return 1.0f;
+		case FIGHTMODE_BALANCED: return 1.2f;
+		case FIGHTMODE_DEFENSE: {
+			if ((OTSYS_TIME() - lastAttack) < getAttackSpeed()) {
+				return 1.0f;
+			}
+
+			return 2.0f;
+		}
 		default: return 1.0f;
 	}
 }
@@ -3374,25 +3378,27 @@ void Player::stopWalk()
 	cancelNextWalk = true;
 }
 
-LightInfo Player::getCreatureLight() const
+void Player::getCreatureLight(LightInfo& light) const
 {
 	if (internalLight.level > itemsLight.level) {
-		return internalLight;
+		light = internalLight;
+	} else {
+		light = itemsLight;
 	}
-	return itemsLight;
 }
 
 void Player::updateItemsLight(bool internal /*=false*/)
 {
 	LightInfo maxLight;
+	LightInfo curLight;
 
 	for (int32_t i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; ++i) {
 		Item* item = inventory[i];
 		if (item) {
-			LightInfo curLight = item->getLightInfo();
+			item->getLight(curLight);
 
 			if (curLight.level > maxLight.level) {
-				maxLight = std::move(curLight);
+				maxLight = curLight;
 			}
 		}
 	}

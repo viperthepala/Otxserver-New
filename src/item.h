@@ -620,7 +620,7 @@ class Item : virtual public Thing
 		}
 
 		uint32_t getWorth() const;
-		LightInfo getLightInfo() const;
+		void getLight(LightInfo& lightInfo) const;
 
 		bool hasProperty(ITEMPROPERTY prop) const;
 		bool isBlocking() const {

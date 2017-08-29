@@ -2589,11 +2589,6 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("ItemType", "isStackable", LuaScriptInterface::luaItemTypeIsStackable);
 	registerMethod("ItemType", "isReadable", LuaScriptInterface::luaItemTypeIsReadable);
 	registerMethod("ItemType", "isWritable", LuaScriptInterface::luaItemTypeIsWritable);
-	registerMethod("ItemType", "isBlocking", LuaScriptInterface::luaItemTypeIsBlocking);
-	registerMethod("ItemType", "isGroundTile", LuaScriptInterface::luaItemTypeIsGroundTile);
-	registerMethod("ItemType", "isMagicField", LuaScriptInterface::luaItemTypeIsMagicField);
-	registerMethod("ItemType", "isUseable", LuaScriptInterface::luaItemTypeIsUseable);
-	registerMethod("ItemType", "isPickupable", LuaScriptInterface::luaItemTypeIsPickupable);
 
 	registerMethod("ItemType", "getType", LuaScriptInterface::luaItemTypeGetType);
 	registerMethod("ItemType", "getId", LuaScriptInterface::luaItemTypeGetId);
@@ -2627,8 +2622,6 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("ItemType", "getDestroyId", LuaScriptInterface::luaItemTypeGetDestroyId);
 	registerMethod("ItemType", "getDecayId", LuaScriptInterface::luaItemTypeGetDecayId);
 	registerMethod("ItemType", "getRequiredLevel", LuaScriptInterface::luaItemTypeGetRequiredLevel);
-	registerMethod("ItemType", "getAmmoType", LuaScriptInterface::luaItemTypeGetAmmoType);
-	registerMethod("ItemType", "getCorpseType", LuaScriptInterface::luaItemTypeGetCorpseType);
 
 	registerMethod("ItemType", "getDecayTime", LuaScriptInterface::luaItemTypeGetDecayTime);
 	registerMethod("ItemType", "getShowDuration", LuaScriptInterface::luaItemTypeGetShowDuration);
@@ -3043,7 +3036,8 @@ int LuaScriptInterface::luaGetWorldTime(lua_State* L)
 int LuaScriptInterface::luaGetWorldLight(lua_State* L)
 {
 	//getWorldLight()
-	LightInfo lightInfo = g_game.getWorldLightInfo();
+	LightInfo lightInfo;
+	g_game.getWorldLightInfo(lightInfo);
 	lua_pushnumber(L, lightInfo.level);
 	lua_pushnumber(L, lightInfo.color);
 	return 2;
@@ -7033,9 +7027,10 @@ int LuaScriptInterface::luaCreatureGetLight(lua_State* L)
 		return 1;
 	}
 
-	LightInfo lightInfo = creature->getCreatureLight();
-	lua_pushnumber(L, lightInfo.level);
-	lua_pushnumber(L, lightInfo.color);
+	LightInfo light;
+	creature->getCreatureLight(light);
+	lua_pushnumber(L, light.level);
+	lua_pushnumber(L, light.color);
 	return 2;
 }
 
@@ -11654,66 +11649,6 @@ int LuaScriptInterface::luaItemTypeIsWritable(lua_State* L)
 	return 1;
 }
 
-int LuaScriptInterface::luaItemTypeIsBlocking(lua_State* L)
-{
-	// itemType:isBlocking()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		pushBoolean(L, itemType->blockProjectile || itemType->blockSolid);
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaItemTypeIsGroundTile(lua_State* L)
-{
-	// itemType:isGroundTile()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		pushBoolean(L, itemType->isGroundTile());
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaItemTypeIsMagicField(lua_State* L)
-{
-	// itemType:isMagicField()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		pushBoolean(L, itemType->isMagicField());
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaItemTypeIsUseable(lua_State* L)
-{
-	// itemType:isUseable()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		pushBoolean(L, itemType->isUseable());
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaItemTypeIsPickupable(lua_State* L)
-{
-	// itemType:isPickupable()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		pushBoolean(L, itemType->isPickupable());
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
 int LuaScriptInterface::luaItemTypeGetType(lua_State* L)
 {
 	// itemType:getType()
@@ -11952,30 +11887,6 @@ int LuaScriptInterface::luaItemTypeGetWeaponType(lua_State* L)
 	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
 	if (itemType) {
 		lua_pushnumber(L, itemType->weaponType);
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaItemTypeGetAmmoType(lua_State* L)
-{
-	// itemType:getAmmoType()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		lua_pushnumber(L, itemType->ammoType);
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaItemTypeGetCorpseType(lua_State* L)
-{
-	// itemType:getCorpseType()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		lua_pushnumber(L, itemType->corpseType);
 	} else {
 		lua_pushnil(L);
 	}

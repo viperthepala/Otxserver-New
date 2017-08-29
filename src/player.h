@@ -700,7 +700,7 @@ class Player final : public Creature, public Cylinder
 		void onIdleStatus() final;
 		void onPlacedCreature() final;
 
-		LightInfo getCreatureLight() const final;
+		void getCreatureLight(LightInfo& light) const final;
 
 		Skulls_t getSkull() const final;
 		Skulls_t getSkullClient(const Creature* creature) const final;
@@ -1136,7 +1136,7 @@ class Player final : public Creature, public Cylinder
 				client->sendCloseTrade();
 			}
 		}
-		void sendWorldLight(LightInfo lightInfo) {
+		void sendWorldLight(const LightInfo& lightInfo) {
 			if (client) {
 				client->sendWorldLight(lightInfo);
 			}
