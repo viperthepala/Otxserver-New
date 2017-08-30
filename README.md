@@ -31,7 +31,7 @@ Versões 11.x: [Compilado](http://www.tibiaking.com/forum/forums/topic/82629-114
 # Sites Compativeis
 [Znote AAC Official](https://github.com/Znote/ZnoteAAC).
 
-[Gesior by Mudroock](https://github.com/mudroock/Gesior-AAC).
+[Gesior by Marco Oliveira](https://github.com/mudroock/Gesior-AAC).
 
 [Gesior by Monteiro](https://github.com/jlcvp/GesiorMonteiro).
 Fixed by Leonardo Pereira (jlcvp)
