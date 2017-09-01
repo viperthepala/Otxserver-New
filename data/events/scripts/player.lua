@@ -129,6 +129,28 @@ function Player:onLook(thing, position, distance)
 	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 end
 
+function Player:onLookInBattleList(creature, distance)
+	local description = "You see " .. creature:getDescription(distance)
+	if self:getGroup():getAccess() then
+		local str = "%s\nHealth: %d / %d"
+		if creature:getMaxMana() > 0 then
+			str = string.format("%s, Mana: %d / %d", str, creature:getMana(), creature:getMaxMana())
+		end
+		description = string.format(str, description, creature:getHealth(), creature:getMaxHealth()) .. "."
+
+		local position = creature:getPosition()
+		description = string.format(
+			"%s\nPosition: %d, %d, %d",
+			description, position.x, position.y, position.z
+		)
+
+		if creature:isPlayer() then
+			description = string.format("%s\nIP: %s", description, Game.convertIpToString(creature:getIp()))
+		end
+	end
+	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
+end
+
 function Player:onLookInTrade(partner, item, distance)
 	self:sendTextMessage(MESSAGE_INFO_DESCR, "You see " .. item:getDescription(distance))
 end
@@ -506,7 +528,7 @@ local function useStamina(player)
 end
 
 local function useStaminaXp(player)
-	local staminaMinutes = player:getExpBoostStamina()
+	local staminaMinutes = player:getExpBoostStamina() / 60
 	if staminaMinutes == 0 then
 		return
 	end
@@ -529,7 +551,7 @@ local function useStaminaXp(player)
 		staminaMinutes = staminaMinutes - 1
 		nextUseXpStamina[playerId] = currentTime + 60
 	end
-	player:setExpBoostStamina(staminaMinutes)
+	player:setExpBoostStamina(staminaMinutes * 60)
 end
 
 
@@ -626,7 +648,7 @@ function Player:onGainExperience(source, exp, rawExp)
 		self:setStoreXpBoost(0) -- reset xp boost to 0
 	end
 
-	-- More compact, after checking before (reset) it only of xp if you have: v
+	-- More compact, after checking before (reset) it only of xp if you have
 	if (self:getStoreXpBoost() > 0) then
 		exp = exp + (exp * (self:getStoreXpBoost()/100)) -- Exp Boost
 	end
@@ -689,6 +711,7 @@ function Player:onGainSkillTries(skill, tries)
 	if APPLY_SKILL_MULTIPLIER == false then
 		return tries
 	end
+
 	if skill == SKILL_MAGLEVEL then
 		return tries * configManager.getNumber(configKeys.RATE_MAGIC)
 	end

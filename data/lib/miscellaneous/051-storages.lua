@@ -22,9 +22,6 @@ Storage = {
 		limit44 = 10044,
 		limit45 = 10045
 		},
-	Autoloot = {
-		Autoloot = 10003
-	},
 	SweetyCyclops = {
 		AmuletTimer = 48,
 		AmuletStatus = 49

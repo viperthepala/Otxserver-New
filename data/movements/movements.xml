@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
-	<movevent event="DeEquip" itemid="9931" slot="feet" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="9931" slot="feet" level="2" function="onEquipItem" />
 	<movevent event="StepIn" actionid="50998" script="rookgaard/levelbridge.lua" />
 	<!-- Dawnport -->
 	<movevent event="StepIn" fromaid="2001" toaid="2004" script="vocationtrial.lua" />
