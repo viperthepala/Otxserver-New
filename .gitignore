@@ -182,5 +182,3 @@ data/world/global.otbm
 #Jetbrains' IDEs config files
 .idea/
 cmake-build-*/
-data/world/realmap.otbm
-data/items/items(official).otb

@@ -306,7 +306,7 @@ function parseBuyStoreOffer(playerId, msg)
 						addEvent(function() changeParcel(parcel) end, 250)
 					else
 						local kegItem = inbox:addItem(offer.thingId,1)
-						kegItem:setAttribute(ITEM_ATTRIBUTE_CHARGES, offer.count)
+						kegItem:setAttribute(ITEM_ATTRIBUTE_CHARGES, pack)
 					end
 				elseif (offer.count > 100) then
 					local parcel = Item(inbox:addItem(2596, 1):getUniqueId())
@@ -420,7 +420,7 @@ function parseBuyStoreOffer(playerId, msg)
 			local currentExpBoostTime = player:getExpBoostStamina()
 
 			player:setStoreXpBoost(50)
-			player:setStaminaXpBoost(currentExpBoostTime + 3600)
+			player:setStaminaXpBoost(currentExpBoostTime + 60)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT then
 			local unlockedColumns = player:getPreySlots()
 			if (unlockedColumns == 2) then

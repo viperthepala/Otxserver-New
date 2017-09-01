@@ -172,7 +172,7 @@ if Modules == nil then
 			if parameters.bless == 4 then
 				player:setStorageValue(Storage.KawillBlessing, 0)
 			end
-			player:addBlessing(parameters.bless, 1)
+			player:addBlessing(parameters.bless)
 			player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 		end
 
