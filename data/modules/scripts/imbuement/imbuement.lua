@@ -424,9 +424,9 @@ function Player.applyImbuement(self, msg)
 	}
 
 	-- Retorna o Level numeral a partir do selecionado no cliente.
-	local VerificaLeveldeRemocao = TempArrayLevel[myImbuement.Levels[imbuingLevel]]	
+	local VerificaLeveldeRemocao = TempArrayLevel[myImbuement.Levels[imbuingLevel]]
 
-	-- Retorna o Valor Total - Se tem Proteção - Soma Valor + Valor Proteção - Senao cobra o Valor Simples.		
+	-- Retorna o Valor Total - Se tem Proteção - Soma Valor + Valor Proteção - Senao cobra o Valor Simples.
 	if  (useProtection == 1) then
 		ValorTotal = ImbuingInfo[VerificaLeveldeRemocao].Price + ImbuingInfo[VerificaLeveldeRemocao].Protection
 	else
@@ -482,7 +482,7 @@ function Player.applyImbuement(self, msg)
 		local ParseAcerto = ImbuingInfo[VerificaLeveldeRemocao].Percent
 			if(math.random(1,100) >= ParseAcerto) then
 				Player.closeImbuementWindow(self)
-				self:removeItem(item:getId(), 1)	
+				self:removeItem(item:getId(), 1)
 				self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Nossa tentativa falhou.")
 
 			end

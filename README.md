@@ -1,6 +1,6 @@
 # OTXServer Full Global Daily Updated!  [![Travis-CI Build Status](https://travis-ci.org/malucooo/Otxserver-New.svg?branch=master)](https://travis-ci.org/malucooo/Otxserver-New) [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/github/malucooo/otxserver-new?branch=master&svg=true)](https://ci.appveyor.com/project/malucooo/otxserver-new/) 
 
-Servidor de Tibia mantido por Malucooo. O servidor usa como base Otxserver 3.9 e também TFS 1.3.
+Servidor de Tibia mantido por Malucooo. O servidor usa como base OTX Server 3.10.
 
 # Tutoriais
 Temos uma Wiki explicando como compilar o servidor  [OTXServer Wiki](https://github.com/malucooo/Otxserver-New/wiki)
@@ -31,10 +31,11 @@ Versões 11.x: [Compilado](http://www.tibiaking.com/forum/forums/topic/82629-114
 # Sites Compativeis
 [Znote AAC Official](https://github.com/Znote/ZnoteAAC).
 
-[Gesior by Mudroock](https://github.com/mudroock/Gesior-AAC).
+[Gesior by Leonardo Pereira](https://github.com/jlcvp/GesiorMonteiro).
+Originally by Monteiro, security fixes and features by Leonardo Pereira (jlcvp)
 
-[Gesior by Monteiro](https://github.com/jlcvp/GesiorMonteiro).
-Fixed by Leonardo Pereira (jlcvp)
+[Gesior by Marco Oliveira](https://github.com/mudroock/Gesior-AAC).
+Originally by Monteiro, layout/images and text adjustments by Marco Oliveira
 
 [Gesior Official](https://github.com/gesior/Gesior2012/tree/TFS-1.0).
 

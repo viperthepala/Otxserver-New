@@ -117,5 +117,11 @@
 	<mount id="113" clientid="1017" name="Blazing Unicorn" speed="20" premium="yes" />
 	<mount id="114" clientid="1018" name="Artic Unicorn" speed="20" premium="yes" />
 	<mount id="115" clientid="1019" name="Prismatic unicorn" speed="20" premium="yes" />
+<<<<<<< HEAD
 >>>>>>> ac5d47819f523d8d2211bfb4cd8e79a17064f194
+=======
+	<mount id="116" clientid="1025" name="New Mount" speed="20" premium="yes" />
+	<mount id="117" clientid="1026" name="New Mount 2" speed="20" premium="yes" />
+	<mount id="118" clientid="1027" name="New Mount 3" speed="20" premium="yes" />
+>>>>>>> 0a4d962c0081e0818ce08a817c8b540461911e79
 </mounts>
