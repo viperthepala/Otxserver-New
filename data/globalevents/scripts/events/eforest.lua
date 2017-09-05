@@ -1,6 +1,9 @@
 dofile('data/lib/events/eforest.lua')
 function onTime()
-
+if getGlobalStorageValue(configExf.stats) == -1 then
+		doStartExf()
+	end
+end	
 function doStartExf()
 
 doCreateTeleport(1387, configExf.teleportPla, configExf.teleportPos)
