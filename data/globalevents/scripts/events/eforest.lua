@@ -1,0 +1,30 @@
+dofile('data/lib/events/eforest.lua')
+
+function doStartExf()
+
+doCreateTeleport(1387, configExf.teleportPla, configExf.teleportPos)
+setGlobalStorageValue(configExf.stats, 0)
+doBroadcastMessage("The Exchanted Forest event will open in " .. configExf.timetostart .. " seconds.")
+addEvent(doInitExf, configExf.timetostart*1000)
+end	
+
+function doInitExf()
+
+if getGlobalStorageValue(configExf.stats) == 0 then
+	doBroadcastMessage("The Exchanted Forest event is starting...")
+	setGlobalStorageValue(configExf.stats, 1)
+end
+
+end
+
+function doCloseExf()
+
+setGlobalStorageValue(configExf.stats, -1)
+
+local item = getTileItemById(configExf.teleportPos, 1387)
+if(item.uid ~= 0) then
+	doRemoveItem(item.uid)
+end	
+
+doRemovePlayersFromArea(configExf.topleftPos, configExf.botrightPos, configExf.templepos)
+end

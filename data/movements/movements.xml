@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+
+	<!-- Enchanted Florest -->
+	<movevent event="StepIn" actionid="5310" script="events/magicTp.lua"/>-->
+	<movevent event="StepIn" actionid="19027" script="events/enterTp.lua" />-->
+
+	<!-- Dawnport and Rookgaard -->
 	<movevent event="StepIn" actionid="50998" script="rookgaard/levelbridge.lua" />
-	<!-- Dawnport -->
 	<movevent event="StepIn" fromaid="2001" toaid="2004" script="vocationtrial.lua" />
 
 	<!-- Lower Roshamuul Quest -->
