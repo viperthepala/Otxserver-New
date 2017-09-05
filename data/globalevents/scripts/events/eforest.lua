@@ -1,4 +1,5 @@
 dofile('data/lib/events/eforest.lua')
+function onTime()
 
 function doStartExf()
 

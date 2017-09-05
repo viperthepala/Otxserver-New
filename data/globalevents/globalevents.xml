@@ -53,6 +53,8 @@
 		<globalevent type="startup" name="NoBugBattle1" script="events/battlefieldstart1.lua"/> 
 		<globalevent interval="55000" name="BattleField" script="events/battlefieldthink.lua"/>
 		<globalevent interval="56000" name="BattleField1" script="events/battlefieldthink1.lua"/>
+		<!-- Snowball War Event -->
+		<globalevent name="StartSBW" time="23:00" event="script" value="events/snowballglobalevent.lua"/>
 	<!-- END Events -->
 
 	<!-- Demon Oak Quest -->

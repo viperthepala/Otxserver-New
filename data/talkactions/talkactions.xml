@@ -67,5 +67,7 @@
 
     <!-- Bomberman Event -->
 	<talkaction words="!bomb" script="bomberman_minigame_talkaction.lua"/>
-		
+	
+    <!-- Snowball War Event -->
+	<talkaction words="!snowball" event="script" value="snowballtalk.lua"/>		
 </talkactions>

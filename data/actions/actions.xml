@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+	<!--Snowball war -->
+	<action actionid="7900" event="script" value="other/snowballaction.lua" />
+
 	<!--bomberman -->
 	<action actionid="2229" allowfaruse="0" script="other/bomberman_minigame_action.lua"/>
 
