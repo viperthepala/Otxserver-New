@@ -69,9 +69,8 @@
 		<immunity paralyze="1" />
 		<immunity invisible="1" />
 	</immunities>
-	<summons maxSummons="6">
-		<summon name="Minion of Gaz'haragoth" interval="4000" chance="33" max="3" />
-		<summon name="Nightmare of Gaz'haragoth" interval="4000" chance="33" max="3" />
+	<summons maxSummons="7">
+		<summon name="Minion of Gaz'haragoth" interval="4000" chance="33" max="7" />
 	</summons>
 	<voices interval="5000" chance="30">
 		<voice sentence="Minions! Follow my call!" yell="1" />
