@@ -60,10 +60,12 @@
 		<talkaction words="!serverinfo" script="serverinfo.lua" />
 
 	<!-- War AntiEntrosa -->
-        <!-- War Area System -->
 	<talkaction words="/citywar" script="wardarashia.lua"/>
 	<talkaction words="/citywar" script="waredron.lua"/>
 	<talkaction words="/citywar" script="warlb.lua"/>
 	<talkaction words="/citywar" script="waryalahar.lua"/>
+
+    <!-- Bomberman Event -->
+	<talkaction words="!bomb" script="bomberman_minigame_talkaction.lua"/>
 		
 </talkactions>

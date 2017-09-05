@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-
+	<!--bomberman -->
+	<action actionid="2229" allowfaruse="0" script="other/bomberman_minigame_action.lua"/>
 
 	<!-- Enchanted Florest -->
 	<action uniqueid="5312" event="script" value="other/flag.lua" />
