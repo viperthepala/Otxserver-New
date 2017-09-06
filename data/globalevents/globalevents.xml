@@ -41,7 +41,7 @@
 		<!-- Last Man Event -->
 		<globalevent name="Last Man Standing" time="18:00:00" script="events/lms.lua"/> 	
 		<!-- Enchanted Florest Event -->
-		<globalevent name="Last Man Standing" time="21:00:00" script="events/eforest.lua"/> 	
+		<globalevent name="eforest" time="21:00:00" script="events/eforest.lua"/> 	
 		<!-- Capture Flag Event -->
 		<globalevent name="Capture The Flag" time="09:30:00" script="events/capture.lua" />
 		<globalevent name="Capture The Flag1" time="11:30:00" script="events/capture.lua" />
