@@ -166,17 +166,17 @@ function onLogin(player)
 
 	-- fury gates
 	if Game.getStorageValue(GlobalStorage.FuryGates, (9710)) == 1 then -- for venore
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Venore Today.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Fury Gate is on Venore Today.')
 	elseif Game.getStorageValue(GlobalStorage.FuryGates, (9711)) == 2 then -- for ab...
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Abdendriel Today.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Fury Gate is on Abdendriel Today.')
 	elseif Game.getStorageValue(GlobalStorage.FuryGates, (9712)) == 3 then -- for ab...
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Thais Today.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Fury Gate is on Thais Today.')
 	elseif Game.getStorageValue(GlobalStorage.FuryGates, (9713)) == 4 then -- for ab...
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Carlin Today.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Fury Gate is on Carlin Today.')
 	elseif Game.getStorageValue(GlobalStorage.FuryGates, (9714)) == 5 then -- for ab...
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Edron Today.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Fury Gate is on Edron Today.')
 	elseif Game.getStorageValue(GlobalStorage.FuryGates, (9716)) == 6 then -- for ab...
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Fury Gate is on Kazordoon Today.')
+		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Fury Gate is on Kazordoon Today.')
 	end
 
 	player:sendTextMessage(messageType or MESSAGE_STATUS_CONSOLE_ORANGE, 'Welcome to OTXServer Global!')

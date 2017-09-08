@@ -16,7 +16,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
  
             for name, _ in pairs(captureTheFlag.players) do
                 local player = Player(name)
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, info.name .. ' has captured the flag for team ' .. (info.team == 1 and 'A' or 'B') .. '!')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, info.name .. ' has captured the flag for team ' .. (info.team == 1 and 'A' or 'B') .. '!')
             end
         end
     end
