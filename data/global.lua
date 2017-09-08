@@ -67,7 +67,14 @@ levelDoors = {
 	9281, 9283, 10282, 10284, 10473, 10482, 10780, 10789, 10780, 12095, 12195, 19845, 19985, 20278, 10789, 12102, 12193, 12202, 19854, 19994, 20287
 }
 
-keys = {2086, 2087, 2088, 2089, 2090, 2091, 2092, 10032}
+keys = {2086, 2087, 2088, 2089, 2090, 2091, 2092, 10032 }
+
+--[ Impact Analyser ]--
+updateInterval = 2 --every 2 seconds
+-- Healing
+healingImpact = {} -- global table to insert data
+-- Damage
+damageImpact = {} -- global table to insert data
 
 function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 	if not position then

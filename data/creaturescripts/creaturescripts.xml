@@ -131,5 +131,7 @@
 	<event type="advance" name="AdvanceSave" script="others/advance_save.lua" />
 	<event type="death" name="WhiteDeerDeath" script="others/whitedeer.lua" />
 	<event type="death" name="WhiteDeerScoutsDeath" script="others/whitedeer_scouts.lua" />
+
+	<event type="healthchange" name="ImpactAnalyzer" script="others/impact_analyzer.lua" />
 	
 </creaturescripts>
