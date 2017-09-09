@@ -4,18 +4,19 @@ if getGlobalStorageValue(configExf.stats) == -1 then
 		doStartExf()
 	end
 end	
+
 function doStartExf()
 
 doCreateTeleport(1387, configExf.teleportPla, configExf.teleportPos)
 setGlobalStorageValue(configExf.stats, 0)
-doBroadcastMessage("The Exchanted Forest event will open in " .. configExf.timetostart .. " seconds.")
+Game.broadcastMessage("The Exchanted Forest event will open in " .. configExf.timetostart .. " seconds.")
 addEvent(doInitExf, configExf.timetostart*1000)
 end	
 
 function doInitExf()
 
 if getGlobalStorageValue(configExf.stats) == 0 then
-	doBroadcastMessage("The Exchanted Forest event is starting...")
+	Game.broadcastMessage("The Exchanted Forest event is starting...")
 	setGlobalStorageValue(configExf.stats, 1)
 end
 
