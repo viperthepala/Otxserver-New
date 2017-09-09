@@ -60,14 +60,20 @@
 		<talkaction words="!serverinfo" script="serverinfo.lua" />
 
 	<!-- War AntiEntrosa -->
-	<talkaction words="/citywar" script="wardarashia.lua"/>
-	<talkaction words="/citywar" script="waredron.lua"/>
-	<talkaction words="/citywar" script="warlb.lua"/>
-	<talkaction words="/citywar" script="waryalahar.lua"/>
+		<talkaction words="/citywar" script="wardarashia.lua"/>
+		<talkaction words="/citywar" script="waredron.lua"/>
+		<talkaction words="/citywar" script="warlb.lua"/>
+		<talkaction words="/citywar" script="waryalahar.lua"/>
 
     <!-- Bomberman Event -->
-	<talkaction words="!bomb" script="bomberman_minigame_talkaction.lua"/>
+		<talkaction words="!bomb" script="bomberman_minigame_talkaction.lua"/>
 	
     <!-- Snowball War Event -->
-	<talkaction words="!snowball" event="script" value="snowballtalk.lua"/>		
-</talkactions>
+		<talkaction words="!snowball" event="script" value="snowballtalk.lua"/>		
+
+	<!-- Cast System -->
+		<talkaction words="!cast" separator=" " script="start_cast.lua" />
+		<talkaction words="!stopcast" script="stop_cast.lua" />
+		<talkaction words="!spectators" script="spectators.lua" />
+	
+	</talkactions>
