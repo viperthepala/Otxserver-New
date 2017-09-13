@@ -58,15 +58,8 @@
 		<element deathPercent="98" />
 		<element firePercent="98" />
 		<element physicalPercent="98" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-		<element drownPercent="-150" />
-=======
-		<element drownPercent="-305" />
->>>>>>> 3a56823fa3667c9e1484531ffb98b1161b9e12d8
-=======
-		<element drownPercent="-305" />
->>>>>>> 3a56823fa3667c9e1484531ffb98b1161b9e12d8
+	        <element drownPercent="-305" />
+
 	</elements>
 	<immunities>
 		<immunity lifedrain="1" />
