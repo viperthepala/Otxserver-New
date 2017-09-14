@@ -37345,73 +37345,73 @@
 	<item id="23805" article="a" name="lightest stone shower rune" />
 	<item id="28553" article="a" name="health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28554" article="a" name="strong health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill great health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28555" article="a" name="great health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill strong health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28556" article="a" name="ultimate health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill ultimate health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28557" article="a" name="supreme health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill supreme health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28563" article="a" name="mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28564" article="a" name="strong mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill great potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28565" article="a" name="great mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill strong mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28566" article="a" name="ultimate mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill ultimate mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28567" article="a" name="supreme mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill supreme mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28573" article="a" name="strong spirit potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill great spirit potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28574" article="a" name="great spirit potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill ultimate spirit potions." />
 		<attribute key="weight" value="200000" />
 	</item>
