@@ -11295,10 +11295,6 @@
 		<attribute key="weight" value="250" />
 	</item>
 	<item id="5923" name="" />
-	<item id="5924" article="a" name="damaged steel helmet">
-		<attribute key="description" value="The words 'Ramsay the Reckless' are engraved inside. It appears to be cracked and broken." />
-		<attribute key="weight" value="4600" />
-	</item>
 	<item id="5925" article="a" name="hardened bone">
 		<attribute key="weight" value="600" />
 	</item>
