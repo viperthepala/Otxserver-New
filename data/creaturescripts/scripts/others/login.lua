@@ -143,11 +143,11 @@ function onLogin(player)
 
 	-- OPEN CHANNERLS (ABRIR CHANNELS)
 	if table.contains({"Rookgaard", "Dawnport"}, player:getTown():getName())then
-		--player:openChannel(7) -- help channel
+		player:openChannel(7) -- help channel
 		player:openChannel(3) -- world chat
 		player:openChannel(6) -- advertsing rook main
 	else
-		--player:openChannel(7) -- help channel
+		player:openChannel(7) -- help channel
 		player:openChannel(3) -- world chat
 		player:openChannel(5) -- advertsing main
 	end

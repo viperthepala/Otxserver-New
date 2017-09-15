@@ -37508,4 +37508,8 @@
 		<attribute key="description" value="This keg can be used to refill ultimate spirit potions." />
 		<attribute key="weight" value="12500" />
 	</item>
+	<item fromid="29084" toid="29085" name="reward shrine">
+	<attribute key="description" value="It depicts the two suns of Tibia, symbolising the course of a day." />
+	</item>
+
 </items>
