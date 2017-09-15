@@ -30,7 +30,7 @@
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
-	<conjure group="support" spellid="193" name="Conjure Wand of Darkness" words="exevo gran mort" lvl="41" mana="250" soul="0" prem="1" conjureId="29055" conjureCount="1" exhaustion="180000" groupcooldown="2000" needlearn="0" function="conjureItem">
+	<conjure group="support" spellid="193" name="Conjure Wand of Darkness" words="exevo gran mort" lvl="41" mana="250" soul="0" prem="1" conjureId="29055" conjureCount="250" exhaustion="180000" groupcooldown="2000" needlearn="0" function="conjureItem">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</conjure>
