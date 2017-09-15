@@ -28,6 +28,20 @@
 		<immunity invisible="1" />
 	</immunities>
 	<loot>
-		<item name="Mr. Punish's handcuffs" chance="100000" />
+		<item id="6537" chance="100000" /><!-- mr punish's handcuffs -->
+		<item id="2148" countmax="123" chance="94120"/><!-- gold coin -->
+		<item id="2152" countmax="5" chance="58820"/><!-- platinum coin -->]
+		<item id="7368" chance="50000" /> <!-- assassin star -->
+		<item id="6492" chance="50000" /> <!-- bat decoration -->
+		<item id="5480" chance="50000" /> <!-- cat's paw -->
+		<item id="6500" chance="100000"/><!-- demonic essence -->
+		<item id="2387" chance="50000" /> <!-- double axe -->
+		<item id="7591" chance="5880"/><!-- great health potion -->
+		<item id="7590" chance="5880"/><!-- great mana potion -->
+		<item id="9971" chance="50000" /> <!-- gold ingot -->
+		<item id="5801" chance="50000" /> <!-- jewelled backpack -->
+		<item id="2243" chance="50000" /> <!-- ravager's axe -->
+		<item id="2145" chance="50000" /> <!-- small diamond -->
+		<item id="5944" chance="100000"/><!-- soul orb -->
 	</loot>
 </monster>
