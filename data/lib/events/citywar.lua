@@ -214,7 +214,7 @@ if not CityWars then
  
     function City:onCancel(player)
         if player:getGuildLevel() < CityWars.minGuildRank then
-            player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Only leaders can cancel an ongoing city war.')
+            player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Only leaders can cancel an ongoing city war.')
             return false
         end
  
@@ -349,7 +349,7 @@ if not CityWars then
     function City:broadcastMessage(msg)
         for k, v in pairs(self.players) do
             if v.player then
-                v.player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, msg)
+                v.player:sendTextMessage(MESSAGE_EVENT_ADVANCE, msg)
             end
         end
     end
@@ -483,7 +483,7 @@ function CityWars.onInviteExpired(invite)
             if player then
                 local guild = Guild(invite.invitedGuildId)
                 local guildName = guild and guild:getName() or 'deleted guild'
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Your city war invite for guild "' .. guildName .. '" has expired.')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Your city war invite for guild "' .. guildName .. '" has expired.')
             end
  
             if invite.invitedLeaders then
@@ -492,7 +492,7 @@ function CityWars.onInviteExpired(invite)
                 for _, leaderName in ipairs(invite.invitedLeaders) do
                     local leader = Player(leaderName)
                     if leader then
-                        leader:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'You failed to answer the city war invite from guild "' .. guildName .. '" and it is now expired.')
+                        leader:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You failed to answer the city war invite from guild "' .. guildName .. '" and it is now expired.')
                     end
                 end
             end
@@ -515,24 +515,24 @@ function CityWars.onInviteAccepted(player, invite)
             table.remove(invite.invites, k)
  
             if not invite.city:isFree() then
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, invite.city:getName() .. ' is not free anymore.')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, invite.city:getName() .. ' is not free anymore.')
                 return false
             end        
  
             local inviterGuild = Guild(invite.inviterGuildId)
             if not inviterGuild then
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Inviter guild does not exist anymore.')              
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Inviter guild does not exist anymore.')              
                 return false
             elseif CityWars.getGuildWar(inviterGuild) then
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'The inviter guild is already in war.')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The inviter guild is already in war.')
             end
  
             local invitedGuild = Guild(invite.invitedGuildId)
             if not invitedGuild then
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'You do not belong to a guild.')              
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You do not belong to a guild.')              
                 return false
             elseif CityWars.getGuildWar(invitedGuild) then
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'You can not accept a war invite while in another one.')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You can not accept a war invite while in another one.')
                 return false
             end
  
@@ -552,14 +552,14 @@ function CityWars.onInviteAccepted(player, invite)
             end
  
             for _, player in ipairs(inviterGuild:getMembersOnline()) do
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, msg)
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, msg)
                 if start then
                     invite.city:addPlayer(player, 1)
                 end
             end
  
             for _, player in ipairs(invitedGuild:getMembersOnline()) do
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, msg)
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, msg)
                 if start then
                     invite.city:addPlayer(player, 2)
                 end

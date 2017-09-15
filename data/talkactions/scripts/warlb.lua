@@ -14,7 +14,7 @@ function onSay(cid, words, param)
 		acc2storage = 96887
 	}
 	local status = {
-		MESSAGE_STATUS_CONSOLE_BLUE,
+		MESSAGE_EVENT_ADVANCE,
 		MESSAGE_INFO_DESCR,
 	}
 	local p = Player(cid)

@@ -9,7 +9,7 @@ CityWars.onInviteExpired = function(invite)
             if player then
                 local guild = Guild(invite.invitedGuildId)
                 local guildName = guild and guild:getName() or 'deleted guild'
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Your city war invite for guild "' .. guildName .. '" has expired.')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Your city war invite for guild "' .. guildName .. '" has expired.')
             end
  
             if invite.invitedLeaders then
@@ -18,7 +18,7 @@ CityWars.onInviteExpired = function(invite)
                 for _, leaderName in ipairs(invite.invitedLeaders) do
                     local leader = Player(leaderName)
                     if leader then
-                        leader:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'You failed to answer the city war invite from guild "' .. guildName .. '" and it is now expired.')
+                        leader:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You failed to answer the city war invite from guild "' .. guildName .. '" and it is now expired.')
                     end
                 end
             end

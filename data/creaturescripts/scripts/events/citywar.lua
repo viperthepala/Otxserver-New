@@ -156,11 +156,11 @@ local function sendWarSettings(player, info)
             elseif ret == CW_RETURNVALUE_INVITEDINWAR then
                 return player:sendCancelMessage('The guild you invited is currently in war.')
             elseif ret == CW_RETURNVALUE_NOERROR then
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'The invite was sent. The enemy guild\'s leader has two minutes to accept it.')
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'The invite was sent. The enemy guild\'s leader has two minutes to accept it.')
                 local guildName = player:getGuild():getName()
                 for _, leader in ipairs(enemyLeaders) do
-                    leader:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, '"' .. player:getName() .. '" from guild "' .. guildName .. '" has invited your guild for a city war. If you wish to accept, head to a temple and read the guild book.')
-                    leader:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, CityWars.getOptionsString(options))
+                    leader:sendTextMessage(MESSAGE_EVENT_ADVANCE, '"' .. player:getName() .. '" from guild "' .. guildName .. '" has invited your guild for a city war. If you wish to accept, head to a temple and read the guild book.')
+                    leader:sendTextMessage(MESSAGE_EVENT_ADVANCE, CityWars.getOptionsString(options))
                 end
             end
         end)

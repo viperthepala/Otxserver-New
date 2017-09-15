@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+	<!--Snowball war -->
+	<action actionid="7900" script="other/snowballaction.lua" />
+
+	<!--bomberman -->
+	<action actionid="2229" script="other/bomberman_minigame_action.lua"/>
+
+	<!-- Enchanted Florest -->
+	<action uniqueid="5312" script="other/flag.lua" />
+
+	<!-- Dawnport -->
 	<action fromaid="2003" toaid="2011" script="other/dawnportdoors.lua" />
-	<!-- World Coin's -->
-	<action itemid="16101" script="other/premiumscroll.lua" />
-	<action itemid="24774" script="other/premiumscroll.lua" />
 
 	<!-- Casks and Kegs -->
 	<action fromid="7634" toid="7636" script="other/caskkegs.lua"/>

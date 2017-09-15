@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- Bomberman Event -->
+	<movevent event="StepIn" actionid ="2880" script="events/snowballmovement.lua"/>
+
+	<!-- Bomberman Event -->
+	<movevent event="StepIn" actionid="4544" script="events/bomberman_minigame_movements.lua" />
+
+	<!-- Enchanted Florest -->
+	<movevent event="StepIn" actionid="5310" script="events/magicTp.lua"/>-->
+	<movevent event="StepIn" actionid="19027" script="events/enterTp.lua" />-->
+
+	<!-- Dawnport and Rookgaard -->
 	<movevent event="StepIn" actionid="50998" script="rookgaard/levelbridge.lua" />
-	<!-- Dawnport -->
 	<movevent event="StepIn" fromaid="2001" toaid="2004" script="vocationtrial.lua" />
 
 	<!-- Lower Roshamuul Quest -->
@@ -359,6 +369,7 @@
 	<movevent event="StepIn" fromid="1746" toid="1749" script="walkback.lua" />
 	<movevent event="StepIn" fromid="1714" toid="1717" script="walkback.lua" />
 	<movevent event="StepIn" actionid="5640" script="walkback.lua" />
+	<movevent event="StepIn" fromuid="5642" touid="5649" script="walkback.lua" />
 
 	<!-- (Level & quest) doors -->
 	<movevent event="StepOut" itemid="1224" script="closingdoor.lua" />
@@ -505,6 +516,11 @@
 	<movevent event="StepIn" itemid="7359" function="onStepInField" />
 	<movevent event="AddItem" itemid="7360" function="onAddField" />
 
+	<movevent event="StepIn" itemid="20669" function="onStepInField" />
+	<movevent event="AddItem" itemid="20669" function="onAddField" />
+	<movevent event="StepIn" itemid="20670" function="onStepInField" />
+	<movevent event="AddItem" itemid="20670" function="onAddField" />
+	
 	<!-- Swimming -->
 	<movevent event="StepIn" fromid="4620" toid="4625" script="swimming.lua" />
 	<movevent event="StepOut" fromid="4620" toid="4625" script="swimming.lua" />

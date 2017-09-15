@@ -216,7 +216,7 @@ if not captureTheFlag then
             end
             for _, info in pairs(captureTheFlag.players) do
                 local player = Player(info.name)
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, status)
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, status)
                 player:teleportTo(captureTheFlag.teams[info.team].base)
 				player:addCondition(captureTheFlag.teams[info.team].outfit)
                 info.state = CTF_STATE_FIGHT
@@ -225,7 +225,7 @@ if not captureTheFlag then
             local status = 'Team ' .. (winner == CTF_TEAM_A and 'A' or 'B') .. ' has won!'
             for _, info in pairs(captureTheFlag.players) do
                 local player = Player(info.name)
-                player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, status)
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, status)
                 if info.team == winner then
                     for i, reward in ipairs(captureTheFlag.rewards) do
                         player:addItem(reward[1], reward[2])

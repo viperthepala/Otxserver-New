@@ -38,12 +38,10 @@ maxPacketsPerSecond = 25
 
 -- Version Manual
 clientVersionMin = 1100
-clientVersionMax = 1143
-clientVersionStr = "Only clients with protocol version 10.00 or 11.43 are allowed!"
+clientVersionMax = 1147
+clientVersionStr = "Only clients with protocol version 11.47 are allowed!"
 
 -- Depot Limit
-freeDepotLimit = 2000
-premiumDepotLimit = 10000
 depotBoxes = 17
 
 -- GameStore
@@ -52,6 +50,9 @@ gamestoreByModules = true
 -- Casting System 
 enableLiveCasting = true
 liveCastPort = 7173
+
+-- Expert Pvp Config
+expertPvp = false
 
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
@@ -70,7 +71,7 @@ timeBetweenExActions = 1000
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
-mapName = "global"
+mapName = "realmap"
 mapAuthor = "Cipsoft"
 
 -- Market

@@ -11295,10 +11295,6 @@
 		<attribute key="weight" value="250" />
 	</item>
 	<item id="5923" name="" />
-	<item id="5924" article="a" name="damaged steel helmet">
-		<attribute key="description" value="The words 'Ramsay the Reckless' are engraved inside. It appears to be cracked and broken." />
-		<attribute key="weight" value="4600" />
-	</item>
 	<item id="5925" article="a" name="hardened bone">
 		<attribute key="weight" value="600" />
 	</item>
@@ -14847,7 +14843,13 @@
 	</item>
 	<item id="7536" name="the remains of a spider egg" />
 	<item id="7537" article="a" name="spider egg" />
-	<item fromid="7538" toid="7543" article="a" name="spider web" />
+	<item id="7538" article="a" name="spider web">
+		<attribute key="destroyTo" value="7544" />
+	</item>
+	<item id="7539" article="a" name="spider web">
+		<attribute key="destroyTo" value="7545" />
+	</item>
+	<item fromid="7540" toid="7543" article="a" name="spider web" />
 	<item id="7544" name="the remains of a spider web">
 		<attribute key="decayTo" value="7538" />
 		<attribute key="duration" value="60" />
@@ -22067,9 +22069,17 @@
 	<item id="23509" name="ground" />
 	<item fromid="11785" toid="11792" name="muddy floor" />
 	<item fromid="11793" toid="11795" article="a" name="skull pillar" />
-	<item id="11796" article="a" name="dimensional portal" />
+	<item id="11796" article="a" name="dimensional portal">
+		<attribute key="description" value="You can see the other side through it." />
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
+	</item>
 	<item id="11797" article="a" name="skull pillar" />
-	<item id="11798" article="a" name="dimensional portal" />
+	<item id="11798" article="a" name="dimensional portal">
+		<attribute key="description" value="You can see the other side through it." />
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
+	</item>
 	<item id="11812" article="a" name="pillar vine" />
 	<item id="11813" article="a" name="pillar growth" />
 	<item id="11817" article="a" name="tangerine tail" />
@@ -30470,6 +30480,16 @@
 		<attribute key="weight" value="1500" />
 	</item>
 	<item id="20668" article="a" name="shadowy statue" />
+	<item id="20669" article="a" name="magic wall">
+		<attribute key="type" value="magicfield" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="20" />
+	</item>
+	<item id="20670" article="a" name="rush wood">
+		<attribute key="type" value="magicfield" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="45" />
+	</item>
 	<item fromid="20671" toid="20691" article="a" name="basalt crystal wall" />
 	<item id="20692" name="the spike of a crystal drill" />
 	<item fromid="20693" toid="20700" article="a" name="large crystal" />
@@ -37325,73 +37345,73 @@
 	<item id="23805" article="a" name="lightest stone shower rune" />
 	<item id="28553" article="a" name="health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28554" article="a" name="strong health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill great health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28555" article="a" name="great health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill strong health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28556" article="a" name="ultimate health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill ultimate health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28557" article="a" name="supreme health potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill supreme health potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28563" article="a" name="mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28564" article="a" name="strong mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill great potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28565" article="a" name="great mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill strong mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28566" article="a" name="ultimate mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill ultimate mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28567" article="a" name="supreme mana potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill supreme mana potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28573" article="a" name="strong spirit potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill great spirit potions." />
 		<attribute key="weight" value="200000" />
 	</item>
 	<item id="28574" article="a" name="great spirit potion cask">
 		<attribute key="wrapableTo" value="26054" />
-		<attribute key="charges" value="1000" />
+		<attribute key="charges" value="999" />
 		<attribute key="description" value="This cask can be used to refill ultimate spirit potions." />
 		<attribute key="weight" value="200000" />
 	</item>
