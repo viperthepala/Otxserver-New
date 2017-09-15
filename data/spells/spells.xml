@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
 	<!-- under construction summons -->
-	<instant group="support" spellid="259" name="Summon Creature EK" words="utevo gran res eq" lvl="200" mana="1000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
+	<instant group="support" spellid="194" name="Summon Creature EK" words="utevo gran res eq" lvl="200" mana="1000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight"/>
 	</instant>
-	<instant group="support" spellid="260" name="Summon Creature RP" words="utevo gran res sac" lvl="200" mana="2000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
+	<instant group="support" spellid="195" name="Summon Creature RP" words="utevo gran res sac" lvl="200" mana="2000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin"/>
 	</instant>
-	<instant group="support" spellid="261" name="Summon Creature MS" words="utevo gran res ven" lvl="200" mana="3000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
+	<instant group="support" spellid="196" name="Summon Creature MS" words="utevo gran res ven" lvl="200" mana="3000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer"/>
 	</instant>
-	<instant group="support" spellid="262" name="Summon Creature ED" words="utevo gran res dru" lvl="200" mana="3000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
+	<instant group="support" spellid="197" name="Summon Creature ED" words="utevo gran res dru" lvl="200" mana="3000"  cooldown="1080000" groupcooldown="4000" needlearn="0" script="support/pet.lua">
 		<vocation name="Druid" />
 		<vocation name="Elder Druid"/>
 	</instant>
 	<!-- under construction -->
-	<conjure group="support" spellid="992" name="Conjure Diamond Arrow" words="exevo gran con hur" lvl="150" mana="1000" soul="0" prem="1" conjureId="29052" conjureCount="100" exhaustion="600000" groupcooldown="2000" needlearn="0" function="conjureItem">
+	<conjure group="support" spellid="176" name="Conjure Diamond Arrow" words="exevo gran con hur" lvl="150" mana="1000" soul="0" prem="1" conjureId="29052" conjureCount="100" exhaustion="600000" groupcooldown="2000" needlearn="0" function="conjureItem">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
-	<conjure group="support" spellid="993" name="Conjure Spectral Bolt" words="exevo gran con vis" lvl="150" mana="1000" soul="0" prem="1" conjureId="29053" conjureCount="100" exhaustion="600000" groupcooldown="2000" needlearn="0" function="conjureItem">
+	<conjure group="support" spellid="192" name="Conjure Spectral Bolt" words="exevo gran con vis" lvl="150" mana="1000" soul="0" prem="1" conjureId="29053" conjureCount="100" exhaustion="600000" groupcooldown="2000" needlearn="0" function="conjureItem">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
-	<conjure group="support" spellid="994" name="Conjure Royal Star" words="exevo gran con grav" lvl="150" mana="1000" soul="0" prem="1" conjureId="29054" conjureCount="30" exhaustion="600000" groupcooldown="2000" needlearn="0" function="conjureItem">
+	<conjure group="support" spellid="191" name="Conjure Royal Star" words="exevo gran con grav" lvl="150" mana="1000" soul="0" prem="1" conjureId="29054" conjureCount="30" exhaustion="600000" groupcooldown="2000" needlearn="0" function="conjureItem">
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
-	<conjure group="support" spellid="995" name="Conjure Wand of Darkness" words="exevo gran mort" lvl="41" mana="250" soul="0" prem="1" conjureId="29055" conjureCount="1" exhaustion="180000" groupcooldown="2000" needlearn="0" function="conjureItem">
+	<conjure group="support" spellid="193" name="Conjure Wand of Darkness" words="exevo gran mort" lvl="41" mana="250" soul="0" prem="1" conjureId="29055" conjureCount="1" exhaustion="180000" groupcooldown="2000" needlearn="0" function="conjureItem">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</conjure>
@@ -141,7 +141,7 @@
 		<vocation name="Master Sorcerer" />
 		<vocation name="Elder Druid" />
 	</instant>
-	<instant group="attack" spellid="175" name="Buzz" words="exori infir vis" lvl="1" mana="6" prem="0" range="3" casterTargetOrDirection="1" blockwalls="1" exhaustion="2000" groupcooldown="2000" needlearn="0" script="attack/buzz.lua">
+	<instant group="attack" spellid="177" name="Buzz" words="exori infir vis" lvl="1" mana="6" prem="0" range="3" casterTargetOrDirection="1" blockwalls="1" exhaustion="2000" groupcooldown="2000" needlearn="0" script="attack/buzz.lua">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</instant>
@@ -179,7 +179,7 @@
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</instant>
-	<instant group="attack" spellid="176" name="scorch" words="exevo infir flam hur" lvl="1" mana="8" direction="1" exhaustion="4000" groupcooldown="2000" needlearn="0" script="attack/scorch.lua">
+	<instant group="attack" spellid="178" name="scorch" words="exevo infir flam hur" lvl="1" mana="8" direction="1" exhaustion="4000" groupcooldown="2000" needlearn="0" script="attack/scorch.lua">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</instant>
