@@ -76,43 +76,10 @@
 	<wand id="25958" level="250" mana="18" min="75" max="100" type="ice"> <!-- Rod of Remedy -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="25991" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
+	<wand id="29000" level="80" mana="17" min="63" max="77" type="death"> <!-- Wand blossom -->
 		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25992" level="150" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25993" level="200" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25994" level="250" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25887" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25897" level="150" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25907" level="200" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25917" level="250" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25951" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25952" level="150" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25953" level="200" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
-		<vocation name="Sorcerer" />
-	</wand>
-	<wand id="25954" level="250" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
-		<vocation name="Sorcerer" />
-	</wand>
-
+		<vocation name="Druid" />
+	</wand>	
 	<!-- Wands -->
 	<wand id="23719" level="1" mana="1" min="3" max="7" type="fire"> <!-- The Scorcher -->
 		<vocation name="Sorcerer" />
@@ -155,6 +122,45 @@
 		<vocation name="Sorcerer" />
 	</wand>
 	<wand id="18409" level="65" mana="17" min="70" max="100" type="fire"> <!-- Wand of Everblazing -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="29055" level="41" mana="20" min="80" max="100" type="energy" action="removecharge"> <!-- Wand of darkness -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25991" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25992" level="150" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25993" level="200" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25994" level="250" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25887" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25897" level="150" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25907" level="200" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25917" level="250" mana="18" min="75" max="100" type="energy"> <!-- Wand of Mayhem -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25951" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25952" level="150" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25953" level="200" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25954" level="250" mana="18" min="75" max="100" type="energy"> <!-- Wand of Remedy -->
 		<vocation name="Sorcerer" />
 	</wand>
 

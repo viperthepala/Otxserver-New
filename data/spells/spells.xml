@@ -30,6 +30,10 @@
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" />
 	</conjure>
+	<conjure group="support" spellid="995" name="Conjure Wand of Darkness" words="exevo gran mort" lvl="41" mana="250" soul="0" prem="1" conjureId="29055" conjureCount="1" exhaustion="180000" groupcooldown="2000" needlearn="0" function="conjureItem">
+		<vocation name="Sorcerer" />
+		<vocation name="Master Sorcerer" />
+	</conjure>
 	<!-- end of under construction -->
 
 	<instant group="attack" spellid="62" name="Annihilation" words="exori gran ico" lvl="110" mana="300" prem="1" range="1" needtarget="1" blockwalls="1" needweapon="1" exhaustion="10000" groupcooldown="4000" needlearn="0" script="attack/annihilation.lua">
