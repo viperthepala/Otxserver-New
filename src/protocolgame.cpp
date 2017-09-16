@@ -1203,6 +1203,10 @@ void ProtocolGame::sendCreatureType(const Creature* creature, uint8_t creatureTy
 	msg.add<uint32_t>(creature->getID());
 	msg.addByte(creatureType);
 
+	if (player->getOperatingSystem() == CLIENTOS_WINDOWS) {
+		msg.addByte(creatureType); // type or any byte idk
+	}
+
 	if (creatureType == CREATURETYPE_SUMMONPLAYER) {
 		const Creature* master = creature->getMaster();
 		if (master) {
