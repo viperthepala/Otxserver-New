@@ -17,12 +17,14 @@
 	<!-- Lower Roshamuul Quest -->
 	<movevent event="StepIn" itemid="22456" script="lowerRoshamuul.lua" />
 	<movevent event="StepIn" actionid="1500" script="lowerRoshamuul.lua" />
-	<movevent event="StepIn" actionid="19049" script="krailos/krailos.lua" />
+	<movevent event="StepIn" actionid="19049" script="krailos.lua" />
 	<movevent event="StepIn" fromuid="24541" touid="24544" script="news/soil.lua" />
 	<movevent event="StepIn" actionid="24545" script="news/ek.lua" />
-	<movevent event="StepIn" actionid="25009" script="quests/ferumbras/ferumbras.lua" />
+	<movevent event="StepIn" actionid="25009" script="ferumbras.lua" />
 	<movevent event="StepIn" actionid="41344" script="lionrock.lua" />
-	<movevent event="StepIn" fromaid="41346" toaid="41349" script="lionrock.lua" />>
+	<movevent event="StepIn" fromaid="41346" toaid="41349" script="lionrock.lua" />
+	<movevent event="StepIn" actionid="25019" script="treinon.lua" />
+	<movevent event="StepOut" actionid="25019" script="treinon.lua" />
 	<movevent event="AddItem" pos="32516;32465;7" script="trash_prevent.lua" />
 	<movevent event="AddItem" pos="32524;32465;7" script="trash_prevent.lua" />
 	<movevent event="AddItem" pos="32524;32464;7" script="trash_prevent.lua" />
@@ -33,23 +35,24 @@
 	<movevent event="StepIn" actionid="45110" script="events/ZE_movements.lua" />
 	<movevent event="StepIn" fromaid="15153" toaid="15155" script="events/ctf.lua" />
 
+	<!-- Dark Trails Quest -->
+	<movevent event="StepIn" actionid="9745" script="oramond/darkTrail.lua" />
+
 	<!-- Chayenne Realm Quest -->
 	<movevent event="StepIn" actionid="55022" script="quests/chayenne realm quest/enterRealm.lua" />
 	<movevent event="StepIn" actionid="55024" script="quests/chayenne realm quest/enterRealm.lua" />
-	<movevent event="StepIn" fromaid="13402" toaid="13413" script="others/movimentos.lua" />
+	<movevent event="StepIn" fromaid="13400" toaid="13413" script="others/movimentos.lua" />
 	<movevent event="StepIn" fromaid="13415" toaid="13428" script="others/movimentos1.lua" />
 	<movevent event="StepIn" fromaid="13510" toaid="13529" script="others/movimento1094.lua" />
 
 	<!-- Halls of Hope -->
-	<movevent event="StepIn" actionid="13429" script="quests/forgotten knowledge/teleportpreto.lua" />
-	<movevent event="StepIn" actionid="13431" script="quests/forgotten knowledge/teleportvioleta.lua" />
-	<movevent event="StepIn" actionid="13433" script="quests/forgotten knowledge/teleportverde.lua" />
-	<movevent event="StepIn" actionid="13435" script="quests/forgotten knowledge/teleportlaranja.lua" />
-	<movevent event="StepIn" actionid="13437" script="quests/forgotten knowledge/teleportazul.lua" />
-	<movevent event="StepIn" actionid="13439" script="quests/forgotten knowledge/teleportdourado.lua" />
-	<movevent event="StepIn" actionid="13441" script="quests/forgotten knowledge/teleportcentral.lua" />
-	
-	<!-- Não sei -->
+	<movevent event="StepIn" actionid="13429" script="teleportpreto.lua" />
+	<movevent event="StepIn" actionid="13431" script="teleportvioleta.lua" />
+	<movevent event="StepIn" actionid="13433" script="teleportverde.lua" />
+	<movevent event="StepIn" actionid="13435" script="teleportlaranja.lua" />
+	<movevent event="StepIn" actionid="13437" script="teleportazul.lua" />
+	<movevent event="StepIn" actionid="13439" script="teleportdourado.lua" />
+	<movevent event="StepIn" actionid="13441" script="teleportcentral.lua" />
 	<movevent event="StepIn" actionid="13430" script="others/movimentos2.lua" />
 	<movevent event="StepIn" actionid="13432" script="others/movimentos2.lua" />
 	<movevent event="StepIn" actionid="13434" script="others/movimentos2.lua" />
@@ -76,16 +79,19 @@
 	<movevent event="StepIn" fromuid="9069" touid="9120" script="others/shrinesportal.lua" />
 	<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua" />
 
-	<!--- Nightmare islands -->
-	<movevent event="StepIn" fromuid="64001" touid="64003" script="darashia/isle1.lua" />
-	<movevent event="StepIn" pos="33498;32613;8" script="darashia/isle2.lua" />
+	<!--- Treiners -->
+	<movevent event="StepIn" fromuid="64001" touid="64003" script="others/isle1.lua" />
+	<movevent event="StepIn" pos="33498;32613;8" script="others/isle2.lua" />
+	<movevent event="StepIn" fromuid="63001" touid="63016" script="others/treinersportal.lua" />
+	<movevent event="StepIn" uniqueid="63017" script="others/treinersportal_out.lua" />
+	<movevent event="StepIn" uniqueid="63018" script="others/treinersportal.lua" />
+	<movevent event="StepIn" uniqueid="63019" script="others/treinersportal_outrook.lua" />
+	<movevent event="StepIn" uniqueid="63020" script="others/treinersportalrook.lua" />
 
 	<!--- Oramond Portals -->
-	<movevent event="StepIn" fromuid="50500" touid="50501" script="oramond/oramond_entrance.lua" />
-	<movevent event="StepIn" fromuid="13400" touid="13401" script="oramond/entrace_city_oramond.lua" />
-	<movevent event="StepIn" uniqueid="50510" script="oramond/oramond_catacombs_entrace.lua" />
-	<movevent event="StepIn" uniqueid="50511" script="oramond/oramond_catacombs_exit.lua" />
-	<movevent event="StepIn" actionid="9745" script="oramond/dark_trail.lua" />
+	<movevent event="StepIn" fromuid="50500" touid="50501" script="others/oramondEntrance.lua" />
+	<movevent event="StepIn" fromuid="50510" touid="50515" script="others/oramondTeleports.lua" />
+	<movevent event="StepIn" fromuid="50624" touid="50625" script="others/oramondTeleports.lua" />
 	<movevent event="StepIn" fromaid="64103" toaid="64127" script="others/tpIsles.lua" />
 	<movevent event="StepIn" pos="33420;32582;9" script="others/tp2.lua" />
 
@@ -363,6 +369,7 @@
 	<movevent event="StepIn" fromid="1746" toid="1749" script="walkback.lua" />
 	<movevent event="StepIn" fromid="1714" toid="1717" script="walkback.lua" />
 	<movevent event="StepIn" actionid="5640" script="walkback.lua" />
+	<movevent event="StepIn" fromuid="5642" touid="5649" script="walkback.lua" />
 
 	<!-- (Level & quest) doors -->
 	<movevent event="StepOut" itemid="1224" script="closingdoor.lua" />

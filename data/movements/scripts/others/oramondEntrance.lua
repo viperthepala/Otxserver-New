@@ -1,5 +1,6 @@
 local portals = {
-	[50511] = {position = Position(33668, 31887, 5), message = 'Slrrp!'},
+	[50500] = {position = Position(33540, 32013, 6), message = 'Slrrp!'}, --entrance
+	[50501] = {position = Position(33491, 31984, 7), message = 'Slrrp!'}, --exit
 }
 
 function onStepIn(creature, item, position, fromPosition)
