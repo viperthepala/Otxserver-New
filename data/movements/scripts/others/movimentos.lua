@@ -1,8 +1,6 @@
 -- <movevent event="StepIn" fromaid="73400" toaid="73403" script="others/oramond_movements.lua"/>
 
 local action_id = {
-	[13400] = {x = 33634, y = 31891, z = 6},
-	[13401] = {x = 33488, y = 31987, z = 7},
 	[13402] = {x = 33632, y = 31661, z = 12},
 	[13403] = {x = 33682, y = 31939, z = 9},	
 	[13404] = {x = 33678, y = 32461, z = 7},	
