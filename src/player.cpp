@@ -2075,11 +2075,11 @@ void Player::death(Creature* lastHitCreature)
 			}
 		}
 
-		if (hasBlessing(6)) {
-			if (lastHitPlayer) {
-				removeBlessing(6, 1);
+		if (hasBlessing(8)) {
+			if (lastHitPlayer && hasBlessing(1)) {
+				removeBlessing(1, 1);
 			} else {
-				for (int i = 1; i <= 5; i++) {
+				for (int i = 1; i <= 8; i++) {
 					removeBlessing(i, 1);
 				}
 			}
