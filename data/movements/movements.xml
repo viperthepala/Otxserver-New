@@ -4,6 +4,8 @@
 	<movevent event="StepIn" fromuid="63001" touid="63016" script="others/treinersportal.lua" />
 	<movevent event="StepIn" uniqueid="63017" script="others/treinersportal_out.lua" />
 	<movevent event="StepIn" uniqueid="63018" script="others/treinersportal.lua" />
+	<movevent event="StepIn" actionid="25019" script="treinon.lua" />
+ 	<movevent event="StepOut" actionid="25019" script="treinon.lua" />
 
 	<!-- Bomberman Event -->
 	<movevent event="StepIn" actionid ="2880" script="events/snowballmovement.lua"/>
@@ -76,8 +78,7 @@
 	<movevent event="StepIn" fromaid="9710" toaid="9716" script="others/furygates.lua" />
 	<movevent event="StepIn" fromaid="50084" toaid="50086" script="others/deeperBanutaShortcutTeleports.lua" />
 	<movevent event="StepIn" fromaid="50220" toaid="50229" script="others/vengothTeleports.lua" />
-	<movevent event="StepIn" actionid="25019" script="treinon.lua" />
- 	<movevent event="StepOut" actionid="25019" script="treinon.lua" />
+
 	<!--- Shrines Portals -->
 	<movevent event="StepIn" fromuid="9069" touid="9120" script="others/shrinesportal.lua" />
 	<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua" />
