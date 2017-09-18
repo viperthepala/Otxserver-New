@@ -27,6 +27,10 @@ function onSay(player, words, param)
 		end
 	end
 
+	if table.contains(invalidIds, itemType:getId()) then
+		return false
+	end
+
 	local count = tonumber(split[2])
 	if count ~= nil then
 		if itemType:isStackable() then
