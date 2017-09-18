@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
-	<!--- Treiners -->
-	<movevent event="StepIn" fromuid="63001" touid="63016" script="others/treinersportal.lua" />
-	<movevent event="StepIn" uniqueid="63017" script="others/treinersportal_out.lua" />
-	<movevent event="StepIn" uniqueid="63018" script="others/treinersportal.lua" />
-	<movevent event="StepIn" actionid="25019" script="treinon.lua" />
- 	<movevent event="StepOut" actionid="25019" script="treinon.lua" />
-
 	<!-- Bomberman Event -->
 	<movevent event="StepIn" actionid ="2880" script="events/snowballmovement.lua"/>
 
