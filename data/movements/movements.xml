@@ -1646,8 +1646,8 @@
 		<vocation name="Elder Druid" showInDescription="0" />
 	</movevent>
 	<!-- wand of Darkness-->
-	<movevent event="DeEquip" itemid="29055" slot="hand" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="29055" slot="hand" level="41" function="onEquipItem">
+	<movevent event="DeEquip" itemid="29059" slot="hand" function="onDeEquipItem" />
+	<movevent event="Equip" itemid="29059" slot="hand" level="41" function="onEquipItem">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" showInDescription="0" />
 	</movevent>
