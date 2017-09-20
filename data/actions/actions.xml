@@ -50,9 +50,61 @@
 	<action itemid="27079" script="other/carpets.lua"/> <!-- star carpet -->
 	<action itemid="27087" script="other/carpets.lua"/> <!-- star carpet -->
 
-	<!-- Items actions -->
-	<action itemid="24324" script="other/sweetheart.lua" />
 
+	<!-- hallsofhope -->
+    <action actionid="17391" script="hallsofhope/BAU1.lua"/>	
+	<action actionid="17392" script="hallsofhope/BAU2.lua"/>    
+	<action actionid="17393" script="hallsofhope/BAU3.lua"/>
+	<action actionid="17394" script="hallsofhope/BAU4.lua"/>
+	<action actionid="17395" script="hallsofhope/BAU5.lua"/>
+	<action actionid="17396" script="hallsofhope/BAU6.lua"/>
+	
+	<!-- Casks and Kegs -->
+	<action fromid="7634" toid="7636" script="other/caskkegs.lua"/>	
+	
+	<!-- Imbuement System -->
+	<action fromid="27728" toid="27729" script="imbuement.lua" />
+	<action fromid="27771" toid="27772" script="imbuement.lua" />
+	<action fromid="27850" toid="27851" script="imbuement.lua" />
+	<action fromid="27842" toid="27843" script="imbuement.lua" />
+	
+    <!-- Ferumbras Ascedant Quest -->
+    <action itemid="25521" script="FerumbrasAscedantQuest/RiftRunner.lua"/>
+    <action itemid="24838" script="FerumbrasAscedantQuest/Teleportationrod.lua"/>
+    <action actionid="53690" script="FerumbrasAscedantQuest/puminboss.lua"/>
+    <action actionid="53691" script="FerumbrasAscedantQuest/alavancaTafariel.lua"/>
+    <action actionid="53692" script="FerumbrasAscedantQuest/tafarielboss.lua"/>
+    <action actionid="53693" script="FerumbrasAscedantQuest/alavancaVerminorfirst.lua"/>
+    <action actionid="53694" script="FerumbrasAscedantQuest/verminorboss.lua"/>
+    <action actionid="59696" script="FerumbrasAscedantQuest/bazirboss.lua"/>
+    <action actionid="60560" script="FerumbrasAscedantQuest/alavancaInfernatil.lua"/>
+    <action actionid="60561" script="FerumbrasAscedantQuest/infernatilboss.lua"/>
+    <action actionid="49682" script="FerumbrasAscedantQuest/apocalypseboss.lua"/>
+    <action actionid="46987" script="FerumbrasAscedantQuest/ashfalorboss.lua"/>
+    <action actionid="35498" script="FerumbrasAscedantQuest/FerumbrasReward.lua"/>
+    <action actionid="35511" script="FerumbrasAscedantQuest/FerumbrasAlavancaFinal.lua"/>
+	
+	<!-- Devil Helmet -->
+	<action actionid="20594" script="quests/devil helmet/lever.lua" />
+	
+	<!-- Rookgaard -->
+	<action actionid="30492" script="rookgaard/chest.lua" />
+	
+	<!-- House Pets -->
+	<action itemid="26364" script="houses/pet.lua" />
+	<action itemid="26098" script="houses/pet.lua" />
+	
+	<!-- Spike Task -->
+	<action itemid="21557" script="quests/spike task/lodestone.lua" />
+	<action itemid="21564" script="quests/spike task/fertilise.lua" />
+	<action itemid="21559" script="quests/spike task/nests.lua" />
+	<action itemid="21556" script="quests/spike task/temperature.lua" />
+	<!-- Others House -->
+	<action fromid="26094" toid="26097" script="houses/statue.lua" />
+	
+	<action itemid="24324" script="sweetheart.lua"/>
+	<action itemid="26333" script="Novos/surprisebox.lua"/>
+	
 	<!-- Lower Roshamuul Quest -->
 	<action itemid="22387" script="roshamuul/mixture.lua" />
 	<action itemid="22388" script="roshamuul/mixture.lua" />
@@ -60,28 +112,18 @@
 	<action itemid="22467" script="roshamuul/gravel.lua" />
 	<action itemid="22503" script="roshamuul/mortar.lua" />
 	<action itemid="22504" script="roshamuul/trough.lua" />
-
+	
 	<!-- Arena Pvp -->
-	<action itemid="24181" pos="32240;32179;8" script="arena/arena.lua"/>
-	<action itemid="24173" pos="32271;32180;8" script="arena/arena1.lua"/>
-
-	<!-- Lion's Rock -->
-	<action itemid="23760" script="quests/lionrock.lua" />
-	<action itemid="23835" script="quests/lionrock.lua" />
-	<action itemid="10551" script="quests/lionrock.lua" />
-	<action fromaid="41354" toaid="41357" script="quests/lionrock.lua" />
-	<action actionid="41345" script="quests/lionrock.lua" />
-	<action itemid="22614" script="other/beacon.lua"/>
-	<action itemid="22615" script="other/beacon.lua"/>
-	<action itemid="25420" script="other/feru.lua"/>
-	<action itemid="24809" script="quests/cavera.lua"/>
-	<action itemid="24810" script="quests/cavera1.lua"/>
-	<action itemid="22535" script="other/ResonanceChamber.lua"/>
-	<action actionid="12441" script="other/espelho.lua"/>
-	<action itemid="15358" script="quests/ancora.lua"/>
-	<action itemid="25524" script="quests/rookslayer.lua"/>
-
-	<!-- Reward Chest System
+    <action actionid="61225" script="Novos/citywar.lua"/>
+	
+	<action itemid="23760" script="lionrock.lua" />
+	<action itemid="23835" script="lionrock.lua" />
+	<action itemid="10551" script="lionrock.lua" /> 
+	<action fromaid="41354" toaid="41357" script="lionrock.lua" />
+    <action actionid="41345" script="lionrock.lua" />
+	
+	<action itemid="24181" pos="32240;32179;8" script="arena/arena.lua"/>  
+	
 	<action itemid="24173" pos="32271;32180;8" script="arena/arena1.lua"/> 
 	
 	<action itemid="22614" script="beacon1.lua"/>
