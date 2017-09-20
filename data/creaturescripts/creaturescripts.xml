@@ -20,6 +20,10 @@
  	<event type="death" name="DeathCounter" script="kdcounter.lua" />
 	<event type="kill" name="KillCounter" script="kdcounter.lua" />
 
+    <!-- Oramond Quest -->
+    <event type="death" name="tp" script="quests/oramond/revanger.lua"/>
+    <event type="death" name="dark" script="quests/oramond/death.lua"/>
+
 	<!-- WARZONE BOSS -->
   	<event type="death" name="WarzoneBossDeath" script="warzone157.lua" />
 
