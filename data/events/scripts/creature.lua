@@ -1,11 +1,5 @@
 __picif = {}
 function Creature:onChangeOutfit(outfit)
-	if self:isPlayer() then
-		local battlefieldInfo = Battlefield:findPlayer(self)
-		if battlefieldInfo then
-			return false
-		end
-	end
 	return true
 end
 
