@@ -1479,11 +1479,6 @@
 		<vocation name="Druid" />
 		<vocation name="Elder Druid" showInDescription="0" />
 	</movevent>
-	<movevent event="DeEquip" itemid="25962" slot="hand" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="25962" slot="hand" level="250" function="onEquipItem">
-		<vocation name="Knight" />
-		<vocation name="Elite Knight" showInDescription="0" />
-	</movevent>
 	<!-- wand of Darkness-->
 	<movevent event="DeEquip" itemid="29055" slot="hand" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="29055" slot="hand" level="41" function="onEquipItem">
