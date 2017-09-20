@@ -7,6 +7,36 @@ GOLD_POUNCH = 26377
 -- Players cannot throw items on teleports if set to true
 local blockTeleportTrashing = true
 
+-- Players cannot throw items on teleports if set to true
+local blockTeleportTrashing = true
+
+local titles = {
+    {storageID = 14960, title = " Scout"},
+    {storageID = 14961, title = " Sentinel"},
+    {storageID = 14962, title = " Steward"},
+    {storageID = 14963, title = " Warden"},
+    {storageID = 14964, title = " Squire"},
+    {storageID = 14965, title = " Warrior"},
+    {storageID = 14966, title = " Keeper"},
+    {storageID = 14967, title = " Guardian"},
+    {storageID = 14968, title = " Sage"},
+	{storageID = 14969, title = " Tutor"},
+	{storageID = 14970, title = " Senior Tutor"},
+	{storageID = 14971, title = " King"},
+}
+ 
+local function getTitle(uid)
+    local player = Player(uid)
+    if not player then return false end
+ 
+    for i = #titles, 1, -1 do
+        if player:getStorageValue(titles[i].storageID) == 1 then
+            return titles[i].title
+        end
+    end
+    return false
+end
+
 function Player:onBrowseField(position)
 	return true
 end
