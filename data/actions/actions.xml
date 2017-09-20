@@ -3,13 +3,10 @@
 
 	<!-- Store -->
 	<action itemid="26347" script="other/fishtank.lua"/>
-	<action fromid="26094" toid="26097" script="other/transform.lua"/>
 	<action fromid="26090" toid="26093" script="other/transform.lua"/>
-	<action fromid="26098" toid="26099" script="other/transform.lua"/>
 	<action fromid="26100" toid="26101" script="other/transform.lua"/>
 	<action fromid="26107" toid="26108" script="other/transform.lua"/>
 	<action fromid="26141" toid="26142" script="other/transform.lua"/>
-	<action fromid="26364" toid="26365" script="other/transform.lua"/><!-- dog house-->
 	<action itemid="26353" script="other/transform.lua"/><!-- dog house-->
 	<action fromid="27088" toid="27089" script="other/transform.lua"/>
 	<action fromid="27090" toid="27091" script="other/transform.lua"/>
@@ -91,8 +88,8 @@
 	<action actionid="30492" script="rookgaard/chest.lua" />
 	
 	<!-- House Pets -->
-	<action itemid="26364" script="houses/pet.lua" />
-	<action itemid="26098" script="houses/pet.lua" />
+	<action fromid="26364" toid="26365" script="houses/pet.lua" />
+	<action fromid="26098" toid="26099" script="houses/pet.lua" />
 	
 	<!-- Spike Task -->
 	<action itemid="21557" script="quests/spike task/lodestone.lua" />
