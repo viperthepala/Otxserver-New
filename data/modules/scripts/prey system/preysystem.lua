@@ -473,7 +473,7 @@ function Player.getBonusReroll(self)
 end
 
 function Player.getRerollPrice(self)
-	return (self:getLevel()/2) * 100
+	return (self:getLevel()/2) * 500
 end
 
 function Player.preyRerollList(self, column)

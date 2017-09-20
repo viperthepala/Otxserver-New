@@ -2,17 +2,15 @@ ImbuingSystem = {
 	Developer = "Charles (Cjaker)",
 	Version = "1.0",
 	LastUpdate = "24/05/2017 - 03:50 (AM)",
-	FixedBy = "Leu (jlvc) and Clenir (Mikii)"
+	FixedBy = "Leu (jlcvp) and Clenir (Mikii)"
 }
 
 --[[
 	1~3 => Element Type
 	4~6 => Total Time (segundos - 20 h)
 	7~9 => Time Passed (seconds)
-]]--
+]]
 
-
-	
 local Imbuements = {
 	{
 		Name = "Scorch",
@@ -23,7 +21,6 @@ local Imbuements = {
 		LevelsPercent = {10, 25, 50},
 		Weapons = {"axe", "club", "sword"},
 		Items = {{10553, 25}, {5920, 5}, {5954, 5}}
-
 	},
 	{
 		Name = "Venom",
@@ -256,13 +253,13 @@ local ImbuementElements = {
 }
 
 function onRecvbyte(player, msg, byte)
- if (byte == 0xD5) then
-  -- Apply Imbuement  
-  player:applyImbuement(msg)
-    elseif (byte == 0xD6) then
-        -- Clear Imbuement
-        player:clearImbuement(msg)
-    end
+	if (byte == 0xD5) then
+		-- Apply Imbuement
+		player:applyImbuement(msg)
+	elseif (byte == 0xD6) then
+		-- Clear Imbuement
+		player:clearImbuement(msg)
+	end
 end
 
 local function tableContains(table, value)
@@ -275,7 +272,7 @@ local function tableContains(table, value)
 	return false
 end
 
-local function haveImbuingShrine(player) 
+local function haveImbuingShrine(player)
 	for x = -1, 1 do
 		for y = -1, 1 do
 			local posX, posY, posZ = player:getPosition().x+x, player:getPosition().y+y, player:getPosition().z
@@ -321,7 +318,7 @@ local function getActiveImbuement(item, slot)
 			local level = Imbuements[i].Levels[j]
 			local enchant = item:getSpecialAttribute(slot)
 			if (enchant:find(level) and enchant:find(Imbuements[i].Name)) then
-				return Imbuements[i], j			
+				return Imbuements[i], j
 			end
 		end
 	end
@@ -413,99 +410,91 @@ function Player.applyImbuement(self, msg)
 	end
 
 	local slot, choiceId, useProtection = msg:getByte(), msg:getU32(), msg:getByte()
-	
-	local myImbuement, imbuingLevel = getImbuementByIndex(choiceId, item:getId())	
-	
+
+	local myImbuement, imbuingLevel = getImbuementByIndex(choiceId, item:getId())
+
 	-- ################# PARTE ADICIONADA BY MIKII - CLENIR SANTOS ################# --
 	-- A FUNÇÃO ABAIXO ATÉ O FINAL DESTE COMENTÁRIO É RESPONSAVEL PELA REMOÇÃO DOS ITENS DOS PLAYERS E DINHEIRO DO BANCO --
-	
+
 	-- Cria um Array para Descobrir o Level numeral do encantamento.
-	local TempArrayLevel = 
-					{ 
-						['Basic'] 		= 1,
-						['Intricate'] 	= 2,
-						['Powerful'] 	= 3
-					}
+	local TempArrayLevel = {
+		['Basic'] = 1,
+		['Intricate'] = 2,
+		['Powerful'] = 3
+	}
 
 	-- Retorna o Level numeral a partir do selecionado no cliente.
-	local VerificaLeveldeRemocao = TempArrayLevel[myImbuement.Levels[imbuingLevel]]	
-			
-			
-	-- Retorna o Valor Total - Se tem Proteção - Soma Valor + Valor Proteção - Senao cobra o Valor Simples.		
-	if  (useProtection == 1) then				
+	local VerificaLeveldeRemocao = TempArrayLevel[myImbuement.Levels[imbuingLevel]]
+
+	-- Retorna o Valor Total - Se tem Proteção - Soma Valor + Valor Proteção - Senao cobra o Valor Simples.
+	if  (useProtection == 1) then
 		ValorTotal = ImbuingInfo[VerificaLeveldeRemocao].Price + ImbuingInfo[VerificaLeveldeRemocao].Protection
 	else
 		ValorTotal = ImbuingInfo[VerificaLeveldeRemocao].Price
 	end
-	
-	-- Verifica se o Player Tem o valor no Banco antes da Remoção.		
+
+	-- Verifica se o Player Tem o valor no Banco antes da Remoção.
 	if (not self:removeMoneyNpc(ValorTotal)) then
 		Player.closeImbuementWindow(self)
 		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have enough money.")
 		return false
-	end	
+	end
+
 	-- Verifica se o Player Tem os Itens Necessários antes da Remoção.
 	for i = 1, VerificaLeveldeRemocao do
-			local	ItemId = myImbuement.Items[i][1]
-			local	ItemQtd = myImbuement.Items[i][2]	
-
+			local ItemId = myImbuement.Items[i][1]
+			local ItemQtd = myImbuement.Items[i][2]
 			if (self:getItemCount(ItemId) < ItemQtd) then
 				Player.closeImbuementWindow(self)
 				self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have necessary items.")
 				return false
-			end							
-	end	
+			end
+	end
 	-- ################# FINAL PARCIAL ################# --
 
-	
-	
 	if (not myImbuement) then
 		self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Cannot find imbuement data, please send this message to a Administrator.")
 		return false
 	end
 
-	
 	slot = slot + 1
 	if (item:isActiveImbuement(slot+3)) then
 		self:sendCancelMessage("Sorry, not possible.")
 		return false
 	end
-	
-	
-		
+
 	-- ################# PARTE ADICIONADA BY MIKII - CLENIR SANTOS ################# --
 	-- SE TUDO OCORREU BEM SEM NENHUM FALSE --
 
 
 	-- Remove os itens .
 	for i = 1, VerificaLeveldeRemocao do
-			local	ItemId = myImbuement.Items[i][1]
-			local	ItemQtd = myImbuement.Items[i][2]	
+		local ItemId = myImbuement.Items[i][1]
+		local ItemQtd = myImbuement.Items[i][2]
 
-			if (not self:removeItem(ItemId, ItemQtd)) then
-				Player.closeImbuementWindow(self)
-				self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Você não tem os itens necessários.")
-				return false
-			end					
-	end	
-	-- Remove o dinheiro .
+		if (not self:removeItem(ItemId, ItemQtd)) then
+			Player.closeImbuementWindow(self)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Você não tem os itens necessários.")
+			return false
+		end
+	end
+
+	-- Remove o dinheiro.
 	self:setBankBalance(self:getBankBalance() - ValorTotal)
 
 	-- Faz a contagem de % para o item quebrar caso nao esteja usando Proteção .
-	if  (useProtection == 0) then
+	if (useProtection == 0) then
 		local ParseAcerto = ImbuingInfo[VerificaLeveldeRemocao].Percent
 			if(math.random(1,100) >= ParseAcerto) then
 				Player.closeImbuementWindow(self)
-				self:removeItem(item:getId(), 1)	
+				self:removeItem(item:getId(), 1)
 				self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Nossa tentativa falhou.")
 
 			end
 	end
 	-- ################# FINAL COMPLETO ################# --
-	
-	
+
 	item:setSpecialAttribute(slot, myImbuement.Levels[imbuingLevel].. " " ..myImbuement.Name, slot+3, 72000, slot+6, 0)
-	
 	self:openImbuementWindow(item)
 end
 
