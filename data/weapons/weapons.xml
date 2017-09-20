@@ -76,7 +76,7 @@
 	<wand id="25958" level="250" mana="18" min="75" max="100" type="ice"> <!-- Rod of Remedy -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="29000" level="80" mana="17" min="63" max="77" type="death"> <!-- Wand blossom -->
+	<wand id="29004" level="80" mana="17" min="63" max="77" type="death"> <!-- Wand blossom -->
 		<vocation name="Sorcerer" />
 		<vocation name="Druid" />
 	</wand>	
@@ -124,7 +124,7 @@
 	<wand id="18409" level="65" mana="17" min="70" max="100" type="fire"> <!-- Wand of Everblazing -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="29055" level="41" mana="20" min="80" max="100" type="energy" action="removecharge"> <!-- Wand of darkness -->
+	<wand id="29059" level="41" mana="20" min="80" max="100" type="energy" action="removecharge"> <!-- Wand of darkness -->
 		<vocation name="Sorcerer" />
 	</wand>
 	<wand id="25991" level="100" mana="18" min="75" max="100" type="energy"> <!-- Wand of Carving -->
@@ -1317,7 +1317,7 @@
 	<distance id="18437" action="removecount" unproperly="1" level="70" /> <!-- Envenomed Arrow -->
 	<distance id="23529" breakchance="2" unproperly="1" level="60" /> <!-- Glooth Spear -->
 	<distance id="23839" action="removecount" unproperly="0" level="1" /> <!-- Simple Arrow -->
-	<distance id="29052" action="removecount" unproperly="1" level="150" script="diamond_arrow.lua" />	<!-- Diamond Arrow -->
-	<distance id="29053" action="removecount" unproperly="1" level="150" />	<!-- Spectral Bolt -->
-	<distance id="29054" breakchance="30" unproperly="1" level="150" />	<!-- Assassin Star -->
+	<distance id="29056" action="removecount" unproperly="1" level="150" script="diamond_arrow.lua" />	<!-- Diamond Arrow -->
+	<distance id="29057" action="removecount" unproperly="1" level="150" />	<!-- Spectral Bolt -->
+	<distance id="29058" breakchance="30" unproperly="1" level="150" />	<!-- Assassin Star -->
 </weapons>

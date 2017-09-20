@@ -88,7 +88,7 @@ function Player.getBlessings(self)
 end
 
 function Player.getClosestFreePosition(self, position, extended)
-	if self:getGroup():getAccess() and self:getAccountType() >= ACCOUNT_TYPE_GOD then
+	if self:getAccountType() >= ACCOUNT_TYPE_GOD then
 		return position
 	end
 	return Creature.getClosestFreePosition(self, position, extended)
@@ -96,10 +96,10 @@ end
 
 function Player.getCookiesDelivered(self)
 	local storage, amount = {
-		Storage.WhatAFoolishQuest.CookieDelivery.SimonTheBeggar, Storage.WhatAFoolishQuest.CookieDelivery.Markwin, Storage.WhatAFoolishQuest.CookieDelivery.Ariella,
-		Storage.WhatAFoolishQuest.CookieDelivery.Hairycles, Storage.WhatAFoolishQuest.CookieDelivery.Djinn, Storage.WhatAFoolishQuest.CookieDelivery.AvarTar,
-		Storage.WhatAFoolishQuest.CookieDelivery.OrcKing, Storage.WhatAFoolishQuest.CookieDelivery.Lorbas, Storage.WhatAFoolishQuest.CookieDelivery.Wyda,
-		Storage.WhatAFoolishQuest.CookieDelivery.Hjaern
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.SIMONTHEBEGGAR, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.MARKWIN, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.ARIELLA,
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.HAIRYCLES, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.DJINN, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.AVARTAR,
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.ORCKING, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.LORBAS, STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.WYDA,
+		STORAGE.WHATAFOOLISHQUEST.COOKIEDELIVERY.HJAERN
 	}, 0
 	for i = 1, #storage do
 		if self:getStorageValue(storage[i]) == 1 then
@@ -140,23 +140,23 @@ function Player.hasRookgaardShield(self)
 end
 
 function Player.isDruid(self)
-	return table.contains({2, 6}, self:getVocation():getId())
+	return isInArray({2, 6}, self:getVocation():getId())
 end
 
 function Player.isKnight(self)
-	return table.contains({4, 8}, self:getVocation():getId())
+	return isInArray({4, 8}, self:getVocation():getId())
 end
 
 function Player.isPaladin(self)
-	return table.contains({3, 7}, self:getVocation():getId())
+	return isInArray({3, 7}, self:getVocation():getId())
 end
 
 function Player.isMage(self)
-	return table.contains({1, 2, 5, 6}, self:getVocation():getId())
+	return isInArray({1, 2, 5, 6}, self:getVocation():getId())
 end
 
 function Player.isSorcerer(self)
-	return table.contains({1, 5}, self:getVocation():getId())
+	return isInArray({1, 5}, self:getVocation():getId())
 end
 
 function Player.isPremium(self)
@@ -258,4 +258,4 @@ function Player.sendDamageImpact(self, damage)
 	msg:addByte(1) -- 0 = healing / 1 = damage (boolean)
 	msg:addU32(damage) -- unsigned int
 	msg:sendToPlayer(self)
-end
+end 

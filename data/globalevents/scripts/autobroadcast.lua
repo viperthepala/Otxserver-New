@@ -1,9 +1,12 @@
+-- 
+
 function onThink(interval, lastExecution)
-    local MESSAGE = {
-        "[COMMANDS] !buyhouse - !sellhouse - !serverinfo - !online - !uptime - !outfit .",
-        "[BUGS?] REPORTEM EM: http://www.github.com/malucooo/otxserver-new/.",
-		"[CONTATO] FACEBOOK:https://www.facebook.com/erick.nunes.75/ SKYPE: e_nunes@live.com WHATSAPP: +5493412802546.",
-    }
-    Game.broadcastMessage(MESSAGE[math.random(1, #MESSAGE)], MESSAGE_EVENT_ADVANCE) 
+	local messages = {
+		"[COMANDOS] !buyhouse - !serverinfo - !online - !uptime.",
+		"[BUGS] use o comando !report Ex.: !report SQM BUGADO !\nA cada Report válido de BUG's você recebe um bonus!"
+	}
+
+    Game.broadcastMessage(messages[math.random(#messages)], MESSAGE_EVENT_ADVANCE) 
     return true
 end
+

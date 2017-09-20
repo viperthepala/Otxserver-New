@@ -18,13 +18,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
         player:setStorageValue(Storage.TheInquisition.Questline, 22)
 
         for i = 1, #effectPositions do
-            effectPositions:sendMagicEffect(CONST_ME_HOLYAREA)
+            effectPositions[i]:sendMagicEffect(CONST_ME_HOLYAREA)
         end
     
         nexusMessage(player, player:getName() .. ' destroyed the shadow nexus!')
         player:teleportTo(Position(32319, 32248, 9))
     else
-        player:getPosition():sendMagicEffect(CONST_ME_POFF)
+        player:teleportTo(Position(32319, 32248, 9))
     end
 
     return true

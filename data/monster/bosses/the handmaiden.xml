@@ -46,19 +46,7 @@
 		<immunity paralyze="1" />
 		<immunity invisible="1" />
 	</immunities>
-		<loot>
+	<loot>
 		<item id="6539" chance="35000" /><!-- handmaiden's protector -->
-		<item id="2148" countmax="123" chance="94120"/><!-- gold coin -->
-		<item id="2152" countmax="5" chance="58820"/><!-- platinum coin -->
-		<item id="2231" chance="5880"/><!-- big bone -->
-		<item id="2656" chance="50000" /><!-- Blue Robe -->
-		<item id="2521" chance="50000" /><!-- Dark Shield -->
-		<item id="6500" chance="100000"/><!-- demonic essence -->
-		<item id="2167" chance="50000" /><!-- Energy Ring -->
-		<item id="2225" chance="50000" /><!-- Piece of Iron -->
-		<item id="2166" chance="50000" /><!-- Power Ring -->
-		<item id="5944" chance="100000"/><!-- soul orb -->
-		<item id="2165" chance="50000" /><!-- Stealth Ring -->
-		<item id="2645" chance="50000" /><!-- Steel Boots -->		
 	</loot>
 </monster>

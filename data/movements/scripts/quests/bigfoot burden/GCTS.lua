@@ -41,20 +41,22 @@ function onStepIn(creature, item, position, fromPosition)
 			player:teleportTo(teleportCrystal.position)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		else
-			player:teleportTo(fromPosition)
 			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You need a teleport crystal to use this device.')
+			player:teleportTo(teleportCrystal.position)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 		end
 		return true
 	end
 
 	-- There is no destination with storageValue == 2, should this check for storage?
 	if teleportCrystal.storageValue == 2 then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have no idea on how to use this device. Xelvar in Kazordoon might tell you more about it.')
-	else
-		player:teleportTo(fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Sorry, you don\'t have access to use this teleport!')
+			player:teleportTo(teleportCrystal.position)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	else
+		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:teleportTo(teleportCrystal.position)
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 	end
 	return true
 end

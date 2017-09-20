@@ -248,7 +248,7 @@ local ImbuingInfo = {
 }
 
 local imbuingShrineIds = {
-	27789, 27790, 27716, 27717
+	27728, 27729, 27771, 27772, 27850, 27851, 27842, 27843
 }
 
 local ImbuementElements = {

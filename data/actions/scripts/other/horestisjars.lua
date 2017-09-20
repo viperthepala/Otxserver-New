@@ -20,7 +20,7 @@ end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 
-local exaustedSeconds = 30
+local exaustedSeconds = 1
 local player = Player(cid)
 local chances = math.random(10)
 
@@ -33,7 +33,7 @@ if item.actionid == 50006 then
 		else	
 			player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
 			player:getPosition():sendMagicEffect(CONST_ME_POFF)
-			setPlayerStorageValue(cid, 324329, os.time()+exaustedSeconds*60)
+			setPlayerStorageValue(cid, 324329, os.time()+exaustedSeconds*1800)
 		end
 	else
 			doPlayerSendCancel(cid, "You need wait 30 minutes to use again.")
@@ -50,7 +50,7 @@ elseif item.actionid == 50007 then
 			else
 				player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
 				player:getPosition():sendMagicEffect(CONST_ME_POFF)
-				setPlayerStorageValue(cid, 324330, os.time()+exaustedSeconds*60)
+				setPlayerStorageValue(cid, 324330, os.time()+exaustedSeconds*1800)
 				end
 			else
 				doPlayerSendCancel(cid, "You need wait 30 minutes to use again.")
@@ -70,7 +70,7 @@ elseif item.actionid == 50008 then
 			else	
 				player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
 				player:getPosition():sendMagicEffect(CONST_ME_POFF)
-				setPlayerStorageValue(cid, 324331, os.time()+exaustedSeconds*60)
+				setPlayerStorageValue(cid, 324331, os.time()+exaustedSeconds*1800)
 				end
 			else
 				doPlayerSendCancel(cid, "You need wait 30 minutes to use again.")
@@ -91,7 +91,7 @@ elseif item.actionid == 50009 then
 			else	
 				player:say(config["randomText"][math.random(#config["randomText"])], TALKTYPE_ORANGE_1)
 				player:getPosition():sendMagicEffect(CONST_ME_POFF)
-				setPlayerStorageValue(cid, 324332, os.time()+exaustedSeconds*60)
+				setPlayerStorageValue(cid, 324332, os.time()+exaustedSeconds*1800)
 				end
 			else
 				doPlayerSendCancel(cid, "You need wait 30 minutes to use again.")

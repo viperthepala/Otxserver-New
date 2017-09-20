@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
+	<quest name="Spirithunters Quest" startstorageid="165163" startstoragevalue="1">
+		<mission name="Method" storageid="165163" startvalue="1" endvalue="2">
+            <missionstate id="1" description="Use the item on the tombstones."/>
+			<missionstate id="2" description="You have used these item in the tombstones."/>
+        </mission>
+		<mission name="First Mission" storageid="165163" startvalue="2" endvalue="4">
+            <missionstate id="3" description="Talk to Sinclair and take the ghost residue."/>
+			<missionstate id="4" description="You got the ghost waste."/>
+        </mission>
+		<mission name="Second Mission" storageid="165163" startvalue="4" endvalue="6">
+            <missionstate id="5" description="You need to get more samples of ghosts."/>
+			<missionstate id="6" description="You got all the ghost scraps."/>
+        </mission>
+	</quest>
+	
+	<quest name="Spike Task" startstorageid="6874100" startstoragevalue="1">
+		<mission name="First Task" storageid="6874101" startvalue="0" endvalue="100" description="You have |STATE| points of task. You need 100 points to take Cave Explorer outfit." />		
+		<mission name="Second Task" storageid="6874102" startvalue="0" endvalue="100" description="You have |STATE| points of task. You need 100 points to take first addon." />			
+		<mission name="Third Task" storageid="6874107" startvalue="0" endvalue="100" description="You have |STATE| points of task. You need 100 points to take second addon." />		
+	</quest>
+	
 	<quest name="A Father's Burden" startstorageid="50203" startstoragevalue="1">
 		<mission name="The Birthday Presents" storageid="50205" startvalue="1" endvalue="2">
 			<missionstate id="1" description="Gather the material Tereban listed. Talk to him about your mission when you have given him everything he was looking for." />
@@ -242,9 +263,9 @@
 	<!-- killing in the name of rank -->
 		<mission name="Paw and Fur: Member" storageid="2500" startvalue="0" endvalue="10" description="You are member of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
 		<mission name="Paw and Fur: Ranger" storageid="2500" startvalue="11" endvalue="20" description="You are Ranger of the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
-		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="21" endvalue="40" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
-		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="41" endvalue="70" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />
-		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="71" endvalue="100" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />
+		<mission name="Paw and Fur: Big Game Hunter" storageid="2500" startvalue="40" endvalue="69" description="You are Big Game Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points." />
+		<mission name="Paw and Fur: Trophy Hunter" storageid="2500" startvalue="70" endvalue="99" description="You are Trophy Hunter in the Paw and Fur hunting elite. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />
+		<mission name="Paw and Fur: Elite Hunter" storageid="2500" startvalue="100" endvalue="9999" description="You have obtained the highest possible rank in the Paw and Fur hunting elite, you are Elite Hunter. You currently have |STATE| Paw &amp; Fur points. Ask Grizzly Adams for 'special task' he might have something for you." />
 
 	<!-- special tasks for killing in the name of -->
 		<mission name="Paw and Fur: Tiquandas Revenge" storageid="22555" startvalue="1" endvalue="2">
@@ -312,7 +333,7 @@
 		<mission name="Paw and Fur: Ancient Scarabs" storageid="65017" startvalue="0" endvalue="250" description="You already hunted |STATE|/250 ancient scarabs." />
 		<mission name="Paw and Fur: Wyverns" storageid="65018" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 wyverns." />
 		<mission name="Paw and Fur: Lancer Beetles" storageid="65019" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 lancer beetles." />
-		<mission name="Paw and Fur: Wailing Widows" storageid="65020" startvalue="0" endvalue="400" description="You already hunted |STATE|/300 wailing widows." />
+		<mission name="Paw and Fur: Wailing Widows" storageid="65020" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 wailing widows." />
 		<mission name="Paw and Fur: Killer Caimans" storageid="65021" startvalue="0" endvalue="250" description="You already hunted |STATE|/250 killer caimans." />
 		<mission name="Paw and Fur: Bonebeasts" storageid="65022" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 bonebeasts." />
 		<mission name="Paw and Fur: Crystal Spiders" storageid="65023" startvalue="0" endvalue="300" description="You already hunted |STATE|/300 crystal spiders." />
@@ -342,7 +363,7 @@
 		<mission name="Paw and Fur: Undead Dragons" storageid="65043" startvalue="0" endvalue="400" description="You already hunted |STATE|/400 undead dragons." />
 
 		<!-- Specials -->
-		<mission name="Paw and Fur: Demons" storageid="65044" startvalue="0" endvalue="200" description="You already hunted |STATE|/200 demons." />
+		<mission name="Paw and Fur: Demons" storageid="65044" startvalue="0" endvalue="666" description="You already hunted |STATE|/666 demons." />
 		<mission name="Paw and Fur: Green Djinns or Efreets" storageid="65045" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 green djinns or efreets." />
 		<mission name="Paw and Fur: Blue Djinns or Marids" storageid="65046" startvalue="0" endvalue="500" description="You already hunted |STATE|/500 blue djinns or marids." />
 		<mission name="Paw and Fur: Pirates" storageid="65047" startvalue="0" endvalue="3000" description="You already hunted |STATE|/3000 pirates." />

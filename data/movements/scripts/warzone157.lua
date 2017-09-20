@@ -84,13 +84,13 @@ function onStepIn(creature, item, pos, fromPosition)
     end
  
     if  creature:getStorageValue(info.storage) > os.time() then
-        creature:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already cleared this warzone in the last ten hours.")
+        creature:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You have already cleared this warzone in the last ten hours.")
         creature:teleportTo(fromPosition)
         return false
     end
  
     if info.locked then
-        creature:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Please, wait a minute until the room is cleared.")
+        creature:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Please, wait a minute until the room is cleared.")
         creature:teleportTo(fromPosition)
         return false
     end

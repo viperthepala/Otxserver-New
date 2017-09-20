@@ -26,7 +26,7 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if msgcontains(msg, "help") then
+	if msgcontains(msg, "slime globber") then
 		if player:getStorageValue(Storage.TheirMastersVoice.SlimeGobblerReceived) < 1 then
 			npcHandler:say("Defeat. {Slime}. We. Will. Why. Did. You. Kill. Us? Do. You. Want. To. Rectify. And. Help?", cid)
 			npcHandler.topic[cid] = 1

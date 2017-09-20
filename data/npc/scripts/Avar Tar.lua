@@ -59,7 +59,7 @@ local function creatureSayCallback(cid, type, msg)
 		end
 	elseif npcHandler.topic[cid] == 2 then
 		if msgcontains(msg, 'base') then
-			if player:getStorageValue(Storage.AnnihilatorDone) == 1 then
+			if player:getStorageValue(Storage.AnnihilatorDone) == 1 or player:getStorageValue(2216, 1) then
 				player:addOutfit(541)
 				player:addOutfit(542)
 				player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)

@@ -66,7 +66,7 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	local boss = bosses[item.uid]
+	local boss = bosses[item.uid] or bosses[item:getActionId()]
 	if not boss then
 		return true
 	end

@@ -20,6 +20,10 @@
 		<talkaction words="/summon" separator=" " script="place_summon.lua" />
 		<talkaction words="/addach" separator=" " script="achievements.lua" />
 		<talkaction words="/removeach" separator=" " script="achievements.lua" />
+		<talkaction words="/set" separator=" " script="setstorage.lua" />
+		<talkaction words="/get" separator=" " script="getstorage.lua" />
+		<talkaction words="/reportadm" separator=" " script="reportadm.lua"/>
+		<talkaction words="/addgm" separator=" " script="add_gm.lua" />
 
 	<!-- Gamemasters -->
         <talkaction words="/ban" separator=" " script="ban.lua" />
@@ -40,40 +44,27 @@
         <talkaction words="/looktype" separator=" " script="looktype.lua" />
         <talkaction words="/mute" script="mute.lua" />
 
-		
 	<!-- Senior Tutors -->
 		<talkaction words="/addtutor" separator=" " script="add_tutor.lua" />
 		<talkaction words="/removetutor" separator=" " script="remove_tutor.lua" />
 
-		
 	<!--Tutors -->
 		<talkaction words="/mute" separator=" " script="mute.lua" />
-
 
  	<!-- player talkactions -->
 		<talkaction words="!buyhouse" script="buyhouse.lua" />
 		<talkaction words="!leavehouse" script="leavehouse.lua" />
 		<talkaction words="!sellhouse" separator=" " script="sellhouse.lua" />
 		<talkaction words="!uptime" script="uptime.lua" />
-		<talkaction words="!outfit" script="guild_outfit.lua"/> 
 		<talkaction words="!online" script="online.lua" />
 		<talkaction words="!serverinfo" script="serverinfo.lua" />
+		<talkaction words="!report" separator=" " script="adminreport.lua"/>
 
-	<!-- War AntiEntrosa -->
-		<talkaction words="/citywar" script="wardarashia.lua"/>
-		<talkaction words="/citywar" script="waredron.lua"/>
-		<talkaction words="/citywar" script="warlb.lua"/>
-		<talkaction words="/citywar" script="waryalahar.lua"/>
-
-    <!-- Bomberman Event -->
-		<talkaction words="!bomb" script="bomberman_minigame_talkaction.lua"/>
-	
-    <!-- Snowball War Event -->
-		<talkaction words="!snowball" event="script" value="snowballtalk.lua"/>		
+	<!-- Anti-Entrosa -->
+		<talkaction words="/war" separator=" " script="warPrivate_talkactions.lua" />
 
 	<!-- Cast System -->
 		<talkaction words="!cast" separator=" " script="start_cast.lua" />
 		<talkaction words="!stopcast" script="stop_cast.lua" />
 		<talkaction words="!spectators" script="spectators.lua" />
-	
-	</talkactions>
+</talkactions>

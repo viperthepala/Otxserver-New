@@ -49,6 +49,7 @@
 		<immunity paralyze="1" />
 	</immunities>
 	<voices interval="2000" chance="20">
-		<voice sentence="Hisss!" />
+		<voice sentence="Hisss!" />				
 	</voices>
+	
 </monster>

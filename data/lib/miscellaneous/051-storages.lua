@@ -3,25 +3,6 @@
 -- Sort it in Values -
 
 Storage = {
-	VocationTrial = {
-		Insidetrial = 47,
-		limit30 = 10030,
-		limit31 = 10031,
-		limit32 = 10032,
-		limit33 = 10033,
-		limit34 = 10034,
-		limit35 = 10035,
-		limit36 = 10036,
-		limit37 = 10037,
-		limit38 = 10038,
-		limit39 = 10039,
-		limit40 = 10040,
-		limit41 = 10041,
-		limit42 = 10042,
-		limit43 = 10043,
-		limit44 = 10044,
-		limit45 = 10045
-		},
 	SweetyCyclops = {
 		AmuletTimer = 48,
 		AmuletStatus = 49
@@ -245,6 +226,24 @@ Storage = {
 		VotesCasted = 10081,
 
 		Rank = 10082,
+	},
+	SpikeTaskQuest = {
+		QuestLine = 6874100,
+		Gnomilly = 6874101,
+		Gnombold = {
+			Points = 6874102,
+			Nests = 6874103,
+			Fertilise = 6874104,
+			Kill = 6874105,
+			Charges = 6874106
+		},
+		Gnomargery = {
+			Points = 6874107,
+			Deliver = 6874108,
+			Undercover = 6874109,
+			Temperature = 6874110,
+			Kill = 6874111
+		}
 	},
 	OutfitQuest = {
 		DefaultStart = 12010, -- until all outfit quests are completed
@@ -731,7 +730,7 @@ Storage = {
 	},
 	SvargrondArena = {
 		Arena = 1100,
-		Pit = 13100,
+		Pit = 1101,
 
 		QuestLogGreenhorn = 50140,
 		QuestLogScrapper = 50141,
@@ -898,6 +897,15 @@ Storage = {
 		ScaredKazzan = 3937
 	},
 
+	spiritHuntersQuest = {
+		missionUm = 165163,
+		tombsUse = 165164,
+		charmUse = 165165,
+		nightstalkerUse = 165166,
+		souleaterUse = 165167,
+		ghostUse = 165168
+	},
+		
 	SeaOfLightQuest = {
 		Questline = 50250,
 		Mission1 = 50251,
@@ -916,8 +924,7 @@ Storage = {
 
 	-- Promotion Storage cannot be changed, it is set in source code
 	Promotion = 30018,
-	Uniwheel = 54321,
-	Tinlizzard = 54322,
+
 	SwampDiggingTimeout = 50143,
 	HydraEggQuest = 320,
 	Dragonfetish = 504,
@@ -936,18 +943,6 @@ Storage = {
 	FountainOfLife = 50572,
 	KnightwatchTowerDoor = 9054,
 
-	-- Forgotten Knowledge Quest
-	
-	ImbuingShrine = 50730,
-	CircleoftheBlackSphinx = 50731,
-	BaneofTheCosmicForce = 50732,
-	TheDesecratedGlade = 50733,
-	TheUnwaryMage = 50734,
-	DragoninDistress = 50735,
-	TimeisaWindow = 50736,
-	LastPortal = 50737,
-	
-	
 	RookgaardHints = 50700,
 	RookgaardDestiny = 50701,
 

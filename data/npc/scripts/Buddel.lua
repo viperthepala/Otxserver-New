@@ -9,8 +9,8 @@ function onThink()				npcHandler:onThink()					end
 
 -- Travel
 local function addTravelKeyword(keyword, text, destination)
-	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Give me |TRAVELCOST| and I bring you to ' .. text, cost = 50, discount = 'postman'})
-		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = true, cost = 50, discount = 'postman', destination = destination})
+	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Give me |TRAVELCOST| and I bring you to ' .. text, cost = 0, discount = 'postman'})
+		travelKeyword:addChildKeyword({'yes'}, StdModule.travel, {npcHandler = npcHandler, premium = false, cost = 0, discount = 'postman', destination = destination})
 		travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, text = 'You shouldn\'t miss the experience.', reset = true})
 end
 
@@ -19,5 +19,7 @@ addTravelKeyword('helheim', 'Heilheim. kay?', Position(32462, 31174, 7))
 addTravelKeyword('tyrsung', 'Tyrsung where the Venoran hunters have their settlement. Alright?', Position(32333, 31227, 7))
 addTravelKeyword('camp', 'the south of Hrodmir where the camps of the barbarians are located. kay?', Position(32021, 31294, 7))
 
+-- Kick
+keywordHandler:addKeyword({'kick'}, StdModule.kick, {npcHandler = npcHandler, text = 'Get out o\' here!*HICKS*', destination = {Position(32255, 31193, 7), Position(32256, 31193, 7), Position(32257, 31193, 7)}})
 
 npcHandler:addModule(FocusModule:new())

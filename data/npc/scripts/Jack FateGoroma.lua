@@ -13,6 +13,10 @@ local function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
+	if (msg) then
+		msg = msg:lower()
+	end
+	
 	if isInArray({"sail", "passage", "wreck", "liberty bay", "ship"}, msg) then
 		--[[if player:getStorageValue(Storage.TheShatteredIsles.AccessToGoroma) ~= 1 then
 			if player:getStorageValue(Storage.TheShatteredIsles.Shipwrecked) < 1 then

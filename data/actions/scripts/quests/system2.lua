@@ -300,7 +300,68 @@ local config = {
 		storage = Storage.hiddenCityOfBeregar.JusticeForAll,
 		formerValue = 3,
 		newValue = 4
-	}
+	},
+	[50126] = {
+		items = {
+			{itemId = 2489, count = 1}
+		},
+		storage = 857439
+	},
+	[65201] = {
+		items = {
+			{itemId = 2087, actionId = 3980}
+		},
+		storage = 857440
+	},
+	[65202] = {
+		items = {
+			{itemId = 2088, actionId = 3610}
+		},
+		storage = 857441
+	},
+	[65204] = {
+		items = {
+			{itemId = 2381, count = 1}
+		},
+		storage = 857442
+	},
+	[65205] = {
+		items = {
+			{itemId = 2462, count = 1}
+		},
+		storage = 857443
+	},
+	[65206] = {
+		items = {
+			{itemId = 2146, count = 4}
+		},
+		storage = 857444
+	},
+	[65207] = {
+		items = {
+			{itemId = 2642, count = 1}
+		},
+		storage = 857445
+	}, 
+	[65208] = {
+		items = {
+			{itemId = 2483, count = 1}
+		},
+		storage = 857446
+	}, 
+	[65209] = {
+		items = {
+			{itemId = 2170, count = 1}
+		},
+		storage = 857447
+	},
+	[65210] = {
+		items = {
+			{itemId = 2260, count = 3}
+		},
+		storage = 857448
+	}, 
+	-- 65203 reservado
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)

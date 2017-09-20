@@ -33,6 +33,7 @@ yalaharian = 22041
 glooth = 22042
 rift = 22043
 elementalist = 22044
+warmaster = 22045
 
 newaddon    = 'Here you are, enjoy your brand new addon!' 
 noitems        = 'You do not have all the required items.' 
@@ -337,6 +338,62 @@ function PumpkinSecond(cid, message, keywords, parameters, node)
 end 
 -- HALLOWEN END -- 
 
+-- WARMASTER START -- 
+function WarmasterFirst(cid, message, keywords, parameters, node) 
+
+    if(not npcHandler:isFocused(cid)) then 
+        return false 
+    end 
+
+    if isPremium(cid) then 
+    addon = getPlayerStorageValue(cid,warmaster) 
+    if addon == -1 then 
+        if getPlayerItemCount(cid,11116) > 0 then 
+        if doPlayerRemoveItem(cid,11116, 1) then 
+            selfSay(newaddon, cid) 
+              
+            doSendMagicEffect(getCreaturePosition(cid), 13) 
+            doPlayerAddOutfit(cid, 335, 1) 
+            doPlayerAddOutfit(cid, 336, 1) 
+            setPlayerStorageValue(cid,warmaster,1) 
+        end 
+        else 
+            selfSay(noitems, cid) 
+        end 
+    else 
+        selfSay(already, cid) 
+    end 
+    end 
+
+end 
+
+function WarmasterSecond(cid, message, keywords, parameters, node) 
+
+    if(not npcHandler:isFocused(cid)) then 
+        return false 
+    end 
+
+    if isPremium(cid) then 
+    addon = getPlayerStorageValue(cid,warmaster+1) 
+    if addon == -1 then 
+        if getPlayerItemCount(cid,11115) > 0 then 
+        if doPlayerRemoveItem(cid,11115,1) then 
+            selfSay(newaddon, cid) 
+              
+            doSendMagicEffect(getCreaturePosition(cid), 13) 
+            doPlayerAddOutfit(cid, 335, 2) 
+            doPlayerAddOutfit(cid, 336, 2) 
+            setPlayerStorageValue(cid,warmaster+1,1) 
+        end 
+        else 
+            selfSay(noitems, cid) 
+        end 
+    else 
+        selfSay(already, cid) 
+    end 
+    end 
+
+end 
 
 -- CITIZEN START -- 
 function CitizenFirst(cid, message, keywords, parameters, node) 
@@ -464,7 +521,7 @@ function MageFirst(cid, message, keywords, parameters, node)
     if isPremium(cid) then 
     addon = getPlayerStorageValue(cid,mage) 
     if addon < 2 then 
-        if getPlayerSex(cid) == 0 then -- PLAYERSEX == 0 Ã© female
+        if getPlayerSex(cid) == 0 then -- PLAYERSEX == 0 é female
         if getPlayerItemCount(cid,5958) >= 1 then 
         if doPlayerRemoveItem(cid,5958,1) then 
             selfSay(newaddon, cid) 
@@ -477,7 +534,7 @@ function MageFirst(cid, message, keywords, parameters, node)
         else 
             selfSay(noitems, cid) 
         end 
-        elseif getPlayerSex(cid) == 1 then -- PLAYERSEX == 1 Ã© male
+        elseif getPlayerSex(cid) == 1 then -- PLAYERSEX == 1 é male
         if getPlayerItemCount(cid,2181) >= 1 and getPlayerItemCount(cid,2182) >= 1 and getPlayerItemCount(cid,2183) >= 1 and getPlayerItemCount(cid,2185) >= 1 and getPlayerItemCount(cid,2186) >= 1 and getPlayerItemCount(cid,2187) >= 1 and getPlayerItemCount(cid,2188) >= 1 and getPlayerItemCount(cid,2189) >= 1 and getPlayerItemCount(cid,2190) >= 1 and getPlayerItemCount(cid,2191) >= 1 and getPlayerItemCount(cid,5904) >= 10 and getPlayerItemCount(cid,2193) >= 20 and getPlayerItemCount(cid,5809) >= 1 then 
         if doPlayerRemoveItem(cid,2181,1) and doPlayerRemoveItem(cid,2182,1) and doPlayerRemoveItem(cid,2183,1) and doPlayerRemoveItem(cid,2185,1) and doPlayerRemoveItem(cid,2186,1) and doPlayerRemoveItem(cid,2187,1) and doPlayerRemoveItem(cid,2188,1) and doPlayerRemoveItem(cid,2189,1) and doPlayerRemoveItem(cid,2190,1) and doPlayerRemoveItem(cid,2191,1) and doPlayerRemoveItem(cid,5904,10) and doPlayerRemoveItem(cid,2193,20) and doPlayerRemoveItem(cid,5809,1) then 
             selfSay(newaddon, cid) 
@@ -507,7 +564,7 @@ function MageSecond(cid, message, keywords, parameters, node)
     if isPremium(cid) then 
     addon = getPlayerStorageValue(cid,mage+1)  
     if addon < 2 then 
-        if getPlayerSex(cid) == 0 then -- PLAYERSEX == 0 Ã© female
+        if getPlayerSex(cid) == 0 then -- PLAYERSEX == 0 é female
         if getPlayerItemCount(cid,5894) >= 70 and getPlayerItemCount(cid,5911) >= 20 and getPlayerItemCount(cid,5883) >= 40 and getPlayerItemCount(cid,5922) >= 35 and getPlayerItemCount(cid,5886) >= 10 and getPlayerItemCount(cid,5881) >= 60 and getPlayerItemCount(cid,5882) >= 40 and getPlayerItemCount(cid,5904) >= 15 and getPlayerItemCount(cid,5905) >= 30 then 
         if doPlayerRemoveItem(cid,5894,70) and doPlayerRemoveItem(cid,5911,20) and doPlayerRemoveItem(cid,5883,40) and doPlayerRemoveItem(cid,5922,35) and doPlayerRemoveItem(cid,5886,10) and doPlayerRemoveItem(cid,5881,60) and doPlayerRemoveItem(cid,5882,40) and doPlayerRemoveItem(cid,5904,15) and doPlayerRemoveItem(cid,5905,30) then 
             selfSay(newaddon, cid) 
@@ -520,7 +577,7 @@ function MageSecond(cid, message, keywords, parameters, node)
         else 
             selfSay(noitems, cid) 
         end 
-        elseif getPlayerSex(cid) == 1 then -- PLAYERSEX == 1 Ã© male
+        elseif getPlayerSex(cid) == 1 then -- PLAYERSEX == 1 é male
         if getPlayerItemCount(cid,5903) >= 1 then 
         if doPlayerRemoveItem(cid,5903,1) then 
             selfSay(newaddon, cid) 
@@ -580,8 +637,8 @@ function KnightSecond(cid, message, keywords, parameters, node)
     if isPremium(cid) then 
     addon = getPlayerStorageValue(cid,knight+1) 
     if addon == -1 then 
-        if getPlayerItemCount(cid,5893) >= 100 and getPlayerItemCount(cid,11422) >= 1 and getPlayerItemCount(cid,5885) >= 1 and getPlayerItemCount(cid,5887) >= 1 then 
-        if doPlayerRemoveItem(cid,5893,100) and doPlayerRemoveItem(cid,11422,1) and doPlayerRemoveItem(cid,5885,1) and doPlayerRemoveItem(cid,5887,1) then 
+        if getPlayerItemCount(cid,5893) >= 100 and getPlayerItemCount(cid,5924) >= 1 and getPlayerItemCount(cid,5885) >= 1 and getPlayerItemCount(cid,5887) >= 1 then 
+        if doPlayerRemoveItem(cid,5893,100) and doPlayerRemoveItem(cid,5924,1) and doPlayerRemoveItem(cid,5885,1) and doPlayerRemoveItem(cid,5887,1) then 
             selfSay(newaddon, cid) 
               
             doSendMagicEffect(getCreaturePosition(cid), 13) 
@@ -721,7 +778,7 @@ function SummonerSecond(cid, message, keywords, parameters, node)
     if isPremium(cid) then 
     addon = getPlayerStorageValue(cid,summoner+2) 
     if addon == -1 then 
-        if getPlayerSex(cid) == 1 then -- PLAYERSEX == 1 Ã© male
+        if getPlayerSex(cid) == 1 then -- PLAYERSEX == 1 é male
         if getPlayerItemCount(cid,5894) >= 70 and getPlayerItemCount(cid,5911) >= 20 and getPlayerItemCount(cid,5883) >= 40 and getPlayerItemCount(cid,5922) >= 35 and getPlayerItemCount(cid,5886) >= 10 and getPlayerItemCount(cid,5881) >= 60 and getPlayerItemCount(cid,5882) >= 40 and getPlayerItemCount(cid,5904) >= 15 and getPlayerItemCount(cid,5905) >= 30 then 
         if doPlayerRemoveItem(cid,5894,70) and doPlayerRemoveItem(cid,5911,20) and doPlayerRemoveItem(cid,5883,40) and doPlayerRemoveItem(cid,5922,35) and doPlayerRemoveItem(cid,5886,10) and doPlayerRemoveItem(cid,5881,60) and doPlayerRemoveItem(cid,5882,40) and doPlayerRemoveItem(cid,5904,15) and doPlayerRemoveItem(cid,5905,30) then 
             selfSay(newaddon, cid) 
@@ -734,7 +791,7 @@ function SummonerSecond(cid, message, keywords, parameters, node)
         else 
             selfSay(noitems, cid) 
         end 
-        elseif getPlayerSex(cid) == 0 then -- PLAYERSEX == 0 Ã© female
+        elseif getPlayerSex(cid) == 0 then -- PLAYERSEX == 0 é female
         if getPlayerItemCount(cid,5903) >= 1 then 
         if doPlayerRemoveItem(cid,5903,1) then 
             selfSay(newaddon, cid) 
@@ -1232,7 +1289,7 @@ function ShamanSecond(cid, message, keywords, parameters, node)
     end 
 
     if isPremium(cid) then 
-    addon = getPlayerStorageValue(cid,shaman) 
+    addon = getPlayerStorageValue(cid,shaman+6) 
     if addon == -1 then 
         if getPlayerItemCount(cid,3955) >= 5 and getPlayerItemCount(cid,5015) >= 1 then 
         if doPlayerRemoveItem(cid,3955,5) and doPlayerRemoveItem(cid,5015,1) then 
@@ -1260,7 +1317,7 @@ function ShamanFirst(cid, message, keywords, parameters, node)
     end 
 
     if isPremium(cid) then 
-    addon = getPlayerStorageValue(cid,shaman+1) 
+    addon = getPlayerStorageValue(cid,shaman+4) 
     if addon == -1 then 
         if getPlayerItemCount(cid,3966) >= 5 and getPlayerItemCount(cid,3967) >= 5 then 
         if doPlayerRemoveItem(cid,3966,5) and doPlayerRemoveItem(cid,3967,5) then 
@@ -1576,7 +1633,7 @@ end
 
 
 keywordHandler:addKeyword({'addons'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "I can offer you first & second addons of the following outfits: Citizen, Hunter, Mage, Knight, Nobleman, Summoner, Warrior, Barbarian, Druid, Wizard, Oriental, Pirate, Assassin, Beggar, Shaman, Norseman, Elementalist, Nightmare, Jester and Brotherhood."}) 
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What you do is that you type 'first hunter addon' or 'second hunter addon' where you replace 'hunter' with whatever outfit you'd like to achieve the addons for. Assuming that you already collected all the required pieces, say 'yes' and voÃ­la - you got yourself an addon!"}) 
+keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "What you do is that you type 'first hunter addon' or 'second hunter addon' where you replace 'hunter' with whatever outfit you'd like to achieve the addons for. Assuming that you already collected all the required pieces, say 'yes' and voíla - you got yourself an addon!"}) 
 
  node1 = keywordHandler:addKeyword({'first citizen addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the first citizen addon you need to give me 100 minotaur leathers. Do you have them with you?'}) 
     node1:addChildKeyword({'yes'}, CitizenFirst, {}) 
@@ -1690,11 +1747,11 @@ keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onl
     node28:addChildKeyword({'yes'}, BeggarSecond, {}) 
     node28:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
 
- node29 = keywordHandler:addKeyword({'second shaman addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the first shaman addon you need to give me 5 dworf voodoo dolls and a mandrake. Do you have them with you?'}) 
+ node29 = keywordHandler:addKeyword({'second shaman addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the second shaman addon you need to give me 5 dworf voodoo dolls and a mandrake. Do you have them with you?'}) 
     node29:addChildKeyword({'yes'}, ShamanSecond, {}) 
     node29:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
 
- node30 = keywordHandler:addKeyword({'first shaman addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the second shaman addon you need to give me 5 banana staffs and 5 tribal masks. Do you have them with you?'}) 
+ node30 = keywordHandler:addKeyword({'first shaman addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the first shaman addon you need to give me 5 banana staffs and 5 tribal masks. Do you have them with you?'}) 
     node30:addChildKeyword({'yes'}, ShamanFirst, {}) 
     node30:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
 
@@ -1781,5 +1838,14 @@ keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, onl
     node50:addChildKeyword({'yes'}, elementalistSecond, {}) 
     node50:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
 -- elementalist end
+-- warmaster
+    node49 = keywordHandler:addKeyword({'first warmaster addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the first Warmaster addon you need to give me 1 Serpent Crest. Do you have them with you?'}) 
+    node49:addChildKeyword({'yes'}, WarmasterFirst, {}) 
+    node49:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
+
+    node50 = keywordHandler:addKeyword({'second warmaster addon'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'To achieve the second Warmaster addon you need to give me 1 Tribal Crest. Do you have them with you?'}) 
+    node50:addChildKeyword({'yes'}, WarmasterSecond, {}) 
+    node50:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then. Come back when you got all neccessary items.', reset = true}) 
+-- warmaster end
 
  npcHandler:addModule(FocusModule:new()) 
