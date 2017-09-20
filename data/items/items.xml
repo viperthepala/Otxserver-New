@@ -145,8 +145,14 @@
 	<!-- New Items 10.9x -->
     <item id="27728" article="a" name="Imbuing Shrine"/>
     <item id="27729" article="a" name="Imbuing Shrine"/>
-    <item id="27850" article="a" name="Gilded Imbuing Shrine"/>
-    <item id="27851" article="a" name="Gilded Imbuing Shrine"/>
+    <item id="27850" article="a" name="Gilded Imbuing Shrine">
+		<attribute key="rotateTo" value="27851" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+    <item id="27851" article="a" name="Gilded Imbuing Shrine">
+		<attribute key="rotateTo" value="27850" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
     <item id="27756" article="an" name="Porcelain Mask">
 	<attribute key="armor" value="1"/>
 	<attribute key="absorbPercentManaDrain" value="10"/>
@@ -196,9 +202,9 @@
 	<attribute key="weight" value="850"/>
 	<attribute key="description" value="It is a sweet candy replica of the famous Ferumbras' hat."/>
 </item>
-<item id="26377" article="an" name="Stack Pouch">
+<item id="26377" article="an" name="Gold Pouch">
 	<attribute key="containerSize" value="8"/>
-	<attribute key="description" value="A infinity bag where you can hold stackable items."/>
+	<attribute key="description" value="A infinity bag where you can hold coins."/>
 </item>
 <!-- Dawnport -->
 <item id="23764" article="a" name="piece of paper">
@@ -517,6 +523,78 @@
 	<attribute key="type" value="carpet" />
 		<attribute key="wrapableTo" value="26054" />
 </item>
+
+	<item id="27084" name="flowery carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27092" name="flowery carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27085" name="colourful carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27093" name="colourful carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27086" name="striped carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27094" name="striped carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27087" name="fur carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27095" name="fur carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27088" name="diamond carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27096" name="diamond carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27089" name="patterned carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27097" name="patterned carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27090" name="night sky carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27098" name="night sky carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27091" name="star carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item id="27099" name="star carpet">
+	<attribute key="type" value="carpet" />
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item fromid="27100" toid="27101" name="parrot">
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+	<item fromid="27102" toid="27104" name="lit skull lamp">
+		<attribute key="wrapableTo" value="26054" />
+	</item>
+<!-- Store finish-->
 <item id="22459" name="chalk">
     <attribute key="description" value="This chalk could be gathered with an available bucket." />
 </item>
@@ -37219,61 +37297,73 @@
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill health potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28580" article="a" name="strong health potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill great health potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28581" article="a" name="great health potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill strong health potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28582" article="a" name="ultimate health potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill ultimate health potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28583" article="a" name="supreme health potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill supreme health potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28584" article="a" name="mana potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill mana potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28585" article="a" name="strong mana potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill great mana potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28586" article="a" name="great mana potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill strong mana potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28587" article="a" name="ultimate mana potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill ultimate mana potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28588" article="a" name="supreme mana potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill supreme mana potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28589" article="a" name="strong spirit potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill great spirit potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item id="28590" article="a" name="ultimate spirit potion keg">
 		<attribute key="charges" value="500" />
 		<attribute key="description" value="This keg can be used to refill ultimate spirit potions." />
 		<attribute key="weight" value="12500" />
+		<attribute key="wrapableTo" value="26054" />
 	</item>
 	<item fromid="29088" toid="29089" name="reward shrine">
 	<attribute key="description" value="It depicts the two suns of Tibia, symbolising the course of a day." />
