@@ -77,7 +77,6 @@ function Creature:onTargetCombat(target)
 				return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER
 			end
 		end
-	end
 
 	if target:isPlayer() then
 		if self:isMonster() then
