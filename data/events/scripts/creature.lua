@@ -34,6 +34,15 @@ local function removeCombatProtection(cid)
 	end, time * 1000, cid)
 end
 
+-- AQUI TREINER ONLINE
+local staminaBonus = {
+	target = 'Training Monk',
+	period = 120000, -- time on miliseconds
+	bonus = 1, -- gain stamina
+	events = {}
+}
+
+
 local function addStamina(name)
 	local player = Player(name)
 	if not player then
@@ -49,14 +58,6 @@ local function addStamina(name)
 	end
 end
 
-
--- AQUI TREINER ONLINE
-local staminaBonus = {
-	target = 'Training Monk',
-	period = 120000, -- time on miliseconds
-	bonus = 1, -- gain stamina
-	events = {}
-}
 
 function Creature:onTargetCombat(target)
 	if not self then
