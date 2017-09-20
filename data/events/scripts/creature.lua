@@ -34,14 +34,6 @@ local function removeCombatProtection(cid)
 	end, time * 1000, cid)
 end
 
--- AQUI TREINER ONLINE
-local staminaBonus = {
-	target = 'Training Monk',
-	period = 120000, -- time on miliseconds
-	bonus = 1, -- gain stamina
-	events = {}
-}
-
 local function addStamina(name)
 	local player = Player(name)
 	if not player then
@@ -57,6 +49,15 @@ local function addStamina(name)
 	end
 end
 
+
+-- AQUI TREINER ONLINE
+local staminaBonus = {
+	target = 'Training Monk',
+	period = 120000, -- time on miliseconds
+	bonus = 1, -- gain stamina
+	events = {}
+}
+
 function Creature:onTargetCombat(target)
 	if not self then
 		return true
@@ -68,15 +69,6 @@ function Creature:onTargetCombat(target)
 			__picif[target.uid] = {}
 		end
 	end
-
-		--party protect
-		local party = self:getParty()
-		if party then
-			local targetParty = target:getParty()
-			if targetParty and targetParty == party then
-				return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER
-			end
-		end
 
 	if target:isPlayer() then
 		if self:isMonster() then
@@ -100,8 +92,27 @@ function Creature:onTargetCombat(target)
 		end
 	end
 
-	-- AQUI TREINER ONLINE
-	if self:isPlayer() then
+	if PARTY_PROTECTION ~= 0 then
+		if self:isPlayer() and target:isPlayer() then
+			local party = self:getParty()
+			if party then
+				local targetParty = target:getParty()
+				if targetParty and targetParty == party then
+					return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER
+				end
+			end
+		end
+	end
+
+	if ADVANCED_SECURE_MODE ~= 0 then
+		if self:isPlayer() and target:isPlayer() then
+			if self:hasSecureMode() then
+				return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER
+			end
+		end
+	end
+
+		if self:isPlayer() then
 		if target and target:getName() == staminaBonus.target then
 			local name = self:getName()
 			if not staminaBonus.events[name] then
