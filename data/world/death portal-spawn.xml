@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<spawns>
+  <spawn centerx="32910" centery="31601" centerz="14" radius="3">
+    <monster name="Shadow Tentacle" x="0" y="0" z="14" spawntime="60" />
+    <monster name="Lady Tenebris" x="2" y="-2" z="14" spawntime="60" />
+  </spawn>
+  <spawn centerx="32917" centery="31601" centerz="14" radius="3">
+    <monster name="Shadow Tentacle" x="-3" y="0" z="14" spawntime="60" />
+  </spawn>
+</spawns>

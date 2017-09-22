@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
-	   
+
+		<!--Feiryst-->
+		<monster name="Faun" file="feyrist/faun.xml" />
+		<monster name="Dark Faun" file="feyrist/dark faun.xml" />
+		<monster name="Enfeebled Silencer" file="feyrist/enfeebled silencer.xml" />
+		<monster name="Weakened Frazzlemaw" file="feyrist/Weakened Frazzlemaw.xml" />	   
 	   <!-- NOVOS 11.2 bosses -->
 	   <monster name="Lady Tenebris" file="11.2/bosses/Lady Tenebris.xml" />
 	   <monster name="Lloyd" file="11.2/bosses/Lloyd.xml" />
