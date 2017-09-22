@@ -176,6 +176,10 @@
 	<item id="23937" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
+	<item id="23124" article="a" name="ramp">
+		<attribute key="floorchange" value="south" />
+	</item>
+	<item id="23123" article="a" name="ramp" />
 	<item id="20983" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
@@ -35544,9 +35548,7 @@
 	<item id="23126" name="stairs">
 		<attribute key="floorchange" value="east" />
 	</item>
-	<item id="23125" name="stairs">
-		<attribute key="floorchange" value="east" />
-	</item>
+	<item id="23125" name="stairs" />
 	<item fromid="22859" toid="22860" article="a" name="sewer entrance">
 		<attribute key="floorchange" value="down" />
 	</item>
