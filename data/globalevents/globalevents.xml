@@ -21,7 +21,6 @@
     <globalevent name="Mad5" time="02:00:00" script="bosses/Mad.lua"/>
     <globalevent name="grayIslandBosses" type="startup" script="gray island/grayIslandBosses.lua"/>
     <globalevent name="npcs" type="startup" script="others/npcspawn.lua"/>
-	<globalevent type="startup" name="rashid" script="rashid.lua"/>
 
 	<!-- Ferumbras Ascendant Quest -->
     <globalevent name="Effect" interval="3000" script="FerumbrasAscedantQuest/effect.lua"/>
@@ -44,7 +43,7 @@
 	<globalevent type="record" name="PlayerRecord" script="record.lua" />
 	<globalevent name="ServerSave" time="05:55:00" script="serversave.lua" />	
 	<globalevent type="startup" name="rashid" script="rashid.lua"/>
-	<globalevent type="startup" name="yasir" script="yasir.lua"/>
+	<globalevent type="startup" name="yasir" script="worldchanges/yasir.lua"/>
 	<!-- raid --> 
 	<globalevent name="SpawnRaid" interval="60000" script="spawn/raids.lua"/>
 
