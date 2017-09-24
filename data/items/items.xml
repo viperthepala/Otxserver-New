@@ -37,7 +37,7 @@
 		<attribute key="shootType" value="prismaticbolt" />
 		<attribute key="maxHitChance" value="100" />
 	</item>
-	<item id="29054" article="a" name="diamond arrow">
+	<item id="29056" article="a" name="diamond arrow">
 		<attribute key="weight" value="80" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="attack" value="37" />
