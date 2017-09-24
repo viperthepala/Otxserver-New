@@ -26749,6 +26749,13 @@
 		<attribute key="extradef" value="3" />
 		<attribute key="imbuingSlots" value="2" />
 	</item>
+	<item id="17428" article="a" name="dead hideous fungus">
+		<attribute key="containerSize" value="25" />
+		<attribute key="decayTo" value="17429" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="venom" />
+		<attribute key="fluidSource" value="slime" />
+	</item>
 	<item id="17429" article="a" name="dead hideous fungus">
 		<attribute key="containerSize" value="25" />
 		<attribute key="decayTo" value="17430" />
