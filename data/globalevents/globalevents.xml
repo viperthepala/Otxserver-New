@@ -44,6 +44,7 @@
 	<globalevent type="record" name="PlayerRecord" script="record.lua" />
 	<globalevent name="ServerSave" time="05:55:00" script="serversave.lua" />	
 	<globalevent type="startup" name="rashid" script="rashid.lua"/>
+	<globalevent type="startup" name="yasir" script="yasir.lua"/>
 	<!-- raid --> 
 	<globalevent name="SpawnRaid" interval="60000" script="spawn/raids.lua"/>
 
