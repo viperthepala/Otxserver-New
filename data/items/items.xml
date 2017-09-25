@@ -153,8 +153,9 @@
 		<attribute key="weight" value="450" />
 	</item>
 	<item id="27061" article="an" name="Pillow Backpack">
-		<attribute key="containerSize" value="24" />
-		<attribute key="weight" value="1450" />
+		<attribute key="weight" value="1800" />
+		<attribute key="containerSize" value="18" />
+		<attribute key="slotType" value="backpack" />
 	</item>
 	<item id="27063" article="an" name="Birthday Backpack">
 		<attribute key="containerSize" value="20" />
