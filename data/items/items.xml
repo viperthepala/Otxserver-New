@@ -154,7 +154,7 @@
 	</item>
 	<item id="27061" article="an" name="Pillow Backpack">
 		<attribute key="weight" value="1800" />
-		<attribute key="containerSize" value="18" />
+		<attribute key="containerSize" value="24" />
 		<attribute key="slotType" value="backpack" />
 	</item>
 	<item id="27063" article="an" name="Birthday Backpack">
@@ -32705,8 +32705,8 @@
 	</item>
 	<item id="25911" article="a" name="axe of mayhem (overcharged)">
 		<attribute key="weight" value="5000" />
-		<attribute key="defense" value="70" />
-		<attribute key="attack" value="95" />
+		<attribute key="defense" value="33" />
+		<attribute key="attack" value="52" />
 		<attribute key="description" value="This weapon is over charged." />
 		<attribute key="skillAxe" value="1" />
 		<attribute key="weaponType" value="axe" />
