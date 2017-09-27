@@ -56,6 +56,8 @@ local events = {
 	'lowerRoshamuul',
 	'SpikeTaskQuestCrystal',
 	'SpikeTaskQuestDrillworm'
+	'petlogin',
+	'petthink'
 }
  
 local function onMovementRemoveProtection(cid, oldPosition, time)
