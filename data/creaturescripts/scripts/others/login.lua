@@ -212,5 +212,22 @@ function onLogin(player)
         onMovementRemoveProtection(playerId, player:getPosition(), 10)
     end
 
+	-- Exp stats
+	local staminaMinutes = player:getStamina()
+	local Boost = player:getExpBoostStamina()
+	if staminaMinutes > 2400 and player:isPremium() and Boost > 0 then
+		player:setBaseXpGain(200) -- 200 = 1.0x, 200 = 2.0x, ... premium account		
+	elseif staminaMinutes > 2400 and player:isPremium() and Boost <= 0 then
+		player:setBaseXpGain(150) -- 150 = 1.0x, 150 = 1.5x, ... premium account	
+	elseif staminaMinutes <= 2400 and staminaMinutes > 840 and player:isPremium() and Boost > 0 then
+		player:setBaseXpGain(150) -- 150 = 1.5x		premium account
+	elseif staminaMinutes > 840 and Boost > 0 then
+		player:setBaseXpGain(150) -- 150 = 1.5x		free account
+	elseif staminaMinutes <= 840 and Boost > 0 then
+		player:setBaseXpGain(100) -- 50 = 0.5x	all players	
+	elseif staminaMinutes <= 840 then
+		player:setBaseXpGain(50) -- 50 = 0.5x	all players	
+	end
+
     return true
 end
