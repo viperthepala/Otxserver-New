@@ -58,8 +58,7 @@
 	<raid name="Pirates" file="normal/Pirates.xml" interval2="500" margin="90" />
 	
 	<raid name="Rats" file="normal/abertura.xml" interval2="500" margin="70" />
-	<raid name="Dragons" file="normal/dragons.xml" interval2="500" margin="80" />
-	<raid name="Insetos" file="normal/Insetos.xml" interval2="500" margin="85" />
+
 	
 	<raid name="Quaras" file="normal/quaras.xml" interval2="500" margin="50" />
 	<raid name="Undead Army" file="normal/undead army.xml" interval2="500" margin="100" />
