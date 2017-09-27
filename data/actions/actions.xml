@@ -412,7 +412,7 @@
 	<action itemid="12497" script="quests/hotcuisine/cookbook1.lua" />
 
 	<!-- The Queen of the Banshees Quest -->
-	<action fromuid="50000" touid="50002" script="quests/the queen of the banshees/theFirstSeal.lua" />
+	<action fromuid="49998" touid="50002" script="quests/the queen of the banshees/theFirstSeal.lua" />
 	<action fromuid="50005" touid="50010" script="quests/the queen of the banshees/theSixthSeal.lua" />
 	<action fromuid="50015" touid="50019" script="quests/the queen of the banshees/theThirdSeal.lua" />
 	<action actionid="50021" script="quests/the queen of the banshees/lastDoor.lua" />
