@@ -212,15 +212,5 @@ function onLogin(player)
         onMovementRemoveProtection(playerId, player:getPosition(), 10)
     end
 
-		-- Exp stats
-	player:setBaseXpGain(Game.getExperienceStage(player:getLevel()) * 100) -- percent multiplier
-		-- stamina
-	local staminaMinutes = player:getStamina()
-	if staminaMinutes > 2400 and player:isPremium() then
-		player:setStaminaXpBoost(150) --100 = 1.0x, 150 = 1.5x, ...		
-	elseif staminaMinutes <= 840 then
-		player:setStaminaXpBoost(50) -- 50 = 0.5x		
-	end
-
     return true
 end
