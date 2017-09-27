@@ -55,7 +55,7 @@ local events = {
     'bless1',
 	'lowerRoshamuul',
 	'SpikeTaskQuestCrystal',
-	'SpikeTaskQuestDrillworm'
+	'SpikeTaskQuestDrillworm',
 	'petlogin',
 	'petthink'
 }
