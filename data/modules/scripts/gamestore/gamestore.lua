@@ -21,7 +21,7 @@ GameStore.Categories = {
 		icons = {"Category_Blessings.png"},
 		rookgaard = false,
 		offers = {
-			{name = "All Regular Blessings", thingId = 1, 2, 3, 4, 5, 7, 8, type = GameStore.OfferTypes.OFFER_TYPE_BLESSINGS, price = 999, icons = {"Product_Blessing_AllPvE.png"}},
+			{name = "All Regular Blessings", thingId = {1, 2, 3, 4, 5, 7, 8,}, type = GameStore.OfferTypes.OFFER_TYPE_BLESSINGS, price = 999, icons = {"Product_Blessing_AllPvE.png"}},
 			{name = "Twist of Fate", thingId = 1, type = GameStore.OfferTypes.OFFER_TYPE_BLESSINGS, price = 2, icons = {"Product_Blessing_Fate.png"}},
 			{name = "The Wisdom of Solitude", thingId = 2, type = GameStore.OfferTypes.OFFER_TYPE_BLESSINGS, price = 5, icons = {"Product_Blessing_Solitude.png"}},
 			{name = "The Spark of the Phoenix", thingId = 3, type = GameStore.OfferTypes.OFFER_TYPE_BLESSINGS, price = 8, icons = {"Product_Blessing_Phoenix.png"}},
