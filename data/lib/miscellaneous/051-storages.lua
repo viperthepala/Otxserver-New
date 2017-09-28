@@ -730,7 +730,7 @@ Storage = {
 	},
 	SvargrondArena = {
 		Arena = 1100,
-		Pit = 1101,
+		Pit = 13100,
 
 		QuestLogGreenhorn = 50140,
 		QuestLogScrapper = 50141,
