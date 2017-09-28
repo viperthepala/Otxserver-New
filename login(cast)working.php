@@ -113,12 +113,12 @@ $session = array(
 $world = array(
 	"id" => 0,
 	"name" => $config['server']['serverName'],
-	"externaladdress" => gethostbyname($config['server']['ip']),
+	"externaladdress" => $config['server']['ip'],
 	"externalport" => $port,
 	"previewstate" => 0,
     "location" => "BRA",
-    "externaladdressunprotected" => gethostbyname($config["server"]["ip"]),
-    "externaladdressprotected" => gethostbyname($config["server"]["ip"])
+    "externaladdressunprotected" => $config["server"]["ip"],
+    "externaladdressprotected" => $config["server"]["ip"]
 );
 
 $worlds = array($world);
