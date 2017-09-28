@@ -1,15 +1,21 @@
+--Script By Igor Labanca
 function onCastSpell(creature, variant)
 		
-	vocationid = creature:getVocation():getId()
-	        if vocationid == 1 or vocationid == 5 then
+	local STORAGE_PET = 60045
+		
+	    vocationid = creature:getVocation():getId()
+	        if  vocationid == 5 then
 				pet = "thundergiant"
-			elseif vocationid == 2 or vocationid == 6 then
+			end
+			if vocationid == 6 then
 				pet = "grovebeast"
-			elseif vocationid == 3 or vocationid == 7 then
+			end
+			if vocationid == 7 then
 				pet = "emberwing"
-			elseif vocationid == 4 or vocationid == 8 then
+			end
+			if vocationid == 8 then
 				pet = "skullfrost"
-    end
+            end
 	local monsterType = MonsterType(pet)
 	
 		if not monsterType:isPet() then
@@ -22,10 +28,9 @@ function onCastSpell(creature, variant)
 			return false
 		end
 	end
-
-
+	
 	local position = creature:getPosition()
-	local summonpet = Game.createMonster(pet, position, true)
+	local summonpet = Game.createMonster(pet,position)
 	if not summonpet then
 		creature:sendCancelMessage(RETURNVALUE_NOTENOUGHROOM)
 		position:sendMagicEffect(CONST_ME_POFF)
@@ -35,10 +40,9 @@ function onCastSpell(creature, variant)
 	creature:addSummon(summonpet)
 	position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	
-	function removepet(summonpet)
-    doRemoveCreature(summonpet)
-    end
-	addEvent(removepet, 15*60*1000, summonpet.uid)
+	local timestorage = 900 --15 minutes
+	creature:setStorageValue(STORAGE_PET,0)
+	creature:setStorageValue(STORAGE_PET,os.time()+timestorage)
 	return true
 	
 end
