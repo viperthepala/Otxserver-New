@@ -62,7 +62,7 @@
 		<attribute key="magiclevelpoints" value="2" />
 		<attribute key="duration" value="900" />
 	</item>
-	<item id="29005" article="a" name="dream blossom staff">
+	<item id="29004" article="a" name="dream blossom staff">
 		<attribute key="description" value="It's a gnarly branch with a gleaming blue blossom." />
 		<attribute key="weight" value="3200" />
 		<attribute key="weaponType" value="wand" />
