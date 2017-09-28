@@ -6,27 +6,30 @@ function onCastSpell(creature, variant)
 	    vocationid = creature:getVocation():getId()
 	        if  vocationid == 5 then
 				pet = "thundergiant"
-			end
-			if vocationid == 6 then
+			
+			elseif vocationid == 6 then
 				pet = "grovebeast"
-			end
-			if vocationid == 7 then
+			
+			elseif vocationid == 7 then
 				pet = "emberwing"
-			end
-			if vocationid == 8 then
+
+			elseif vocationid == 8 then
 				pet = "skullfrost"
-            end
+		end
+            
 	local monsterType = MonsterType(pet)
 	
 		if not monsterType:isPet() then
 			creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 			creature:getPosition():sendMagicEffect(CONST_ME_POFF)
+			return false
+
 			
 		if #creature:getSummons() >= 1 then
 			creature:sendCancelMessage("You cannot summon more creatures.")
 			creature:getPosition():sendMagicEffect(CONST_ME_POFF)
 			return false
-		end
+			end
 	end
 	
 	local position = creature:getPosition()
