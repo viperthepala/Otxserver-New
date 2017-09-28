@@ -35,7 +35,7 @@ Container::Container(uint16_t type, uint16_t size, bool unlocked /*= true*/, boo
 	pagination(pagination)
 {}
 
-Container::Container(Tile* tile) : Container(ITEM_BROWSEFIELD, 30, false, true)
+Container::Container(Tile* tile) : Container(ITEM_BROWSEFIELD, 30, false, false)
 {
 	TileItemVector* itemVector = tile->getItemList();
 	if (itemVector) {
