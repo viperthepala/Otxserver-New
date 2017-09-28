@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<monster name="Dark Faun" nameDescription="a dark faun" race="blood" experience="85" speed="190" manacost="450">
-	<look type="980" head="94" body="114" legs="57" feet="94" corpse="20523" />
-	<health now="1000" max="1000" />
+<monster name="Weakened Frazzlemaw" nameDescription="a weakened frazzlemaw" race="blood" experience="630" speed="190" manacost="450">
+	<look type="983" corpse="22567" />
+	<health now="770" max="770" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />
@@ -20,16 +20,14 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-515" />
-		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-60" max="-115">
-			<attribute key="shootEffect" value="poison" />
+		<attack name="melee" interval="2000" min="0" max="-250" />
 		<attack name="drunk" interval="3000" chance="11" radius="6" target="0" duration="25000">
 			<attribute key="areaEffect" value="purplenote" />
 		</attack>
 	</attacks>
-	<defenses armor="25" defense="25">
-		<defense name="healing" interval="2000" chance="15" min="85" max="105">
-			<attribute key="areaEffect" value="blueshimmer" />
+	<defenses armor="50" defense="45">
+		<defense name="healing" interval="2000" chance="25" min="400" max="600">
+			<attribute key="areaEffect" value="greenshimmer" />
 		</defense>
 	</defenses>
 	<elements>
@@ -40,34 +38,28 @@
 		<element physicalPercent="-5" />
 	</elements>
 	<voices interval="5000" chance="10">
-		<voice sentence="Are you posing a threat to this realm? I suppose so."; "Hicks!" />
-		<voice sentence="This is will be your last dance!" />
-		<voice sentence="You're a threat to this realm! You have to die!" />
-		<voice sentence="This is a nightmare and you won't wake up!" />
+		<voice sentence="Glamour, glitter, glistening things! Do you have any of those?" />
+		<voice sentence="Sweet Dreams!" />
+		<voice sentence="You might be a threat! I'm sorry but I can allow you to linger here." />
+		<voice sentence="Let's try a step or two!" />
 	</voices>
 	<loot>
-		<item name="small diamond" chance="200" />
 		<item name="gold coin" countmax="112" chance="30000" />
 		<item name="rainbow quartz" chance="1086" />
-		<item name="wood cape" chance="492" />
+		<item name="butterfly ring" chance="492" />
 		<item name="wooden spellbook" chance="92" />
 		<item name="dream blossom staff" chance="92" />
 		<item name="mandrake" chance="50" />
-		<item name="leaf legs" chance="492" />
-		<item name="small stone" countmax="4" chance="492" />
+		<item name="magic light wand" chance="492" />
+		<item name="green mushroom" countmax="4" chance="492" />
 		<item name="small enchanted sapphire" countmax="2" chance="492" />
-		<item name="shimmering beetles" chance="492" />
-		<item name="cave turnips" countmax="4" chance="55000" />
-		<item name="leaf legs" chance="719" />
 		<item name="rainbow quartz" countmax="3" chance="719" />
-		<item name="dark mushroom" chance="719" />
-		<item name="fairy wings" chance="719" />
-		<item name="panpipes" chance="719" />
-		<item name="prismatic quartz" chance="719" />
+		<item name="colourful snail shell" chance="719" />
+		<item name="star herbs" chance="719" />
 		<item name="leaf star" countmax="8" chance="10000" />
-		<item name="grapes" chance="30100" />
+		<item name="red rose" chance="30100" />
 		<item name="strong health potion" countmax="2" chance="6800" />
-		<item name="goat grass" chance="5155" />
+		<item name="wild flowers" chance="5155" />
 		<item name="great health potion" chance="591" />
 		<item name="dandelion seeds" chance="5800" />
 		<item name="fresh fruits" chance="3400" />

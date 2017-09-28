@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<monster name="Faun" nameDescription="a faun" race="blood" experience="85" speed="190" manacost="450">
-	<health now="190" max="190" />
+<monster name="Faun" nameDescription="a faun" race="blood" experience="800" speed="190" manacost="450">
+	<health now="900" max="900" />
 	<look type="980" head="81" body="115" legs="114" feet="81" corpse="20523" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
-		<flag summonable="1" />
+		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
 		<flag illusionable="1" />
-		<flag convinceable="1" />
+		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
 		<flag canpushcreatures="0" />
@@ -20,12 +20,18 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-70" />
-		<attack name="physical" interval="2000" chance="15" range="7" min="0" max="-50">
-			<attribute key="shootEffect" value="spear" />
+		<attack name="melee" interval="2000" min="0" max="-370" />
+		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-60" max="-100">
+			<attribute key="shootEffect" value="poison" />
+		<attack name="drunk" interval="3000" chance="11" radius="6" target="0" duration="25000">
+			<attribute key="areaEffect" value="purplenote" />
 		</attack>
 	</attacks>
-	<defenses armor="20" defense="20" />
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="2000" chance="15" min="75" max="90">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
 	<elements>
 		<element icePercent="10" />
 		<element firePercent="10" />
@@ -34,26 +40,27 @@
 		<element physicalPercent="-5" />
 	</elements>
 	<voices interval="5000" chance="10">
-		<voice sentence="Another head for me!" />
-		<voice sentence="Head off!" />
-		<voice sentence="Your head will be mine!" />
-		<voice sentence="Stand still!" />
-		<voice sentence="One more head for me!" />
+		<voice sentence="Are you posing a threat to this realm? I suppose so." />
+		<voice sentence="In vino veritas! Hahaha!" />
 	</voices>
 	<loot>
 		<item name="small diamond" chance="200" />
-		<item name="gold coin" countmax="12" chance="30000" />
-		<item name="protection amulet" chance="1086" />
-		<item id="2229" chance="760" /> <!-- skull -->
-		<item name="double axe" chance="492" />
-		<item name="spear" countmax="3" chance="55000" />
-		<item name="plate armor" chance="719" />
-		<item name="chain armor" chance="10000" />
-		<item name="meat" chance="30100" />
-		<item name="red apple" countmax="2" chance="6800" />
-		<item name="hunting spear" chance="5155" />
-		<item name="health potion" chance="591" />
-		<item name="girlish hair decoration" chance="5800" />
-		<item name="protective charm" chance="3400" />
+		<item name="gold coin" countmax="112" chance="30000" />
+		<item name="rainbow quartz" chance="1086" />
+		<item name="wood cape" chance="492" />
+		<item name="mandrake" chance="50" />
+		<item name="leaf legs" chance="492" />
+		<item name="small stone" chance="492" />
+		<item name="small enchanted sapphire" chance="492" />
+		<item name="shimmering beetles" chance="492" />
+		<item name="cookies" countmax="4" chance="55000" />
+		<item name="prismatic quartz" chance="719" />
+		<item name="leaf star" chance="10000" />
+		<item name="grapes" chance="30100" />
+		<item name="strong health potion" countmax="2" chance="6800" />
+		<item name="goat grass" chance="5155" />
+		<item name="great health potion" chance="591" />
+		<item name="dandelion seeds" chance="5800" />
+		<item name="fresh fruits" chance="3400" />
 	</loot>
 </monster>

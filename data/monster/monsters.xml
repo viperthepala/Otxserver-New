@@ -11,7 +11,12 @@
 		<monster name="Dark Faun" file="feyrist/dark faun.xml" />
 		<monster name="Enfeebled Silencer" file="feyrist/enfeebled silencer.xml" />
 		<monster name="Weakened Frazzlemaw" file="feyrist/Weakened Frazzlemaw.xml" />	   
-	   <!-- NOVOS 11.2 bosses -->
+		<monster name="Pixie" file="feyrist/pixie.xml" />	   
+		<monster name="Pooka" file="feyrist/pooka.xml" />	   
+		<monster name="Twisted Pooka" file="feyrist/twisted pooka.xml" />	   
+		<monster name="Nymph" file="feyrist/nymph.xml" />	   
+
+		<!-- NOVOS 11.2 bosses -->
 	   <monster name="Lady Tenebris" file="11.2/bosses/Lady Tenebris.xml" />
 	   <monster name="Lloyd" file="11.2/bosses/Lloyd.xml" />
 	   <monster name="Melting Frozen Horror" file="11.2/bosses/Melting Frozen Horror.xml" />
