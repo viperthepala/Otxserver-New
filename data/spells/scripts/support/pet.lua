@@ -22,7 +22,6 @@ function onCastSpell(creature, variant)
 		if not monsterType:isPet() then
 			creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 			creature:getPosition():sendMagicEffect(CONST_ME_POFF)
-			return false
 
 			
 		if #creature:getSummons() >= 1 then
