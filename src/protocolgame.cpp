@@ -2432,13 +2432,13 @@ void ProtocolGame::sendOutfitWindow()
 
 	std::vector<ProtocolOutfit> protocolOutfits;
 	if (player->isAccessPlayer()) {
-		static const std::string gamemasterOutfitName = "Gamemaster";
+		static const std::string gamemasterOutfitName = "Game Master";
 		protocolOutfits.emplace_back(gamemasterOutfitName, 75, 0);
 
-		static const std::string gmCustomerSupport = "CS";
+		static const std::string gmCustomerSupport = "Customer Support";
 		protocolOutfits.emplace_back(gmCustomerSupport, 266, 0);
 
-		static const std::string communityManager = "CM";
+		static const std::string communityManager = "Community Manager";
 		protocolOutfits.emplace_back(communityManager, 302, 0);
 	}
 
