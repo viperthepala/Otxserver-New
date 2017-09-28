@@ -3824,17 +3824,6 @@
 		<attribute key="weight" value="90" />
 		<attribute key="slotType" value="ring" />
 	</item>
-	<item id="27871" name="Relembra boots">
-		<attribute key="absorbPercentFire" value="3" />
-		<attribute key="weight" value="250" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="speed" value="40" />
-		<attribute key="healthGain" value="15" />
-		<attribute key="healthTicks" value="1000" />
-		<attribute key="manaGain" value="30" />
-		<attribute key="manaTicks" value="1000" />
-		<attribute key="description" value="It is special boots, faster regeneration and protection fire 3%." />
-	</item>
 	<item id="26131" name="Tiara of Power (faster regeneration)">
 		<attribute key="weight" value="1100" />
 		<attribute key="speed" value="40" />
@@ -5707,9 +5696,9 @@
 		<attribute key="decayTo" value="10021" />
 		<attribute key="transformDeEquipTo" value="6132" />
 		<attribute key="duration" value="14400" />
-		<attribute key="healthGain" value="10" />
+		<attribute key="healthGain" value="3" />
 		<attribute key="healthTicks" value="2000" />
-		<attribute key="manaGain" value="15" />
+		<attribute key="manaGain" value="6" />
 		<attribute key="manaTicks" value="1000" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />

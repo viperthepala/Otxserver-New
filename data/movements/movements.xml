@@ -654,8 +654,6 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</movevent>
-	<movevent event="DeEquip" itemid="27871" slot="feet" function="onDeEquipItem" />
-	<movevent event="Equip" itemid="27871" slot="feet" level="10" function="onEquipItem"/>
 	
 	<movevent event="DeEquip" itemid="26133" slot="feet" function="onDeEquipItem" />
 	<movevent event="Equip" itemid="26133" slot="feet" level="150" function="onEquipItem"/>
