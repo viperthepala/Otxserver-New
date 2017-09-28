@@ -23,6 +23,7 @@
 		<attack name="melee" interval="2000" min="0" max="-515" />
 		<attack name="earth" interval="2000" chance="15" range="7" target="1" min="-60" max="-115">
 			<attribute key="shootEffect" value="poison" />
+		</attack>
 		<attack name="drunk" interval="3000" chance="11" radius="6" target="0" duration="25000">
 			<attribute key="areaEffect" value="purplenote" />
 		</attack>
@@ -40,7 +41,8 @@
 		<element physicalPercent="-5" />
 	</elements>
 	<voices interval="5000" chance="10">
-		<voice sentence="Are you posing a threat to this realm? I suppose so."; "Hicks!" />
+		<voice sentence="Are you posing a threat to this realm? I suppose so." />
+		<voice sentence="Hicks!" />
 		<voice sentence="This is will be your last dance!" />
 		<voice sentence="You're a threat to this realm! You have to die!" />
 		<voice sentence="This is a nightmare and you won't wake up!" />

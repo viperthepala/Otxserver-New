@@ -24,7 +24,6 @@
 		<attack name="drunk" interval="3000" chance="11" radius="6" target="0" duration="25000">
 			<attribute key="areaEffect" value="purplenote" />
 		</attack>
-		</attack>
 	</attacks>
 	<defenses armor="20" defense="20" />
 	<elements>
