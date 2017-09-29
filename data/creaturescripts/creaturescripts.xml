@@ -9,6 +9,10 @@
     <event type="login" name="WarPrivateLogin" script="warPrivate_creaturescript.lua"/>
     <event type="logout" name="WarPrivateLogout" script="warPrivate_creaturescript.lua"/>
     <event type="death" name="WarPrivateDeath" script="warPrivate_creaturescript.lua"/>
+	<event type="modalwindow" name="ModalWindowHelper" script="modalwindowhelper.lua" />  
+	<event type="logout" name="CityWarLogout" script="citywar.lua" />
+    <event type="preparedeath" name="CityWarDeath" script="citywar.lua" />
+    <event type="textedit" name="CityWarInvite" script="citywar.lua" />
 
     <!-- Oramond Quest -->
     <event type="death" name="tp" script="quests/oramond/revanger.lua"/>
@@ -37,15 +41,11 @@
 	<event type="kill" name="FerumbrasKill" script="FerumbrasAscedantQuest/Ferumbras.lua" />
   
     <!-- Reward Chest 19/01 -->	
-    <event type="modalwindow" name="ModalWindowHelper" script="modalwindowhelper.lua" />  
-	
-	<event type="logout" name="CityWarLogout" script="citywar.lua" />
-    <event type="preparedeath" name="CityWarDeath" script="citywar.lua" />
-    <event type="textedit" name="CityWarInvite" script="citywar.lua" />
-  
  	<event type="death" name="BossDeath" script="rewardChest/boss.lua" />
  	<event type="healthchange" name="BossParticipation" script="rewardChest/boss.lua" />
  	<event type="think" name="BossThink" script="rewardChest/boss.lua" />
+	<event type="healthchange" name="HealGaz" script="gaz'haragoth heal.lua"/>	
+
 
     <!-- Bigfoot Burden Quest -->
 	<event type="kill" name="Razzagorn" script="Novos/Razzagorn.lua"/>	

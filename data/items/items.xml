@@ -14392,12 +14392,6 @@
 		<attribute key="weaponType" value="axe" />
 		<attribute key="extradef" value="2" />
 	</item>
-	<item id="7421" article="an" name="onyx flail">
-		<attribute key="weight" value="2600" />
-		<attribute key="defense" value="18" />
-		<attribute key="attack" value="45" />
-		<attribute key="weaponType" value="club" />
-	</item>
 	<item id="7422" article="a" name="jade hammer">
 		<attribute key="weight" value="3200" />
 		<attribute key="defense" value="20" />
@@ -21443,8 +21437,7 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item fromid="11142" toid="11143" article="a" name="shrine" />
-	<item id="11144" article="a" name="remover skull">
-		<attribute key="description" value="Use to remove red and black skull." />
+	<item id="11144" article="a" name="nightmare doll">
 		<attribute key="weight" value="1800" />
 	</item>
 	<item fromid="11145" toid="11160" article="a" name="sand" />
@@ -22344,7 +22337,7 @@
 	<item id="11672" article="a" name="carnivortex" />
 	<item id="11673" article="a" name="toxic tulip" />
 	<item id="11674" article="a" name="sprocketwhip" />
-	<item id="13281" article="a" name="black skull" />
+	<item id="13281" article="a" name="stone skull" />
 	<item id="11676" article="a" name="wraithtongue" />
 	<item fromid="11677" toid="11678" article="a" name="acid foxglove" />
 	<item id="11679" article="a" name="dark delight" />
@@ -22991,8 +22984,8 @@
 		<attribute key="description" value="You're never sure what demonic candy balls will do, but they sure taste sweet and exciting." />
 		<attribute key="weight" value="950" />
 	</item>
-	<item id="12544" article="a" name="refill stamina">
-		<attribute key="description" value="It will refill all stamina." />
+	<item id="12544" article="a" name="sweet mangonaise elixir">
+		<attribute key="description" value="It's said to have incredible effects if you drink it while wearing a magical ring with time limit." />
 		<attribute key="weight" value="300" />
 	</item>
 	<item id="12545" name="the dead glitterscale">
@@ -24836,7 +24829,7 @@
 	<item id="13936" article="a" name="trapdoor">
 		<attribute key="floorchange" value="down" />
 	</item>
-	<item id="13928" article="a" name="rolling pin">
+	<item id="13928" article="a" name="rolling pins">
 		<attribute key="description" value="A good item to knock out unsuspicious orcs." />
 		<attribute key="weight" value="500" />
 	</item>
@@ -25235,9 +25228,9 @@
 	<item fromid="14706" toid="14749" article="a" name="hive structure" />
 	<item fromid="14750" toid="14771" article="a" name="hive gate" />
 	<item id="14772" article="an" name="insectoid antenna" />
-	<item fromid="14774" toid="14777" name="insectoid eggs" />
+	<item fromid="14774" toid="14777" name="insectoid egg" />
 	<item id="14778" name="cracked insectoid eggs" />
-	<item id="14779" name="insectoid eggs" />
+	<item id="14779" name="insectoid egg" />
 	<item fromid="14780" toid="14788" name="cracked insectoid eggs" />
 	<item fromid="14789" toid="14791" article="a" name="dry insectoid hivecomb" />
 	<item fromid="14792" toid="14794" article="an" name="insectoid hivecomb" />
@@ -28362,7 +28355,7 @@
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="19737" name="insectoid eggs" plural="insectoid eggs">
+	<item id="19737" name="insectoid eggs">
 		<attribute key="weight" value="20" />
 	</item>
 	<item id="19738" article="a" name="damselfly wing">
@@ -31009,7 +31002,6 @@
 	<item fromid="20701" toid="20715" article="a" name="basalt crystal wall" />
 	<item fromid="20723" toid="20727" article="a" name="basalt crystal wall" />
 	<item fromid="20732" toid="20743" article="a" name="basalt crystal wall" />
-	<item id="20752" article="a" name="pick" />
 	<item fromid="20753" toid="20758" article="a" name="hedge" />
 	<item id="20759" article="a" name="lurking tree" />
 	<item id="20760" article="a" name="small birch" />
@@ -34945,8 +34937,8 @@
 		<attribute key="description" value="You don't like holding it. Really don't. As if something bad was just waiting to happen." />
 		<attribute key="weight" value="30" />
 	</item>
-	<item id="22473" name="small stamina refill">
-		<attribute key="description" value="It will refill 8 hours of stamina." />
+	<item id="22473" name="essence of wishful thinking">
+		<attribute key="description" value="Just looking at it makes you feel better. What could possibly go wrong." />
 		<attribute key="weight" value="30" />
 	</item>
 	<item id="22475" article="a" name="pendulum">
@@ -35563,7 +35555,7 @@
 	<item fromid="22868" toid="22871" article="a" name="street lamp" />
 	<item fromid="22872" toid="22875" article="a" name="candle" />
 	<item id="21397" article="a" name="candle" />
-	<item fromid="22876" toid="22879" article="a" name="gear wheel" />
+	<item fromid="22876" toid="22879" article="a" name="great gear wheel" />
 	<item fromid="22889" toid="22903" article="a" name="sewer pipe" />
 	<item fromid="22904" toid="22913" name="stone floor" />
 	<item fromid="22915" toid="22940" name="stone floor" />
