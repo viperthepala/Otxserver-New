@@ -210,6 +210,12 @@
 		<attribute key="weight" value="850" />
 		<attribute key="description" value="It is a sweet candy replica of the famous Ferumbras' hat." />
 	</item>
+	<item id="26378" article="a" name="gold converter">
+		<attribute key="weight" value="1800" />
+		<attribute key="wrapableTo" value="26054" />
+		<attribute key="charges" value="500" />
+		<attribute key="showcharges" value="1" />
+	</item>
 	<item id="26377" article="an" name="Gold Pouch">
 		<attribute key="containerSize" value="8" />
 		<attribute key="description" value="A infinity bag where you can hold coins." />
