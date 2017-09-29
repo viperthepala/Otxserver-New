@@ -35,11 +35,13 @@
 	<monster name="Faun" file="feyrist/faun.xml" />
 	<monster name="Dark Faun" file="feyrist/dark faun.xml" />
 	<monster name="Enfeebled Silencer" file="feyrist/enfeebled silencer.xml" />
-	<monster name="Weakened Frazzlemaw" file="feyrist/Weakened Frazzlemaw.xml" />	   
+	<monster name="Weakened Frazzlemaw" file="feyrist/weakened frazzlemaw.xml" />	   
 	<monster name="Pixie" file="feyrist/pixie.xml" />	   
 	<monster name="Pooka" file="feyrist/pooka.xml" />	   
 	<monster name="Twisted Pooka" file="feyrist/twisted pooka.xml" />	   
 	<monster name="Nymph" file="feyrist/nymph.xml" />	   
+	<monster name="Boogy" file="feyrist/boogy.xml" />	   
+	<monster name="Swan Maiden" file="feyrist/swan maiden.xml" />	   
 	
 	<!-- Otherworld Hallsofhope bosses -->
 	<monster name="Lady Tenebris" file="Hallsofhope/bosses/Lady Tenebris.xml" />
