@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Weakened Frazzlemaw" nameDescription="a weakened frazzlemaw" race="blood" experience="550" speed="190" manacost="450">
 	<health now="600" max="600" />
-	<look type="977" corpse="22567" />
+	<look type="977" corpse="29113" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="1" />

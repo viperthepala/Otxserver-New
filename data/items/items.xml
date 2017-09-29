@@ -2485,7 +2485,7 @@
 	<item id="2073" article="a" name="drum">
 		<attribute key="weight" value="3200" />
 	</item>
-	<item id="2074" name="panpipes">
+	<item id="2074" name="panpipe">
 		<attribute key="weight" value="820" />
 	</item>
 	<item id="2075" article="a" name="simple fanfare">
@@ -36687,25 +36687,6 @@
 		<attribute key="duration" value="3" />
 		<attribute key="description" value="Only the real killers can touch me! This item was awarded by TibiaBrasileiros.com." />
 	</item>
-	<item id="30001" name="water" />
-	<item id="30002" name="blood" />
-	<item id="30003" name="beer" />
-	<item id="30004" name="slime" />
-	<item id="30005" name="lemonade" />
-	<item id="30006" name="milk" />
-	<item id="30007" name="manafluid" />
-	<item id="30010" name="lifefluid" />
-	<item id="30011" name="oil" />
-	<item id="30013" name="urine" />
-	<item id="30014" name="coconut milk" />
-	<item id="30015" name="wine" />
-	<item id="30019" name="mud" />
-	<item id="30021" name="fruit juice" />
-	<item id="30026" name="lava" />
-	<item id="30027" name="rum" />
-	<item id="30028" name="swamp" />
-	<item id="30035" name="tea" />
-	<item id="30043" name="mead" />
 	<!-- Store-->
 	<item fromid="27886" toid="27888" article="a" name="vengothic lamp">
 		<attribute key="wrapableTo" value="26054" />
@@ -37118,7 +37099,7 @@
 	<item id="28993"  article="a" name="document" />
 	<item id="28994"  article="a" name="golden brush" />
 	<item id="28995"  article="a" name="wild flowers" />
-	<item id="28996"  article="a" name="fresh fruit" />
+	<item id="28996"  article="a" name="fresh fruits" />
 	<item id="28997"  article="a" name="shimmering beetles" />
 	<item id="28998"  article="a" name="fairy wings" />
 	<item id="28999"  article="a" name="dandelion seeds" />
@@ -37178,33 +37159,175 @@
 	<item id="29048"  article="a" name="unknown" />
 	<item id="29049"  article="a" name="unknown" />
     <item fromid="29050" toid="29055" article="a" name="unknown wall" />
-	  
-	  
-
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<item id="29079" article="an" name="blossom bag">
+		<attribute key="weight" value="800" />
+		<attribute key="containerSize" value="24" />
+		<attribute key="slotType" value="backpack" />
+	</item>
+		<item id="29093" article="a" name="dead nymph">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29092" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29092" article="a" name="dead nymph">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29091" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29091" article="a" name="dead nymph">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29090" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29090" article="a" name="dead nymph">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29097" article="a" name="dead pixie">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29096" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29096" article="a" name="dead pixie">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29095" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29095" article="a" name="dead pixie">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29094" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29094" article="a" name="dead pixie">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29101" article="a" name="dead faun">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29100" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29100" article="a" name="dead faun">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29099" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29099" article="a" name="dead faun">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29098" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29098" article="a" name="dead faun">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29108" article="a" name="dead pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29107" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29107" article="a" name="dead pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29106" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29106" article="a" name="dead pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29105" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29105" article="a" name="dead pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29113" article="a" name="dead twisted pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29112" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29112" article="a" name="dead twisted pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29111" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29111" article="a" name="dead twisted pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29110" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29110" article="a" name="dead twisted pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="27630" article="a" name="prismatic quartz">
+		<attribute key="weight" value="120" />
+	</item>
+	<item id="27051" article="a" name="cave turnip">
+		<attribute key="weight" value="250" />
+	</item>
 </items>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Pooka" nameDescription="a pooka" race="blood" experience="500" speed="190" manacost="450">
-	<look type="977" corpse="22567" />
+	<look type="977" corpse="29108" />
 	<health now="600" max="600" />
 	<targetchange interval="4000" chance="10" />
 	<flags>

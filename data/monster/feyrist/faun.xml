@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Faun" nameDescription="a faun" race="blood" experience="800" speed="190" manacost="450">
 	<health now="900" max="900" />
-	<look type="980" head="81" body="115" legs="114" feet="81" corpse="20523" />
+	<look type="980" head="81" body="115" legs="114" feet="81" corpse="29101" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />
@@ -54,7 +54,7 @@
 		<item name="small stone" chance="492" />
 		<item name="small enchanted sapphire" chance="492" />
 		<item name="shimmering beetles" chance="492" />
-		<item name="cookies" countmax="4" chance="55000" />
+		<item name="cookie" countmax="4" chance="55000" />
 		<item name="prismatic quartz" chance="719" />
 		<item name="leaf star" chance="10000" />
 		<item name="grapes" chance="30100" />

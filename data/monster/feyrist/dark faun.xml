@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Dark Faun" nameDescription="a dark faun" race="blood" experience="85" speed="190" manacost="450">
-	<look type="980" head="94" body="114" legs="57" feet="94" corpse="20523" />
+	<look type="980" head="94" body="114" legs="57" feet="94" corpse="29101" />
 	<health now="1000" max="1000" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -59,7 +59,7 @@
 		<item name="small stone" countmax="4" chance="492" />
 		<item name="small enchanted sapphire" countmax="2" chance="492" />
 		<item name="shimmering beetles" chance="492" />
-		<item name="cave turnips" countmax="4" chance="55000" />
+		<item name="cave turnip" countmax="4" chance="55000" />
 		<item name="leaf legs" chance="719" />
 		<item name="rainbow quartz" countmax="3" chance="719" />
 		<item name="dark mushroom" chance="719" />
