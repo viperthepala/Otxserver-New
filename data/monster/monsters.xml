@@ -32,16 +32,16 @@
 	<monster name="Grovebeast" file="Summons/Grovebeast.xml" />
 
 	<!--Feiryst-->
-	<monster name="Faun" file="feyrist/faun.xml" />
-	<monster name="Dark Faun" file="feyrist/dark faun.xml" />
-	<monster name="Enfeebled Silencer" file="feyrist/enfeebled silencer.xml" />
-	<monster name="Weakened Frazzlemaw" file="feyrist/weakened frazzlemaw.xml" />	   
-	<monster name="Pixie" file="feyrist/pixie.xml" />	   
-	<monster name="Pooka" file="feyrist/pooka.xml" />	   
-	<monster name="Twisted Pooka" file="feyrist/twisted pooka.xml" />	   
-	<monster name="Nymph" file="feyrist/nymph.xml" />	   
-	<monster name="Boogy" file="feyrist/boogy.xml" />	   
-	<monster name="Swan Maiden" file="feyrist/swan maiden.xml" />	   
+	<monster name="Faun" file="Feyrist/faun.xml" />
+	<monster name="Dark Faun" file="Feyrist/dark_faun.xml" />
+	<monster name="Enfeebled Silencer" file="Feyrist/enfeebled_silencer.xml" />
+	<monster name="Weakened Frazzlemaw" file="Feyrist/weakened_frazzlemaw.xml" />	   
+	<monster name="Pixie" file="Feyrist/pixie.xml" />	   
+	<monster name="Pooka" file="Feyrist/pooka.xml" />	   
+	<monster name="Twisted Pooka" file="Feyrist/twisted_pooka.xml" />	   
+	<monster name="Nymph" file="Feyrist/nymph.xml" />	   
+	<monster name="Boogy" file="Feyrist/boogy.xml" />	   
+	<monster name="Swan Maiden" file="Feyrist/swan_maiden.xml" />	   
 	
 	<!-- Otherworld Hallsofhope bosses -->
 	<monster name="Lady Tenebris" file="Hallsofhope/bosses/Lady Tenebris.xml" />
@@ -530,7 +530,7 @@
 	<monster name="Shaburak Lord" file="Demons/shaburak_lord.xml" />
 	<monster name="Shaburak Prince" file="Demons/shaburak_prince.xml" />
 	<monster name="Yielothax" file="Demons/yielothax.xml" />
-    <monster name="Rift Invader" file="Demons/rift invader.xml"/>	
+    <monster name="Rift Invader" file="Demons/rift_invader.xml"/>	
 
 	<!-- Djinn -->
 	<monster name="Blue Djinn" file="Djinn/blue_djinn.xml" />
