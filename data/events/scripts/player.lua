@@ -396,10 +396,13 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 	end
 
 	-- No move if item count > 26 items
-	if tile and tile:getItemCount() > 26 then
-		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-		return false
-	end
+		if toPosition ~= nil then
+        if Tile(toPosition):getItemCount() >= 20 then
+            self:sendCancelMessage("Sorry, not possible.")
+            return false
+        end
+    return true
+end
 
 	if tile and tile:getItemById(370) then -- Trapdoor
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)

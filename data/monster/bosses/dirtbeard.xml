@@ -19,7 +19,6 @@
 		<flag canwalkonfire="0" />
 		<flag canwalkonpoison="0" />
 	</flags>
-	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" min="0" max="-125" />
 		<attack name="physical" interval="2000" chance="30" range="7" min="0" max="-100">
