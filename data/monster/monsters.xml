@@ -704,7 +704,7 @@
 	<monster name="Goblin Assassin" file="Goblins/goblin_assassin.xml" />
 	<monster name="Goblin Leader" file="Goblins/goblin_leader.xml" />
 	<monster name="Goblin Scavenger" file="Goblins/goblin_scavenger.xml" />
-	<monster name="Demon (Goblin)" file="Goblins/demon_(goblin).xml" />
+	<monster name="Demon Goblin" file="Goblins/demon_goblin.xml" />
 
 	<!-- Hydro-Elementals -->
 	<monster name="Massive Water Elemental" file="Hydro-Elementals/massive_water_elemental.xml" />
