@@ -109,14 +109,14 @@
 	<movevent event="StepIn" fromuid="9069" touid="9120" script="others/shrinesportal.lua" />
 	<movevent event="StepIn" actionid="9117" script="others/shrinesportal_out.lua" />
 
-	<!-- oramond caterot -->
+	<!-- oramond -->
 	<movevent event="StepIn" actionid="42626" script="oramond/enterOramond.lua" />
 	<movevent event="StepIn" actionid="42627" script="oramond/enterOramond.lua" />
 	<movevent event="StepIn" actionid="42628" script="oramond/votingOramond.lua" />
-	<movevent event="StepIn" actionid="42630" script="oramond/enterCidade.lua" />
-	<movevent event="StepIn" actionid="42631" script="oramond/enterCidade.lua" />
-	<movevent event="StepIn" actionid="36489" script="oramond/enterBuero.lua" />
-	<movevent event="StepIn" actionid="50389" script="oramond/enterBuero.lua" />
+	<movevent event="StepIn" actionid="42630" script="oramond/enterCity.lua" />
+	<movevent event="StepIn" actionid="42631" script="oramond/enterCity.lua" />
+	<movevent event="StepIn" actionid="36489" script="oramond/enterGlooth.lua" />
+	<movevent event="StepIn" actionid="50389" script="oramond/enterGlooth.lua" />
 	<movevent event="StepIn" actionid="50390" script="oramond/fibula.lua" />
 	<movevent event="StepIn" uniqueid="26798" script="others/seacrest.lua" />
 	
