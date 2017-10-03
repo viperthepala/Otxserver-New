@@ -16,20 +16,31 @@ function onCastSpell(creature, variant)
 			elseif vocationid == 8 then
 				pet = "Skullfrost"
 		end
+		
+		
             
 	local monsterType = MonsterType(pet)
+	
+	if monsterType == nil then
+		creature:sendCancelMessage("You vocation cannot use this spell.")
+		return false
+		end
+	
 	
 		if not monsterType:isPet() then
 			creature:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 			creature:getPosition():sendMagicEffect(CONST_ME_POFF)
+			return false
+end
+
 
 			
 		if #creature:getSummons() >= 1 then
 			creature:sendCancelMessage("You cannot summon more creatures.")
 			creature:getPosition():sendMagicEffect(CONST_ME_POFF)
 			return false
-			end
-	end
+			
+end
 	
 	local position = creature:getPosition()
 	local summonpet = Game.createMonster(pet,position)
