@@ -26426,7 +26426,7 @@
 		<attribute key="description" value="It was created by Tibia's finest bakers for the celebration of 15 years of Tibia." />
 	</item>
 	<item id="24774" article="a" name="Tibia coin">
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="1" />
 		<attribute key="description" value="Tibia Coins are needed to shop exclusive products in the Store, including fabulous mounts, classy outfits, a Name Change or even Premium Time." />
 	</item>
 	<item id="16015" article="a" name="Chayenne's magical key">
@@ -26488,7 +26488,7 @@
 	</item>
 	<item id="16101" article="a" name="Tibia Coins">
 		<attribute key="description" value="Using this scroll will add 30 Tibia Coins to your account once." />
-		<attribute key="weight" value="0" />
+		<attribute key="weight" value="1" />
 	</item>
 	<item id="16102" article="a" name="surprise nest">
 		<attribute key="weight" value="2000" />
