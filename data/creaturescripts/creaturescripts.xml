@@ -76,7 +76,6 @@
 
 	<!-- Recompense by level -->
 	<event type="advance" name="Recompense" script="others/recompense.lua"/>
-	<event type="login" name="bless1" script="adventureblessings.lua"/>
 	
     <!-- ragingmagetower -->
 	<event type="kill" name="Yielothax" script="ragingmagetower/yielothax.lua"/>
