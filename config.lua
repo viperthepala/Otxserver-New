@@ -38,8 +38,8 @@ maxPacketsPerSecond = 25
 
 -- Version Manual
 clientVersionMin = 1100
-clientVersionMax = 1147
-clientVersionStr = "Only clients with protocol version 11.47 are allowed!"
+clientVersionMax = 1148
+clientVersionStr = "Only clients with protocol version 11.48 are allowed!"
 
 -- Depot Limit
 depotBoxes = 17
