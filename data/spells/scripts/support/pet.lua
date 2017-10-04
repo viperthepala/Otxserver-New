@@ -5,16 +5,16 @@ function onCastSpell(creature, variant)
 		
 	    vocationid = creature:getVocation():getId()
 	        if  vocationid == 5 then
-				pet = "Thundergiant"
+				pet = "thundergiant"
 			
 			elseif vocationid == 6 then
-				pet = "Grovebeast"
+				pet = "grovebeast"
 			
 			elseif vocationid == 7 then
-				pet = "Emberwing"
+				pet = "emberwing"
 
 			elseif vocationid == 8 then
-				pet = "Skullfrost"
+				pet = "skullfrost"
 		end
 		
 		
