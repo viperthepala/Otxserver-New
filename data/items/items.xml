@@ -165,6 +165,9 @@
 	<item fromid="20977" toid="20978" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item id="20979" article="a" name="ramp">
+		<attribute key="floorchange" value="east" />
+	</item>
 	<item id="20980" article="a" name="ramp" />
 	<item id="20981" article="a" name="ramp">
 		<attribute key="floorchange" value="west" />
