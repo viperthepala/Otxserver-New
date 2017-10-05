@@ -26743,6 +26743,12 @@
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="undead" />
 	</item>
+	<item id="17421" article="a" name="dead cliff strider">
+		<attribute key="containerSize" value="25" />
+		<attribute key="decayTo" value="17422" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="undead" />
+	</item>
 	<item id="7421" article="an" name="onyx flail">
 		<attribute key="weight" value="2600" />
 		<attribute key="defense" value="18" />
