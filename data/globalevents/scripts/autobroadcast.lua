@@ -6,7 +6,7 @@ function onThink(interval, lastExecution)
 	"[TEAMSPEAK3]: Servidor de teamSpeak 3 com 1000 slots disponiveis, liberado para criar salas particulares e com senha.",
 	"[REGRAS]: Evite ser punido, não viole nossas regras.",
 	"[SISTEMA]: O global save do servidor ocorre todos os dias às 06:00hrs.",
-	"[COMANDOS]: !buyhouse - !serverinfo - !online - !uptime."
+	"[SEGURANÇA]: Proteja sua senha. Use-a apenas em nosso website oficial."
 	}
 
     Game.broadcastMessage(messages[math.random(#messages)], MESSAGE_EVENT_ADVANCE) 
