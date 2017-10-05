@@ -4,8 +4,7 @@ ITEM_STORE_INBOX = 26052
 GOLD_POUNCH = 26377
 
 -- No move items with actionID 8000
--- Players cannot throw items on teleports if set to true
-local blockTeleportTrashing = true
+NOT_MOVEABLE_ACTION = 8000
 
 -- Players cannot throw items on teleports if set to true
 local blockTeleportTrashing = true
@@ -307,6 +306,11 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		end
 	end
 
+	-- No move gold pounch
+	if (containerTo:getId() == GOLD_POUNCH) then
+		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		return false
+	end
 	-- No move items with actionID 8000
 	if item:getActionId() == NOT_MOVEABLE_ACTION then
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
