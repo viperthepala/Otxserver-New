@@ -188,6 +188,55 @@ function Player:onLookInShop(itemType, count)
 	return true
 end
 
+local config = {
+    maxItemsPerSeconds = 1,
+    exhaustTime = 2000,
+}
+
+if not pushDelay then
+    pushDelay = { }
+end
+
+local function antiPush(self, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
+    if toPosition.x == CONTAINER_POSITION then
+        return true
+    end
+
+    local tile = Tile(toPosition)
+    if not tile then
+        self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+        return false
+    end
+
+    local cid = self:getId()
+    if not pushDelay[cid] then
+        pushDelay[cid] = {items = 0, time = 0}
+    end
+
+    pushDelay[cid].items = pushDelay[cid].items + 1
+
+    local currentTime = os.mtime()
+    if pushDelay[cid].time == 0 then
+        pushDelay[cid].time = currentTime
+    elseif pushDelay[cid].time == currentTime then
+        pushDelay[cid].items = pushDelay[cid].items + 1
+    elseif currentTime > pushDelay[cid].time then
+        pushDelay[cid].time = 0
+        pushDelay[cid].items = 0
+    end
+
+    if pushDelay[cid].items > config.maxItemsPerSeconds then
+        pushDelay[cid].time = currentTime + config.exhaustTime
+    end
+
+    if pushDelay[cid].time > currentTime then
+        self:sendCancelMessage("You can't move that item so fast.")
+        return false
+    end
+
+    return true
+end
+
 function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	--- LIONS ROCK START 
 	if self:getStorageValue(lionrock.storages.playerCanDoTasks) - os.time() < 0 then
@@ -411,51 +460,9 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		return false
 	end
 
-	-- Anti push
-	local config = {
-    maxItemsPerSeconds = 1,
-    exhaustTime = 500,
-}
-
-if not pushDelay then
-    pushDelay = { }
-end
-
-    if toPosition.x == CONTAINER_POSITION then
-       return true
-    end
-
-    local tile = Tile(toPosition)
-    if not tile then
-        self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-        return false
-    end
-
-    local cid = self:getId()
-    if not pushDelay[cid] then
-        pushDelay[cid] = {items = 0, time = 0}
-    end
-
-    pushDelay[cid].items = pushDelay[cid].items + 1
-
-    local currentTime = os.mtime()
-    if pushDelay[cid].time == 0 then
-        pushDelay[cid].time = currentTime
-    elseif pushDelay[cid].time == currentTime then
-        pushDelay[cid].items = pushDelay[cid].items + 1
-    elseif currentTime > pushDelay[cid].time then
-        pushDelay[cid].time = 0
-        pushDelay[cid].items = 0
-    end
-
-    if pushDelay[cid].items > config.maxItemsPerSeconds then
-        pushDelay[cid].time = currentTime + config.exhaustTime
-    end
-
-    if pushDelay[cid].time > currentTime then
-        self:sendCancelMessage("You can't move that item so fast.")
-        return false
-    end
+	if not antiPush(self, item, count, fromPosition, toPosition, fromCylinder, toCylinder) then
+		return false
+	end
 
 	return true
 end
