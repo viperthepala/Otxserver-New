@@ -307,7 +307,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 	end
 
 	-- No move gold pounch
-	if (containerTo:getId() == GOLD_POUNCH) then
+	if item:getId() == GOLD_POUNCH then
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false
 	end
