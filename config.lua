@@ -104,9 +104,9 @@ classicAttackSpeed = false
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
 rateExp = 1
-rateSkill = 1
-rateLoot = 1
-rateMagic = 1
+rateSkill = 50
+rateLoot = 3
+rateMagic = 25
 rateSpawn = 1
 
 -- Monster rates

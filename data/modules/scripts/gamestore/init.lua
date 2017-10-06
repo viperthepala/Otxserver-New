@@ -81,6 +81,14 @@ GameStore.RecivedPackets = {
 	C_RequestTransactionHistory = 0xFE, -- 254
 }
 
+GameStore.ExpBoostValues = {
+	[1] = 30,
+	[2] = 45,
+	[3] = 90,
+	[4] = 180,
+	[5] = 360
+}
+
 GameStore.DefaultValues = {
 	DEFAULT_VALUE_ENTRIES_PER_PAGE	= 16
 }
@@ -652,6 +660,17 @@ function sendShowStoreOffers(playerId, category)
 					if GameStore.canAddPromotionToPlayer(playerId, offer.thingId).ability == false then
 						disabled = 1
 						disabledReason = "You can't get this promotion"
+					end
+				elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT then
+					local unlockedColumns = player:getPreySlots()
+					if (unlockedColumns == 2) then
+						disabled = 1
+						disabledReason = "You already have 3 slots released."
+					end
+					elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST then
+					if (player:getStorageValue(51052) == 5) then
+						disabled = 1
+						disabledReason = "You can't buy XP Boost for today."
 					end
 				end
 			end

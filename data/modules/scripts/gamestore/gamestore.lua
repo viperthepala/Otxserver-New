@@ -65,7 +65,7 @@ GameStore.Categories = {
 		rookgaard = false,
 		icons = {"Category_Boosts.png"},
 		offers = {
-			{name = "XP Boost 50%", state = GameStore.States.STATE_NEW, type = GameStore.OfferTypes.OFFER_TYPE_EXPBOOST, price = 99, icons = {"xpboosticon.png"}, description="50% XP Boost for 1 hour!"},
+			{name = "XP Boost 50%", state = GameStore.States.STATE_NEW, type = GameStore.OfferTypes.OFFER_TYPE_EXPBOOST, price = 30, icons = {"xpboosticon.png"}, description="50% XP Boost for 1 hour!"},
 		}
 	},
 	{

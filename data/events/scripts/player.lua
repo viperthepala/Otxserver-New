@@ -775,6 +775,23 @@ function Player:onGainExperience(source, exp, rawExp)
 	-- Exp Boost Modifier
 	useStaminaXp(self)
 
+	-- Exp stats
+	local staminaMinutes = self:getStamina()
+	local Boost = self:getExpBoostStamina()
+	if staminaMinutes > 2400 and self:isPremium() and Boost > 0 then
+		self:setBaseXpGain(200) -- 200 = 1.0x, 200 = 2.0x, ... premium account		
+	elseif staminaMinutes > 2400 and self:isPremium() and Boost <= 0 then
+		self:setBaseXpGain(150) -- 150 = 1.0x, 150 = 1.5x, ... premium account	
+	elseif staminaMinutes <= 2400 and staminaMinutes > 840 and self:isPremium() and Boost > 0 then
+		self:setBaseXpGain(150) -- 150 = 1.5x		premium account
+	elseif staminaMinutes > 840 and Boost > 0 then
+		self:setBaseXpGain(150) -- 150 = 1.5x		free account
+	elseif staminaMinutes <= 840 and Boost > 0 then
+		self:setBaseXpGain(100) -- 50 = 0.5x	all players	
+	elseif staminaMinutes <= 840 then
+		self:setBaseXpGain(50) -- 50 = 0.5x	all players	
+	end
+
 	-- Stamina modifier
 	if configManager.getBoolean(configKeys.STAMINA_SYSTEM) then
 		useStamina(self)

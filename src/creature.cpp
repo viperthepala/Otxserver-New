@@ -1112,7 +1112,6 @@ void Creature::onGainExperience(uint64_t gainExp, Creature* target)
 		return;
 	}
 
-	gainExp /= 2;
 	master->onGainExperience(gainExp, target);
 
 	SpectatorHashSet spectators;
