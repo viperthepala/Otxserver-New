@@ -439,6 +439,11 @@ function parseBuyStoreOffer(playerId, msg)
 
 			player:setStoreXpBoost(50)
 			player:setExpBoostStamina(currentExpBoostTime + 3600)
+			if (player:getStorageValue(51052) == -1) then
+				player:setStorageValue(51052, 1)
+			end
+
+			player:setStorageValue(51052, player:getStorageValue(51052) + 1)
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT then
 			local unlockedColumns = player:getPreySlots()
 			if (unlockedColumns == 2) then
