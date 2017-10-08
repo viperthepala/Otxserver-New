@@ -10,6 +10,16 @@ function onStepIn(creature, item, position, fromPosition)
 		return true
 	end
 
-	player:teleportTo(fromPosition, true)
+		if position == fromPosition then
+			if creature:isPlayer() then
+				local temple = creature:getTown():getTemplePosition()
+				creature:teleportTo(temple, false)
+			else
+				creature:remove()	
+			end
+		else
+			creature:teleportTo(fromPosition, false)
+		end
+ 	end
 	return true
 end
