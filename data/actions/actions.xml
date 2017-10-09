@@ -945,7 +945,6 @@
 	<action itemid="20255" script="other/constructionkits.lua" />
 	<action itemid="20257" script="other/constructionkits.lua" />
 
-	<action itemid="24683" script="vipbless.lua"/>
 	
 	<action fromid="7904" toid="7907" script="other/bed_modification_kits.lua" />
 	<action itemid="20252" script="other/bed_modification_kits.lua" />
