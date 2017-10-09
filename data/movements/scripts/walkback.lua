@@ -20,6 +20,5 @@ function onStepIn(creature, item, position, fromPosition)
 		else
 			creature:teleportTo(fromPosition, false)
 		end
- 	end
 	return true
 end
