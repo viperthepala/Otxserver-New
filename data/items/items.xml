@@ -37319,6 +37319,14 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
+	<item id="29109" article="a" name="dead pooka">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29108" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
 	<item id="29108" article="a" name="dead pooka">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
@@ -37408,6 +37416,38 @@
 		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="29105" article="a" name="dead boogy">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29117" article="a" name="dead swan maiden">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29116" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29116" article="a" name="dead boogy">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29115" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29115" article="a" name="dead boogy">
+		<attribute key="weight" value="60000" />
+		<attribute key="containerSize" value="10" />
+		<attribute key="decayTo" value="29114" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="29114" article="a" name="dead boogy">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="0" />
