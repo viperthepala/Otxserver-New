@@ -251,15 +251,20 @@ function parseBuyStoreOffer(playerId, msg)
 			return addPlayerEvent(sendStoreError, 250, playerId, GameStore.StoreErrors.STORE_ERROR_NETWORK, "The offer is either fake or corrupt.")
 		end
 
+		local newPrice = nil
+		if offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST then
+			newPrice = GameStore.ExpBoostValues[player:getStorageValue(51052)]
+		end
+
 		-- We remove coins before doing everything, if it fails, we add coins back!
-		if not player:canRemoveCoins(offer.price) then
+		if not player:canRemoveCoins(newPrice or offer.price) then
 			return addPlayerEvent(sendStoreError, 250, playerId, GameStore.StoreErrors.STORE_ERROR_NETWORK, "We couldn't remove coins from your account, try again later.")
 		end
 
 		-- count is used in type(item), so we need to show (i.e 10x crystal coins)
 		local offerCountStr = offer.count and (offer.count .. "x ") or ""
 		-- The message which we will send to player!
-		local message = "You have purchased " .. offerCountStr .. offer.name .. " for " .. offer.price .. " coins."
+		local message = "You have purchased " .. offerCountStr .. offer.name .. " for " .. (newPrice or offer.price) .. " coins."
 
 		-- If offer is item.
 		if offer.type == GameStore.OfferTypes.OFFER_TYPE_ITEM then
@@ -439,11 +444,13 @@ function parseBuyStoreOffer(playerId, msg)
 
 			player:setStoreXpBoost(50)
 			player:setExpBoostStamina(currentExpBoostTime + 3600)
-			if (player:getStorageValue(51052) == -1) then
+
+			if (player:getStorageValue(51052) == -1 or player:getStorageValue(51052) == 6) then
 				player:setStorageValue(51052, 1)
 			end
 
 			player:setStorageValue(51052, player:getStorageValue(51052) + 1)
+			player:setStorageValue(51053, os.time()) -- last bought
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PREYSLOT then
 			local unlockedColumns = player:getPreySlots()
 			if (unlockedColumns == 2) then
@@ -470,9 +477,9 @@ function parseBuyStoreOffer(playerId, msg)
 			return addPlayerEvent(sendStoreError, 250, playerId, GameStore.StoreErrors.STORE_ERROR_NETWORK, "This offer is fake, please contact admin.")
 		end
 		-- Removing coins
-		player:removeCoinsBalance(offer.price)
+		player:removeCoinsBalance(newPrice or offer.price)
 		-- We add this purchase to history!
-		GameStore.insertHistory(player:getAccountId(), GameStore.HistoryTypes.HISTORY_TYPE_NONE, offerCountStr .. offer.name, offer.price * -1)
+		GameStore.insertHistory(player:getAccountId(), GameStore.HistoryTypes.HISTORY_TYPE_NONE, offerCountStr .. offer.name, (newPrice or offer.price) * -1)
 		-- Send to client that purchase is successful!
 		return addPlayerEvent(sendStorePurchaseSuccessful, 650, playerId, message)
 	end
@@ -589,7 +596,17 @@ function sendShowStoreOffers(playerId, category)
 				end
 			end
 
-			msg:addU32(newPrice or offer.price or 0xFFFF)
+			xpBoostPrice = nil
+			if offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST then
+				xpBoostPrice = GameStore.ExpBoostValues[player:getStorageValue(51052)]
+			end
+
+			if xpBoostPrice then
+				msg:addU32(xpBoostPrice)
+			else
+				msg:addU32(newPrice or offer.price or 0xFFFF)
+			end
+
 			if (offer.state) then
 				if (offer.state == GameStore.States.STATE_SALE) then
 					local daySub = offer.validUntil-os.date("*t").day
@@ -673,7 +690,7 @@ function sendShowStoreOffers(playerId, category)
 						disabledReason = "You already have 3 slots released."
 					end
 					elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_EXPBOOST then
-					if (player:getStorageValue(51052) == 5) then
+					if (player:getStorageValue(51052) == 6 and (os.time() - player:getStorageValue(51053)) < 86400)  then
 						disabled = 1
 						disabledReason = "You can't buy XP Boost for today."
 					end
