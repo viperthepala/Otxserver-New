@@ -103,6 +103,10 @@ if ($isCasting) {
 }
 
 $session = array(
+	"fpstracking" => false,
+	"isreturner" => true,
+	"returnernotification" => false,
+	"showrewardnews" => false,
 	"sessionkey" => $accountName . "\n" . $password,
 	"lastlogintime" => $lastLogin,
     "ispremium" => true,
@@ -117,8 +121,7 @@ $world = array(
 	"externalport" => $port,
 	"previewstate" => 0,
     "location" => "BRA",
-    "externaladdressunprotected" => $config["server"]["ip"],
-    "externaladdressprotected" => $config["server"]["ip"]
+    "anticheatprotection" => false
 );
 
 $worlds = array($world);
