@@ -1158,6 +1158,12 @@ ALTER TABLE `market_offers`
   ADD KEY `sale` (`sale`,`itemtype`),
   ADD KEY `created` (`created`),
   ADD KEY `player_id` (`player_id`);
+  
+--
+-- Indexes for table `newsticker`
+--
+ALTER TABLE `newsticker`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pagseguro_transactions`
@@ -1362,6 +1368,11 @@ ALTER TABLE `market_history`
 -- AUTO_INCREMENT for table `market_offers`
 --
 ALTER TABLE `market_offers`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `market_offers`
+--
+ALTER TABLE `newsticker`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `players`
