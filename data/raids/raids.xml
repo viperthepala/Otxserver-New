@@ -31,12 +31,12 @@
 	<raid name="Tarantulas" file="rookgaard/tarantula.xml" interval2="500" margin="70" />
 	
 	<!-- Raids Ankrahmun -->
-	<raid name="Terramite" file="ankrahmun/terramite.xml" interval2="500" margin="70" />	
-	<raid name="Nomad" file="ankrahmun/nomad.xml" interval2="500" margin="70" />
-	<raid name="Scarab" file="ankrahmun/scarab.xml" interval2="500" margin="60" />	
-	<raid name="Cobra" file="ankrahmun/cobra.xml" interval2="500" margin="70" />
-	<raid name="Bonebeast" file="ankrahmun/bonebeast.xml" interval2="500" margin="70" />
-	<raid name="Gargoyle" file="ankrahmun/gargoyle.xml" interval2="500" margin="70" />
+	<raid name="Terramite" file="ankrahmun/Terramite.xml" interval2="500" margin="70" />	
+	<raid name="Nomad" file="ankrahmun/Nomad.xml" interval2="500" margin="70" />
+	<raid name="Scarab" file="ankrahmun/Scarab.xml" interval2="500" margin="60" />	
+	<raid name="Cobra" file="ankrahmun/Cobra.xml" interval2="500" margin="70" />
+	<raid name="Bonebeast" file="ankrahmun/Bonebeast.xml" interval2="500" margin="70" />
+	<raid name="Gargoyle" file="ankrahmun/Gargoyle.xml" interval2="500" margin="70" />
 	
 	<!-- Raids Darashia -->
 	<raid name="Undead Darashia" file="darashia/undead_darashia.xml" interval2="500" margin="70" />
