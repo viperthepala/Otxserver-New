@@ -2,6 +2,10 @@
 
 Servidor de Tibia mantido por Malucooo. O servidor usa como base OTX Server 3.10.
 
+# Caso queira adicionar mais sistemas, que não temos aqui no nosso repositório:
+Temos um desenvolvedor a indicar, pois como muitos sabem existem pessoas que revendem sistemas, recebem a grana e desaparece sem dar o suporte...
+Contato Whatsapp: +5562982474679
+
 # Tutoriais
 Temos uma Wiki explicando como compilar o servidor  [OTXServer Wiki](https://github.com/malucooo/Otxserver-New/wiki)
 
