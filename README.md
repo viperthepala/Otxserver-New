@@ -4,6 +4,7 @@ Servidor de Tibia mantido por Malucooo. O servidor usa como base OTX Server 3.10
 
 # Caso necessite de um especialista na área:
 Temos um desenvolvedor a indicar, pois como muitos sabem existem pessoas que revendem sistemas, recebem a grana e desaparece sem dar o suporte... consulte-o e adicione mais alguns sistemas a sua datapack!
+
 Contato Whatsapp: +5562982474679
 
 # Tutoriais
