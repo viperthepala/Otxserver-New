@@ -133,6 +133,7 @@
 	<event type="kill" name="PythiusTheRotten" script="others/PythiusTheRotten.lua" />
 
 	<!-- Others -->
+	<event type="think" name="Idle" event="script" value="idle.lua"/>
 	<event type="login" name="AdventurerBlessings" script="adventureblessings.lua"/>
 	<event type="healthchange" name="ImpactAnalyzer" script="others/impact_analyzer.lua" />
 	<event type="login" name="PlayerLogin" script="others/login.lua" />

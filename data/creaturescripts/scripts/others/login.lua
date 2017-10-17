@@ -57,6 +57,7 @@ local events = {
 	'SpikeTaskQuestCrystal',
 	'SpikeTaskQuestDrillworm',
 	'petlogin',
+	'Idle',
 	'petthink'
 }
  
@@ -208,7 +209,8 @@ function onLogin(player)
     for i = 1, #events do
         player:registerEvent(events[i])
     end
- 	
+ 
+ 
     if player:getStorageValue(Storage.combatProtectionStorage) <= os.time() then
         player:setStorageValue(Storage.combatProtectionStorage, os.time() + 10)
         onMovementRemoveProtection(playerId, player:getPosition(), 10)
