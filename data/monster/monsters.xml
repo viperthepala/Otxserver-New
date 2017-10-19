@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+    <!-- NOSTALGIA -->		
+	<monster file="Nostalgia/old_bear.xml" name="BearOld"/>
+	<monster file="Nostalgia/old_bonelord.xml" name="BonelordOld"/>
+	<monster file="Nostalgia/old_bug.xml" name="BugOld"/>
+	<monster file="Nostalgia/old_giant_spider.xml" name="Giant SpiderOld"/>
+	<monster file="Nostalgia/old_pig.xml" name="PigOld"/>
+	<monster file="Nostalgia/old_spider.xml" name="SpiderOld"/>
+	<monster file="Nostalgia/old_wasp.xml" name="WaspOld"/>
+	<monster file="Nostalgia/old_wolf.xml" name="WolfOld"/>
+
     <!-- DAWNPORT -->		
 	<monster file="Dawnport/weakened_shlorg.xml" name="Weakened Shlorg"/>
 	<monster file="Dawnport/mountain troll.xml" name="Mountain Troll"/>
