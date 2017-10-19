@@ -18066,10 +18066,11 @@
 	</item>
 	<item id="8928" article="an" name="obsidian truncheon">
 		<attribute key="weight" value="6500" />
-		<attribute key="defense" value="40" />
-		<attribute key="attack" value="60" />
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="50" />
 		<attribute key="weaponType" value="club" />
 		<attribute key="imbuingSlots" value="1" />
+		<attribute key="extradef" value="2" />
 	</item>
 	<item id="8929" name="the stomper">
 		<attribute key="weight" value="11500" />
