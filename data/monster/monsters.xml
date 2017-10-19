@@ -332,12 +332,14 @@
 
 	<!-- Bosses -->
 	<monster name="Abyssador" file="Bosses/abyssador.xml" />
+	<monster name="Ascending Ferumbras" file="Bosses/Ascending Ferumbras.xml" />
 	<monster name="Annihilon" file="Bosses/annihilon.xml" />
 	<monster name="Apocalypse" file="Bosses/apocalypse.xml" />
 	<monster name="Apprentice Sheng" file="Bosses/apprentice_sheng.xml" />
 	<monster name="Arachir the Ancient One" file="Bosses/arachir_the_ancient_one.xml" />
 	<monster name="Armenius" file="Bosses/armenius.xml" />
 	<monster name="Azerus" file="Bosses/azerus.xml" />
+	<monster name="Azerus2" file="Bosses/azerus2.xml" />
 	<monster name="Barbaria" file="Bosses/barbaria.xml" />
 	<monster name="Baron Brute" file="Bosses/baron_brute.xml" />
 	<monster name="Battlemaster Zunzu" file="Bosses/battlemaster_zunzu.xml" />
@@ -368,6 +370,9 @@
 	<monster name="Fatality" file="Bosses/fatality.xml" />
 	<monster name="Fernfang" file="Bosses/fernfang.xml" />
 	<monster name="Ferumbras" file="Bosses/ferumbras.xml" />
+	<monster name="Ferumbras Essence" file="Bosses/Ferumbras Essence.xml" />
+	<monster name="Ferumbras Mortal Shell" file="Bosses/Ferumbras Mortal Shell.xml" />
+	<monster name="Ferumbras Soul Splinter" file="Bosses/Ferumbras Soul Splinter.xml" />
 	<monster name="Fleshslicer" file="Bosses/fleshslicer.xml" />
 	<monster name="Fluffy" file="Bosses/fluffy.xml" />
 	<monster name="Foreman Kneebiter" file="Bosses/foreman_kneebiter.xml" />
