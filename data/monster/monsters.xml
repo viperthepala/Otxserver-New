@@ -429,6 +429,7 @@
 	<monster name="Morik the Gladiator" file="Bosses/morik_the_gladiator.xml" />
 	<monster name="Mr. Punish" file="Bosses/mr._punish.xml" />
 	<monster name="Munster" file="Bosses/munster.xml" />
+	<monster name="Mutated Zalamon" file="Bosses/mutated zalamon.xml" />
 	<monster name="Necropharus" file="Bosses/necropharus.xml" />
 	<monster name="Obujos" file="Bosses/obujos.xml" />
 	<monster name="Orshabaal" file="Bosses/orshabaal.xml" />
