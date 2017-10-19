@@ -37180,6 +37180,8 @@
 		<attribute key="weaponType" value="shield" />
 		<attribute key="imbuingSlots" value="1" />
 	</item>
+	<item id="27058"  article="an" name="ancient coin" />
+	<item id="27059"  article="a" name="coral brooch" />
 	<item id="29005"  article="a" name="single human eye" />
 	<item id="29006"  article="a" name="little bowl of myrrh" />
 	
@@ -37432,7 +37434,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29116" article="a" name="dead boogy">
+	<item id="29116" article="a" name="dead swan maiden">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="29115" />
@@ -37440,7 +37442,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29115" article="a" name="dead boogy">
+	<item id="29115" article="a" name="dead swan maiden">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="29114" />
@@ -37448,7 +37450,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="29114" article="a" name="dead boogy">
+	<item id="29114" article="a" name="dead swan maiden">
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="0" />

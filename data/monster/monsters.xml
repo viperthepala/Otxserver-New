@@ -59,7 +59,6 @@
    
     <!-- Halls of Hope -->
 	<monster name="A Shielded Astral Glyph" file="Hallsofhope/A Shielded Astral Glyph.xml" />
-	<monster name="Stone Rhino" file="Hallsofhope/Stone Rhino.xml" />
 	<monster name="An Observer Eye (Imune)" file="Hallsofhope/An Observer Eye (Imune).xml" />
 	<monster name="Angry Plant" file="Hallsofhope/Angry Plant.xml" />
 	<monster name="Animated Sword" file="Hallsofhope/Animated Sword.xml" />
@@ -73,13 +72,38 @@
 	<monster name="Cosmic Energy Prism C" file="Hallsofhope/Cosmic Energy Prism C.xml" />
 	<monster name="Cosmic Energy Prism D" file="Hallsofhope/Cosmic Energy Prism D.xml" />
 	<monster name="Diamond Servant Replica" file="Hallsofhope/Diamond Servant Replica.xml" />
-	<monster name="Golden Servant Replica" file="Hallsofhope/Golden Servant Replica.xml" />
 	<monster name="Dragon Essence" file="Hallsofhope/Dragon Essence.xml" />
 	<monster name="Dragon Warden" file="Hallsofhope/Dragon Warden.xml" />
+	<monster name="Golden Servant Replica" file="Hallsofhope/Golden Servant Replica.xml" />
+	<monster name="Fallen Challenger" file="Hallsofhope/Fallen Challenger.xml" />  
+	<monster name="Frozen Man" file="Hallsofhope/Frozen Man.xml" />  
+	<monster name="Frozen Minion" file="Hallsofhope/Frozen Minion.xml" />  
+	<monster name="Ice Dragon" file="Hallsofhope/Ice Dragon.xml" />  
+	<monster name="Icicle" file="Hallsofhope/Icicle.xml" />  
+	<monster name="Iron Servant Replica" file="Hallsofhope/Iron Servant Replica.xml" />
+	<monster name="Lost Time" file="Hallsofhope/Lost Time.xml" />
 	<monster name="Orclops Doomhauler" file="Hallsofhope/Orclops Doomhauler.xml" />
 	<monster name="Orclops Ravager" file="Hallsofhope/Orclops Ravager.xml" />
-	<monster name="Twisted Shaper" file="Hallsofhope/Twisted Shaper.xml" />
+	<monster name="Pinata Dragon" file="Hallsofhope/Pinata Dragon.xml" />
+	<monster name="Possessed Tree" file="Hallsofhope/Possessed Tree.xml" />
+	<monster name="Shadow Fiend" file="Hallsofhope/Shadow Fiend.xml" />  
+	<monster name="Shadow Tentacle" file="Hallsofhope/Shadow Tentacle.xml" />  
 	<monster name="Shaper Matriarch" file="Hallsofhope/Shaper Matriarch.xml" />  
+	<monster name="Somewhat Beatable" file="Hallsofhope/Somewhat Beatable.xml" />  
+	<monster name="Spirit of Fertility" file="Hallsofhope/Spirit of Fertility.xml" />  
+	<monster name="Stone Rhino" file="Hallsofhope/Stone Rhino.xml" />
+	<monster name="Twisted Shaper" file="Hallsofhope/Twisted Shaper.xml" />
+	<monster name="The Astral Source" file="Hallsofhope/The Astral Source.xml" />
+	<monster name="The Distorted Astral Source" file="Hallsofhope/The Distorted Astral Source.xml" />
+	<monster name="Thorn Minion" file="Hallsofhope/Thorn Minion.xml" />
+	<monster name="Time Keeper" file="Hallsofhope/Time Keeper.xml" />
+	<monster name="Time Waster" file="Hallsofhope/Time Waster.xml" />
+	<monster name="Twisted Shaper" file="Hallsofhope/Twisted Shaper.xml" />
+	<monster name="Unbeatable Dragon" file="Hallsofhope/Unbeatable Dragon.xml" />
+	<monster name="Unbound Blightwalker" file="Hallsofhope/Unbound Blightwalker.xml" />
+	<monster name="Unbound Defiler" file="Hallsofhope/Unbound Defiler.xml" />
+	<monster name="Unbound Demon Outcast" file="Hallsofhope/Unbound Demon Outcast.xml" />
+	<monster name="Unbound Demon" file="Hallsofhope/Unbeatable Dragon.xml" />
 
 	<!-- Otherworld -->
 	<monster name="Instable Breach Brood" file="Otherworld/Instable Breach BroodSummon.xml" />
@@ -548,6 +572,7 @@
 	<monster name="Elder Wyrm" file="Dragons/elder_wyrm.xml" />
 	<monster name="Frost Dragon" file="Dragons/frost_dragon.xml" />
 	<monster name="Frost Dragon Hatchling" file="Dragons/frost_dragon_hatchling.xml" />
+	<monster name="Haunted Dragon" file="Dragons/haunted_dragon.xml" />
 	<monster name="Undead Dragon" file="Dragons/undead_dragon.xml" />
 	<monster name="Wyrm" file="Dragons/wyrm.xml" />
 	<monster name="Ghastly Dragon" file="Dragons/ghastly_dragon.xml" />
