@@ -248,6 +248,9 @@
 	<item id="27476" article="a" name="ramp">
 		<attribute key="floorchange" value="west" />
 	</item>
+	<item id="27705" article="a" name="ramp">
+		<attribute key="floorchange" value="north" />
+	</item>
 	<item id="27070" article="an" name="Chocolatey Dragon Scale Legs">
 		<attribute key="armor" value="2" />
 		<attribute key="weight" value="1800" />

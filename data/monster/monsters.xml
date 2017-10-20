@@ -328,7 +328,6 @@
 	<monster name="Mercury Blob" file="Blobs/mercury_blob.xml" />
 	<monster name="Glooth Blob" file="Blobs/glooth blob.xml" />
 	<monster name="Essence Of Darkness" file="Blobs/essence of darkness.xml" />
-	<monster name="Floor Blob" file="Blobs/floor blob.xml" />
 	<monster name="Midnight Spawn" file="Blobs/midnight spawn.xml" />
 
 	<!-- Bonelords -->
@@ -718,7 +717,6 @@
 	<monster name="War Golem" file="Geo-Elementals/war_golem.xml" />
 	<monster name="Worker Golem" file="Geo-Elementals/worker_golem.xml" />
 	<monster name="Shard Of Corruption" file="Geo-Elementals/shard of corruption.xml" />
-	<monster name="Stone Devourer" file="Geo-Elementals/stone devourer.xml" />
 
 	<!-- Ghosts -->
 	<monster name="Ghost" file="Ghosts/ghost.xml" />
