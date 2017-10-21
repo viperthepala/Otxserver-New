@@ -473,10 +473,11 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 			for (Creature* summon : summons) {
 				const Position& pos = summon->getPosition();
 				if (Position::getDistanceZ(newPos, pos) > 0 || (std::max<int32_t>(Position::getDistanceX(newPos, pos), Position::getDistanceY(newPos, pos)) > 30)) {
-					if (!summon->getMonster()->isPet())
+					if (!summon->getMonster()->isPet()) {
 						despawnList.push_front(summon);
-					else
+					} else {
 						g_game.internalTeleport(summon, summon->getMaster()->getPosition(), true);
+					}
 				}
 			}
 
@@ -860,8 +861,9 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 bool Creature::setAttackedCreature(Creature* creature)
 {
 	if (creature) {
-		if (this->getMonster() && this->getMonster()->isPet() && this->getTile()->hasFlag(TILESTATE_PROTECTIONZONE))
+		if (this->getMonster() && this->getMonster()->isPet() && this->getTile()->hasFlag(TILESTATE_PROTECTIONZONE)) {
 			return false;
+		}
 
 		const Position& creaturePos = creature->getPosition();
 		if (creaturePos.z != getPosition().z || !canSee(creaturePos)) {

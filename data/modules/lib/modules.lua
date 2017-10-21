@@ -12,15 +12,17 @@ function addPlayerEvent(callable, delay, playerId, ...)
 	end, delay, callable, player.uid, ...)
 end
 
---function Player.updateFightModes(self)
---	local msg = NetworkMessage()
+--[[
+function Player.updateFightModes(self)
+	local msg = NetworkMessage()
 
---	msg:addByte(0xA7)
+	msg:addByte(0xA7)
 
---	msg:addByte(self:getFightMode())
---	msg:addByte(self:getChaseMode())
---	msg:addByte(self:getSecureMode() and 1 or 0)
---	msg:addByte(self:getPvpMode())
+	msg:addByte(self:getFightMode())
+	msg:addByte(self:getChaseMode())
+	msg:addByte(self:getSecureMode() and 1 or 0)
+	msg:addByte(self:getPvpMode())
 
---	msg:sendToPlayer(self)
---end
+	msg:sendToPlayer(self)
+end
+]]

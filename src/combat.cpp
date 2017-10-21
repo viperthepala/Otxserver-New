@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -486,8 +486,7 @@ void Combat::CombatHealthFunc(Creature* caster, Creature* target, const CombatPa
 {
 	assert(data);
 	CombatDamage damage = *data;
-	if (caster && caster->getPlayer())
-	{
+	if (caster && caster->getPlayer()) {
 		CombatType_t imbuingCombat = COMBAT_NONE;
 		int32_t imbuingDamage = 0;
 

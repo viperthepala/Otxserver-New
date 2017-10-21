@@ -12541,8 +12541,7 @@ int LuaScriptInterface::luaMonsterTypeIsPet(lua_State* L)
 	MonsterType* monsterType = getUserdata<MonsterType>(L, 1);
 	if (monsterType) {
 		pushBoolean(L, monsterType->info.isPet);
-	}
-	else {
+	} else {
 		lua_pushnil(L);
 	}
 	return 1;

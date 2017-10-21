@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -439,7 +439,6 @@ enum item_t : uint16_t {
 	ITEM_BROWSEFIELD = 460, // for internal use
 
 	ITEM_DEPOT_NULL = 25452, // for internal use
-
 	ITEM_GOLD_POUCH = 26377,
 	TRANSFORM_BOX_ID = 26054, // for internal use
 
@@ -516,17 +515,17 @@ enum item_t : uint16_t {
 	ITEM_TIBIA_COIN = 24774,
 
 	/** Casks and Kegs **/
-	ITEM_HEALTH_CASK_START = 28555,
-	ITEM_HEALTH_CASK_END = 28559,
+	ITEM_HEALTH_CASK_START = 28553,
+	ITEM_HEALTH_CASK_END = 28557,
 
-	ITEM_MANA_CASK_START = 28565,
-	ITEM_MANA_CASK_END = 28568,
+	ITEM_MANA_CASK_START = 28563,
+	ITEM_MANA_CASK_END = 28567,
 
-	ITEM_SPIRIT_CASK_START = 28575,
-	ITEM_SPIRIT_CASK_END = 28576,
+	ITEM_SPIRIT_CASK_START = 28573,
+	ITEM_SPIRIT_CASK_END = 28574,
 
-	ITEM_KEG_START = 28579, //kegs ids are contiguous in item.otb
-	ITEM_KEG_END = 28590,
+	ITEM_KEG_START = 28577, //kegs ids are contiguous in item.otb
+	ITEM_KEG_END = 28588,
 
 	ITEM_DOCUMENT_RO = 1968, //read-only
 };
