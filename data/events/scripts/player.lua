@@ -318,7 +318,6 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		end
 	end
 	---- LIONS ROCK END
-
 	-- SSA exhaust
 	local exhaust = { }
 	if toPosition.x == CONTAINER_POSITION and toPosition.y == CONST_SLOT_NECKLACE and item:getId() == STONE_SKIN_AMULET then
@@ -475,7 +474,7 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 end
 
 -- Temporal disable
---[[function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
+function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
 	local name = self:getName()
 	local pendingReport = function () local f = io.open(string.format("data/reports/players/%s-%s-%d.txt", name, targetName, reportType), "r") ; if f then io.close(f) return true else return false end end
 	if pendingReport() then
@@ -503,7 +502,7 @@ end
 	io.close(file)
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("Thank you for reporting %s. Your report will be processed by %s team as soon as possible.", targetName, configManager.getString(configKeys.SERVER_NAME)))
 	return
-end]]
+end
 
 function Player:onReportBug(message, position, category)
 	local name = self:getName()
@@ -585,6 +584,11 @@ function useStaminaImbuing(playerId, itemuid)
 				end
 
 				item:setSpecialAttribute(i+3, staminaMinutes*60)
+				if (staminaMinutes <= 0) then
+					player:removeCondition(CONDITION_HASTE, item:getId() + i)
+					player:removeCondition(CONDITION_ATTRIBUTES, item:getId() + i)
+ 					item:setSpecialAttribute(i, 0, i+3, 0, i+6, 0)
+ 				end
 			end
 		end
 	end
@@ -677,11 +681,46 @@ local function useStaminaPrey(player, name)
 end
 
 function Player:onUseWeapon(normalDamage, elementType, elementDamage)
+	-- Imbuement
 	local weapon = self:getSlotItem(CONST_SLOT_LEFT)
 	if not weapon or weapon:getType():getWeaponType() == WEAPON_SHIELD then
 		weapon = self:getSlotItem(CONST_SLOT_RIGHT)
+		if not weapon or weapon:getType():getWeaponType() == WEAPON_SHIELD then
+			weapon = nil
+		end
 	end
 
+	for slot = 1, 10 do
+        local nextEquip = self:getSlotItem(slot)
+        if nextEquip and nextEquip:getType():getImbuingSlots() > 0 then
+            for i = 1, nextEquip:getType():getImbuingSlots() do
+                local slotEnchant = nextEquip:getSpecialAttribute(i)
+                if (slotEnchant) then
+                    local percentDamage, enchantPercent = 0, nextEquip:getImbuementPercent(slotEnchant)
+                    local typeEnchant = nextEquip:getImbuementType(i) or ""
+                    if (typeEnchant ~= "" and typeEnchant ~= "skillShield" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
+                        useStaminaImbuing(self:getId(), nextEquip:getUniqueId())
+                    end
+
+                    if (typeEnchant ~= "hitpointsleech" and typeEnchant ~= "manapointsleech" and typeEnchant ~= "criticaldamage" 
+                        and typeEnchant ~= "skillShield" and typeEnchant ~= "magiclevelpoints" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
+                        local weaponType = nextEquip:getType():getWeaponType()
+                        if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_SHIELD and weaponType ~= WEAPON_AMMO then
+							percentDamage = normalDamage*(enchantPercent/100)
+							normalDamage = normalDamage - percentDamage
+							elementDamage = nextEquip:getType():getAttack()*(enchantPercent/100)
+						end
+                    end
+
+                    if (typeEnchant == "hitpointsleech") then
+                        local healAmountHP = normalDamage*(enchantPercent/100)
+                        self:addHealth(math.abs(healAmountHP))
+                    elseif (typeEnchant == "manapointsleech") then
+                        local healAmountMP = normalDamage*(enchantPercent/100)
+                        self:addMana(math.abs(healAmountMP))
+                    end
+
+                    if (typeEnchant == "firedamage") then
                         elementType = COMBAT_FIREDAMAGE
                     elseif (typeEnchant == "earthdamage") then
                         elementType = COMBAT_EARTHDAMAGE
