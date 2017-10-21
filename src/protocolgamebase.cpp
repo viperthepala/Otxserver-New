@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -118,16 +118,19 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 	if (known) {
 		msg.add<uint16_t>(0x62);
 		msg.add<uint32_t>(creature->getID());
-	} else {
+	}
+	else {
 		msg.add<uint16_t>(0x61);
 		msg.add<uint32_t>(remove);
 		msg.add<uint32_t>(creature->getID());
 		msg.addByte(creatureType);
 
-		if (creatureType == CREATURETYPE_SUMMONPLAYER) {
-			const Creature* master = creature->getMaster();
-			if (master) {
-				msg.add<uint32_t>(master->getID());
+		if (player->getProtocolVersion() >= 1120) {
+			if (creatureType == CREATURETYPE_SUMMONPLAYER) {
+				const Creature* master = creature->getMaster();
+				if (master) {
+					msg.add<uint32_t>(master->getID());
+				}
 			}
 		}
 
@@ -136,7 +139,8 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 
 	if (creature->isHealthHidden()) {
 		msg.addByte(0x00);
-	} else {
+	}
+	else {
 		msg.addByte(std::ceil((static_cast<double>(creature->getHealth()) / std::max<int32_t>(creature->getMaxHealth(), 1)) * 100));
 	}
 
@@ -144,7 +148,8 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 
 	if (!creature->isInGhostMode() && !creature->isInvisible()) {
 		AddOutfit(msg, creature->getCurrentOutfit());
-	} else {
+	}
+	else {
 		static Outfit_t outfit;
 		AddOutfit(msg, outfit);
 	}
@@ -163,22 +168,26 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 		msg.addByte(player->getGuildEmblem(otherPlayer));
 	}
 
-	if (creatureType == CREATURETYPE_MONSTER) {
-		const Creature* master = creature->getMaster();
-		if (master) {
-			const Player* masterPlayer = master->getPlayer();
-			if (masterPlayer) {
-				creatureType = CREATURETYPE_SUMMONPLAYER;
+	if (player->getProtocolVersion() >= 1120) {
+		if (creatureType == CREATURETYPE_MONSTER) {
+			const Creature* master = creature->getMaster();
+			if (master) {
+				const Player* masterPlayer = master->getPlayer();
+				if (masterPlayer) {
+					creatureType = CREATURETYPE_SUMMONPLAYER;
+				}
 			}
 		}
 	}
 
 	msg.addByte(creatureType); // Type (for summons)
 
-	if (creatureType == CREATURETYPE_SUMMONPLAYER) {
-		const Creature* master = creature->getMaster();
-		if (master) {
-			msg.add<uint32_t>(master->getID());
+	if (player->getProtocolVersion() >= 1120) {
+		if (creatureType == CREATURETYPE_SUMMONPLAYER) {
+			const Creature* master = creature->getMaster();
+			if (master) {
+				msg.add<uint32_t>(master->getID());
+			}
 		}
 	}
 
@@ -190,7 +199,8 @@ void ProtocolGameBase::AddCreature(NetworkMessage& msg, const Creature* creature
 
 	if (otherPlayer) {
 		msg.add<uint16_t>(otherPlayer->getHelpers());
-	} else {
+	}
+	else {
 		msg.add<uint16_t>(0x00);
 	}
 
@@ -268,18 +278,25 @@ void ProtocolGameBase::sendBlessStatus() {
 
 	msg.addByte(0x9C);
 	if (blessCount >= 5) {
-		uint8_t blessFlag = 0;
-		uint8_t maxFlag = (maxBlessings == 8) ? 256 : 64;
-		for (int i = 2; i < maxFlag; i *= 2) {
-			blessFlag += i;
-		}
+		if (player->getProtocolVersion() >= 1120) {
+			uint8_t blessFlag = 0;
+			uint8_t maxFlag = (maxBlessings == 8) ? 256 : 64;
+			for (int i = 2; i < maxFlag; i *= 2) {
+				blessFlag += i;
+			}
 
-		msg.add<uint16_t>(blessFlag-1);
-	} else {
+			msg.add<uint16_t>(blessFlag - 1);
+		}
+		else
+			msg.add<uint16_t>(0x01);
+	}
+	else {
 		msg.add<uint16_t>(0x00);
 	}
 
-	msg.addByte((blessCount >= 5) ? 2 : 1); // 1 = Disabled | 2 = normal | 3 = green
+	if (player->getProtocolVersion() >= 1120)
+		msg.addByte((blessCount >= 5) ? 2 : 1); // 1 = Disabled | 2 = normal | 3 = green
+
 	writeToOutputBuffer(msg);
 }
 
@@ -793,8 +810,10 @@ void ProtocolGameBase::sendAddCreature(const Creature* creature, const Position&
 	sendBasicData();
 	sendInventoryClientIds();
 	sendPreyData();
-	player->sendClientCheck();
-	player->sendGameNews();
+	if (player->getProtocolVersion() >= 1130) {
+		player->sendClientCheck();
+		player->sendGameNews();
+	}
 	player->sendIcons();
 }
 

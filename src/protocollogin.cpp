@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ void ProtocolLogin::disconnectClient(const std::string& message, uint16_t versio
 	disconnect();
 }
 
-void ProtocolLogin::addWorldInfo(OutputMessage_ptr& output, const std::string& accountName, const std::string& password, uint16_t version, bool isLiveCastLogin /*=false*/)
+void ProtocolLogin::addWorldInfo(OutputMessage_ptr& output, const std::string& accountName, const std::string& password, uint16_t, bool isLiveCastLogin /*=false*/)
 {
 	const std::string& motd = g_config.getString(ConfigManager::MOTD);
 	if (!motd.empty()) {
@@ -145,7 +145,7 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 		return;
 	}
 
-	msg.skipBytes(2); // client OS
+	OperatingSystem_t operatingSystem = static_cast<OperatingSystem_t>(msg.get<uint16_t>());
 
 	uint16_t version = msg.get<uint16_t>();
 	if (version >= 1111) {
@@ -180,7 +180,7 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	enableXTEAEncryption();
 	setXTEAKey(key);
 
-	if (version < g_config.getNumber(ConfigManager::VERSION_MIN) || version > g_config.getNumber(ConfigManager::VERSION_MAX)) {
+	if ((version != g_config.getNumber(ConfigManager::VERSION_MIN) && operatingSystem == 2) || (version != g_config.getNumber(ConfigManager::VERSION_MAX) && operatingSystem == 5)) {
 		std::ostringstream ss;
 		ss << "Only clients with protocol " << g_config.getString(ConfigManager::VERSION_STR) << " allowed!";
 		disconnectClient(ss.str(), version);

@@ -1,6 +1,6 @@
 /**
 * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
 *
 * This program is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -377,7 +377,7 @@ void ProtocolSpectator::release()
 	OutputMessagePool::getInstance().removeProtocolFromAutosend(shared_from_this());
 }
 
-void ProtocolSpectator::writeToOutputBuffer(const NetworkMessage& msg, bool broadcast)
+void ProtocolSpectator::writeToOutputBuffer(const NetworkMessage& msg, bool)
 {
 	OutputMessage_ptr out = getOutputBuffer(msg.getLength());
 	out->append(msg);

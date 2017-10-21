@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -446,7 +446,7 @@ class Game
 
 		void combatGetTypeInfo(CombatType_t combatType, Creature* target, TextColor_t& color, uint8_t& effect);
 
-		bool combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage);
+		bool combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage, bool isEvent = false);
 		bool combatChangeMana(Creature* attacker, Creature* target, int32_t manaChange, CombatOrigin origin);
 
 		//animation help functions

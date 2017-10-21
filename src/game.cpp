@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -854,6 +854,10 @@ ReturnValue Game::internalMoveCreature(Creature& creature, Tile& toTile, uint32_
 				internalCreatureTurn(&creature, dir);
 			}
 		}
+	}
+
+	if (creature.getPlayer()) {
+		g_events->eventPlayerOnMove(creature.getPlayer());
 	}
 
 	return RETURNVALUE_NOERROR;
@@ -3882,7 +3886,7 @@ void Game::combatGetTypeInfo(CombatType_t combatType, Creature* target, TextColo
 	}
 }
 
-bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage)
+bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage& damage, bool isEvent)
 {
 	const Position& targetPos = target->getPosition();
 	if (damage.primary.value > 0) {
@@ -4018,6 +4022,13 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 			}
 		}
 
+		TextMessage message;
+		message.position = targetPos;
+
+		if (!isEvent) {
+			g_events->eventCreatureOnDrainHealth(target, attacker, damage.primary.type, damage.primary.value, damage.secondary.type, damage.secondary.value, message.primary.color, message.secondary.color);
+		}
+
 		int32_t healthChange = damage.primary.value + damage.secondary.value;
 		if (healthChange == 0) {
 			return true;
@@ -4029,9 +4040,6 @@ bool Game::combatChangeHealth(Creature* attacker, Creature* target, CombatDamage
 		if (damage.critical) {
 			addMagicEffect(spectators, targetPos, CONST_ME_CRITICAL_DAMAGE);
 		}
-
-		TextMessage message;
-		message.position = targetPos;
 
 		if (target->hasCondition(CONDITION_MANASHIELD) && damage.primary.type != COMBAT_UNDEFINEDDAMAGE) {
 			int32_t manaDamage = std::min<int32_t>(target->getMana(), healthChange);
