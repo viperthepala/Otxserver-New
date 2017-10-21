@@ -68,7 +68,10 @@ function Player:onLook(thing, position, distance)
 			description = description .. 'a honeyflower patch.'
 		elseif thing.actionid == 5641 then
 			description = description .. 'a banana palm.'
-		elseif thing.itemid >= 28553 and thing.itemid <= 28557 or thing.itemid >= 28563 and thing.itemid <= 28566 or thing.itemid >= 28573 and thing.itemid <= 28574 or thing.itemid >= 28577 and thing.itemid <= 28588 then
+		elseif thing.itemid >= ITEM_HEALTH_CASK_START and thing.itemid <= ITEM_HEALTH_CASK_END 
+		or thing.itemid >= ITEM_MANA_CASK_START and thing.itemid <= ITEM_MANA_CASK_END 
+		or thing.itemid >= ITEM_SPIRIT_CASK_START and thing.itemid <= ITEM_SPIRIT_CASK_END 
+		or thing.itemid >= ITEM_KEG_START and thing.itemid <= ITEM_KEG_END then
 			description = description .. thing:getDescription(distance)
 			local charges = thing:getCharges()
 			if charges then
@@ -679,32 +682,158 @@ function Player:onUseWeapon(normalDamage, elementType, elementDamage)
 		weapon = self:getSlotItem(CONST_SLOT_RIGHT)
 	end
 
-	-- Imbuement
-	if (weapon and weapon:getType():getImbuingSlots() > 0) then
-		for i = 1, weapon:getType():getImbuingSlots() do
-			local slotEnchant = weapon:getSpecialAttribute(i)
-			if (slotEnchant) then
-				local percentDamage, enchantPercent = 0, weapon:getImbuementPercent(slotEnchant)
-				local typeEnchant = weapon:getImbuementType(i) or ""
-				if (typeEnchant ~= "") then
-					useStaminaImbuing(self:getId(), weapon:getUniqueId())
-				end
+                        elementType = COMBAT_FIREDAMAGE
+                    elseif (typeEnchant == "earthdamage") then
+                        elementType = COMBAT_EARTHDAMAGE
+                    elseif (typeEnchant == "icedamage") then
+                        elementType = COMBAT_ICEDAMAGE
+                    elseif (typeEnchant == "energydamage") then
+                        elementType = COMBAT_ENERGYDAMAGE
+                    elseif (typeEnchant == "deathdamage") then
+                        elementType = COMBAT_DEATHDAMAGE
+                    end
+                end
+            end
+        end
+    end
+    
+	return normalDamage, elementType, elementDamage
+end
 
-			if (typeEnchant == "firedamage") then
-					elementType = COMBAT_FIREDAMAGE
-				elseif (typeEnchant == "earthdamage") then
-					elementType = COMBAT_EARTHDAMAGE
-				elseif (typeEnchant == "icedamage") then
-					elementType = COMBAT_ICEDAMAGE
-				elseif (typeEnchant == "energydamage") then
-					elementType = COMBAT_ENERGYDAMAGE
-				elseif (typeEnchant == "deathdamage") then
-					elementType = COMBAT_DEATHDAMAGE
+function Player:onCombatSpell(normalDamage, elementDamage, elementType, changeDamage)
+	-- Imbuement
+	local weapon = self:getSlotItem(CONST_SLOT_LEFT)
+	if not weapon or weapon:getType():getWeaponType() == WEAPON_SHIELD then
+		weapon = self:getSlotItem(CONST_SLOT_RIGHT)
+		if not weapon or weapon:getType():getWeaponType() == WEAPON_SHIELD then
+			weapon = nil
+		end
+	end
+
+	if normalDamage < 0 then
+		for slot = 1, 10 do
+			local nextEquip = self:getSlotItem(slot)
+			if nextEquip and nextEquip:getType():getImbuingSlots() > 0 then
+				for i = 1, nextEquip:getType():getImbuingSlots() do
+					local slotEnchant = nextEquip:getSpecialAttribute(i)
+					if (slotEnchant and type(slotEnchant) == 'string') then
+						local percentDamage, enchantPercent = 0, nextEquip:getImbuementPercent(slotEnchant)
+						local typeEnchant = nextEquip:getImbuementType(i) or ""
+						if (typeEnchant ~= "" and typeEnchant ~= "skillShield" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
+							useStaminaImbuing(self:getId(), nextEquip:getUniqueId())
+						end
+
+						if (typeEnchant == "firedamage" or typeEnchant == "earthdamage" or typeEnchant == "icedamage" or typeEnchant == "energydamage" or typeEnchant == "deathdamage") then
+							local weaponType = nextEquip:getType():getWeaponType()
+	                        if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_SHIELD and weaponType ~= WEAPON_AMMO then
+								percentDamage = normalDamage*(enchantPercent/100)
+								normalDamage = normalDamage - percentDamage
+								elementDamage = nextEquip:getType():getAttack()*(enchantPercent/100)
+							end
+						end
+
+						if (typeEnchant == "firedamage") then
+							elementType = COMBAT_FIREDAMAGE
+						elseif (typeEnchant == "earthdamage") then
+							elementType = COMBAT_EARTHDAMAGE
+						elseif (typeEnchant == "icedamage") then
+							elementType = COMBAT_ICEDAMAGE
+						elseif (typeEnchant == "energydamage") then
+							elementType = COMBAT_ENERGYDAMAGE
+						elseif (typeEnchant == "deathdamage") then
+							elementType = COMBAT_DEATHDAMAGE
+						end
+					end
 				end
 			end
 		end
 	end
-	return normalDamage, elementType, elementDamage
+	
+	return normalDamage, elementDamage, elementType, changeDamage
+end
+
+function Player:onMove()	
+	local haveImbuingBoots = self:getSlotItem(CONST_SLOT_FEET) and self:getSlotItem(CONST_SLOT_FEET):getType():getImbuingSlots() or 0
+	if haveImbuingBoots > 0 then
+		local bootsItem = self:getSlotItem(CONST_SLOT_FEET)
+		for slot = 1, haveImbuingBoots do
+			local slotEnchant = bootsItem:getSpecialAttribute(slot)
+			if (slotEnchant and type(slotEnchant) == 'string') then
+				local typeEnchant = bootsItem:getImbuementType(slot) or ""
+				if (typeEnchant == "speed") then
+					useStaminaImbuing(self:getId(), bootsItem:getUniqueId())
+				end
+			end
+		end
+	end
+	return true
+end
+
+function Player:onEquipImbuement(item)
+	local itemType = item:getType()
+	for i = 1, itemType:getImbuingSlots() do
+		local slotEnchant = item:getSpecialAttribute(i)
+		if (slotEnchant and type(slotEnchant) == 'string') then
+			conditionHaste = Condition(CONDITION_HASTE, item:getId() + i)
+			conditionSkill = Condition(CONDITION_ATTRIBUTES, item:getId() + i)
+			local skillValue = item:getImbuementPercent(slotEnchant)
+			local typeEnchant = item:getImbuementType(i) or ""
+			if (typeEnchant == "skillSword") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_SWORD, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "skillAxe") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_AXE, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "skillClub") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_CLUB, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "skillDist") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_DISTANCE, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "skillShield") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_SHIELD, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "magiclevelpoints") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_STAT_MAGICPOINTS, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "speed") then
+				conditionHaste:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionHaste:setParameter(CONDITION_PARAM_SPEED, self:getSpeed() * (skillValue/100))
+				self:addCondition(conditionHaste)
+			elseif (typeEnchant == "criticaldamage") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_CRITICAL_HIT_CHANCE, 10)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_CRITICAL_HIT_DAMAGE, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "hitpointsleech") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_LIFE_LEECH_CHANCE, 100)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_LIFE_LEECH_AMOUNT, skillValue)
+				self:addCondition(conditionSkill)
+			elseif (typeEnchant == "manapointsleech") then
+				conditionSkill:setParameter(CONDITION_PARAM_TICKS, -1)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_MANA_LEECH_CHANCE, 100)
+				conditionSkill:setParameter(CONDITION_PARAM_SKILL_MANA_LEECH_AMOUNT, skillValue)
+				self:addCondition(conditionSkill)
+			end
+		end
+	end
+	
+	return true
+end
+
+function Player:onDeEquipImbuement(item)
+	for i = 1, item:getType():getImbuingSlots() do
+		self:removeCondition(CONDITION_HASTE, item:getId() + i)
+		self:removeCondition(CONDITION_ATTRIBUTES, item:getId() + i)
+	end
+	return true
 end
 
 function Player:onGainExperience(source, exp, rawExp)
