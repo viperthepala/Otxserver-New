@@ -10,30 +10,31 @@ NOT_MOVEABLE_ACTION = 8000
 local blockTeleportTrashing = true
 
 local titles = {
-    {storageID = 14960, title = " Scout"},
-    {storageID = 14961, title = " Sentinel"},
-    {storageID = 14962, title = " Steward"},
-    {storageID = 14963, title = " Warden"},
-    {storageID = 14964, title = " Squire"},
-    {storageID = 14965, title = " Warrior"},
-    {storageID = 14966, title = " Keeper"},
-    {storageID = 14967, title = " Guardian"},
-    {storageID = 14968, title = " Sage"},
+	{storageID = 14960, title = " Scout"},
+	{storageID = 14961, title = " Sentinel"},
+	{storageID = 14962, title = " Steward"},
+	{storageID = 14963, title = " Warden"},
+	{storageID = 14964, title = " Squire"},
+	{storageID = 14965, title = " Warrior"},
+	{storageID = 14966, title = " Keeper"},
+	{storageID = 14967, title = " Guardian"},
+	{storageID = 14968, title = " Sage"},
 	{storageID = 14969, title = " Tutor"},
 	{storageID = 14970, title = " Senior Tutor"},
 	{storageID = 14971, title = " King"},
 }
- 
+
 local function getTitle(uid)
-    local player = Player(uid)
-    if not player then return false end
- 
-    for i = #titles, 1, -1 do
-        if player:getStorageValue(titles[i].storageID) == 1 then
-            return titles[i].title
-        end
-    end
-    return false
+	local player = Player(uid)
+	if not player then return false end
+
+	for i = #titles, 1, -1 do
+		if player:getStorageValue(titles[i].storageID) == 1 then
+			return titles[i].title
+		end
+	end
+
+	return false
 end
 
 function Player:onBrowseField(position)
@@ -192,52 +193,52 @@ function Player:onLookInShop(itemType, count)
 end
 
 local config = {
-    maxItemsPerSeconds = 1,
-    exhaustTime = 2000,
+	maxItemsPerSeconds = 1,
+	exhaustTime = 2000,
 }
 
 if not pushDelay then
-    pushDelay = { }
+	pushDelay = { }
 end
 
 local function antiPush(self, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
-    if toPosition.x == CONTAINER_POSITION then
-        return true
-    end
+	if toPosition.x == CONTAINER_POSITION then
+		return true
+	end
 
-    local tile = Tile(toPosition)
-    if not tile then
-        self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-        return false
-    end
+	local tile = Tile(toPosition)
+	if not tile then
+		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
+		return false
+	end
 
-    local cid = self:getId()
-    if not pushDelay[cid] then
-        pushDelay[cid] = {items = 0, time = 0}
-    end
+	local cid = self:getId()
+	if not pushDelay[cid] then
+		pushDelay[cid] = {items = 0, time = 0}
+	end
 
-    pushDelay[cid].items = pushDelay[cid].items + 1
+	pushDelay[cid].items = pushDelay[cid].items + 1
 
-    local currentTime = os.mtime()
-    if pushDelay[cid].time == 0 then
-        pushDelay[cid].time = currentTime
-    elseif pushDelay[cid].time == currentTime then
-        pushDelay[cid].items = pushDelay[cid].items + 1
-    elseif currentTime > pushDelay[cid].time then
-        pushDelay[cid].time = 0
-        pushDelay[cid].items = 0
-    end
+	local currentTime = os.mtime()
+	if pushDelay[cid].time == 0 then
+		pushDelay[cid].time = currentTime
+	elseif pushDelay[cid].time == currentTime then
+		pushDelay[cid].items = pushDelay[cid].items + 1
+	elseif currentTime > pushDelay[cid].time then
+		pushDelay[cid].time = 0
+		pushDelay[cid].items = 0
+	end
 
-    if pushDelay[cid].items > config.maxItemsPerSeconds then
-        pushDelay[cid].time = currentTime + config.exhaustTime
-    end
+	if pushDelay[cid].items > config.maxItemsPerSeconds then
+		pushDelay[cid].time = currentTime + config.exhaustTime
+	end
 
-    if pushDelay[cid].time > currentTime then
-        self:sendCancelMessage("You can't move that item so fast.")
-        return false
-    end
+	if pushDelay[cid].time > currentTime then
+		self:sendCancelMessage("You can't move that item so fast.")
+		return false
+	end
 
-    return true
+	return true
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
@@ -318,6 +319,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		end
 	end
 	---- LIONS ROCK END
+
 	-- SSA exhaust
 	local exhaust = { }
 	if toPosition.x == CONTAINER_POSITION and toPosition.y == CONST_SLOT_NECKLACE and item:getId() == STONE_SKIN_AMULET then
@@ -362,6 +364,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, 
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
 		return false
 	end
+
 	-- No move items with actionID 8000
 	if item:getActionId() == NOT_MOVEABLE_ACTION then
 		self:sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
@@ -474,7 +477,7 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 end
 
 -- Temporal disable
-function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
+--[[function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
 	local name = self:getName()
 	local pendingReport = function () local f = io.open(string.format("data/reports/players/%s-%s-%d.txt", name, targetName, reportType), "r") ; if f then io.close(f) return true else return false end end
 	if pendingReport() then
@@ -502,7 +505,7 @@ function Player:onReportRuleViolation(targetName, reportType, reportReason, comm
 	io.close(file)
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("Thank you for reporting %s. Your report will be processed by %s team as soon as possible.", targetName, configManager.getString(configKeys.SERVER_NAME)))
 	return
-end
+end]]
 
 function Player:onReportBug(message, position, category)
 	local name = self:getName()
@@ -587,8 +590,8 @@ function useStaminaImbuing(playerId, itemuid)
 				if (staminaMinutes <= 0) then
 					player:removeCondition(CONDITION_HASTE, item:getId() + i)
 					player:removeCondition(CONDITION_ATTRIBUTES, item:getId() + i)
- 					item:setSpecialAttribute(i, 0, i+3, 0, i+6, 0)
- 				end
+					item:setSpecialAttribute(i, 0, i+3, 0, i+6, 0)
+				end
 			end
 		end
 	end
@@ -648,7 +651,6 @@ local function useStaminaXp(player)
 	player:setExpBoostStamina(staminaMinutes * 60)
 end
 
-
 -- useStaminaPrey
 local function useStaminaPrey(player, name)
 	for i = 1, 3 do
@@ -691,51 +693,51 @@ function Player:onUseWeapon(normalDamage, elementType, elementDamage)
 	end
 
 	for slot = 1, 10 do
-        local nextEquip = self:getSlotItem(slot)
-        if nextEquip and nextEquip:getType():getImbuingSlots() > 0 then
-            for i = 1, nextEquip:getType():getImbuingSlots() do
-                local slotEnchant = nextEquip:getSpecialAttribute(i)
-                if (slotEnchant) then
-                    local percentDamage, enchantPercent = 0, nextEquip:getImbuementPercent(slotEnchant)
-                    local typeEnchant = nextEquip:getImbuementType(i) or ""
-                    if (typeEnchant ~= "" and typeEnchant ~= "skillShield" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
-                        useStaminaImbuing(self:getId(), nextEquip:getUniqueId())
-                    end
+		local nextEquip = self:getSlotItem(slot)
+		if nextEquip and nextEquip:getType():getImbuingSlots() > 0 then
+			for i = 1, nextEquip:getType():getImbuingSlots() do
+				local slotEnchant = nextEquip:getSpecialAttribute(i)
+				if (slotEnchant) then
+					local percentDamage, enchantPercent = 0, nextEquip:getImbuementPercent(slotEnchant)
+					local typeEnchant = nextEquip:getImbuementType(i) or ""
+					if (typeEnchant ~= "" and typeEnchant ~= "skillShield" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
+						useStaminaImbuing(self:getId(), nextEquip:getUniqueId())
+					end
 
-                    if (typeEnchant ~= "hitpointsleech" and typeEnchant ~= "manapointsleech" and typeEnchant ~= "criticaldamage" 
-                        and typeEnchant ~= "skillShield" and typeEnchant ~= "magiclevelpoints" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
-                        local weaponType = nextEquip:getType():getWeaponType()
-                        if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_SHIELD and weaponType ~= WEAPON_AMMO then
+					if (typeEnchant ~= "hitpointsleech" and typeEnchant ~= "manapointsleech" and typeEnchant ~= "criticaldamage" 
+						and typeEnchant ~= "skillShield" and typeEnchant ~= "magiclevelpoints" and not typeEnchant:find("absorb") and typeEnchant ~= "speed") then
+						local weaponType = nextEquip:getType():getWeaponType()
+						if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_SHIELD and weaponType ~= WEAPON_AMMO then
 							percentDamage = normalDamage*(enchantPercent/100)
 							normalDamage = normalDamage - percentDamage
 							elementDamage = nextEquip:getType():getAttack()*(enchantPercent/100)
 						end
-                    end
+					end
 
-                    if (typeEnchant == "hitpointsleech") then
-                        local healAmountHP = normalDamage*(enchantPercent/100)
-                        self:addHealth(math.abs(healAmountHP))
-                    elseif (typeEnchant == "manapointsleech") then
-                        local healAmountMP = normalDamage*(enchantPercent/100)
-                        self:addMana(math.abs(healAmountMP))
-                    end
+					if (typeEnchant == "hitpointsleech") then
+						local healAmountHP = normalDamage*(enchantPercent/100)
+						self:addHealth(math.abs(healAmountHP))
+					elseif (typeEnchant == "manapointsleech") then
+						local healAmountMP = normalDamage*(enchantPercent/100)
+						self:addMana(math.abs(healAmountMP))
+					end
 
-                    if (typeEnchant == "firedamage") then
-                        elementType = COMBAT_FIREDAMAGE
-                    elseif (typeEnchant == "earthdamage") then
-                        elementType = COMBAT_EARTHDAMAGE
-                    elseif (typeEnchant == "icedamage") then
-                        elementType = COMBAT_ICEDAMAGE
-                    elseif (typeEnchant == "energydamage") then
-                        elementType = COMBAT_ENERGYDAMAGE
-                    elseif (typeEnchant == "deathdamage") then
-                        elementType = COMBAT_DEATHDAMAGE
-                    end
-                end
-            end
-        end
-    end
-    
+					if (typeEnchant == "firedamage") then
+						elementType = COMBAT_FIREDAMAGE
+					elseif (typeEnchant == "earthdamage") then
+						elementType = COMBAT_EARTHDAMAGE
+					elseif (typeEnchant == "icedamage") then
+						elementType = COMBAT_ICEDAMAGE
+					elseif (typeEnchant == "energydamage") then
+						elementType = COMBAT_ENERGYDAMAGE
+					elseif (typeEnchant == "deathdamage") then
+						elementType = COMBAT_DEATHDAMAGE
+					end
+				end
+			end
+		end
+	end
+	
 	return normalDamage, elementType, elementDamage
 end
 
@@ -764,7 +766,7 @@ function Player:onCombatSpell(normalDamage, elementDamage, elementType, changeDa
 
 						if (typeEnchant == "firedamage" or typeEnchant == "earthdamage" or typeEnchant == "icedamage" or typeEnchant == "energydamage" or typeEnchant == "deathdamage") then
 							local weaponType = nextEquip:getType():getWeaponType()
-	                        if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_SHIELD and weaponType ~= WEAPON_AMMO then
+							if weaponType ~= WEAPON_NONE and weaponType ~= WEAPON_SHIELD and weaponType ~= WEAPON_AMMO then
 								percentDamage = normalDamage*(enchantPercent/100)
 								normalDamage = normalDamage - percentDamage
 								elementDamage = nextEquip:getType():getAttack()*(enchantPercent/100)
@@ -787,11 +789,11 @@ function Player:onCombatSpell(normalDamage, elementDamage, elementType, changeDa
 			end
 		end
 	end
-	
+
 	return normalDamage, elementDamage, elementType, changeDamage
 end
 
-function Player:onMove()	
+function Player:onMove()
 	local haveImbuingBoots = self:getSlotItem(CONST_SLOT_FEET) and self:getSlotItem(CONST_SLOT_FEET):getType():getImbuingSlots() or 0
 	if haveImbuingBoots > 0 then
 		local bootsItem = self:getSlotItem(CONST_SLOT_FEET)
@@ -863,7 +865,7 @@ function Player:onEquipImbuement(item)
 			end
 		end
 	end
-	
+
 	return true
 end
 
@@ -872,6 +874,7 @@ function Player:onDeEquipImbuement(item)
 		self:removeCondition(CONDITION_HASTE, item:getId() + i)
 		self:removeCondition(CONDITION_ATTRIBUTES, item:getId() + i)
 	end
+
 	return true
 end
 

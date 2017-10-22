@@ -11,7 +11,7 @@
 	<monster file="Nostalgia/old_wolf.xml" name="WolfOld"/>
 
     <!-- DAWNPORT -->		
-	<monster file="Dawnport/weakened_shlorg.xml" name="Weakened Shlorg"/>
+	<monster file="Dawnport/weakened shlorg.xml" name="Weakened Shlorg"/>
 	<monster file="Dawnport/mountain troll.xml" name="Mountain Troll"/>
 	<monster file="Dawnport/salamander trainer.xml" name="Salamander Trainer"/>
 	<monster file="Dawnport/troll marauder.xml" name="Troll Marauder"/>		

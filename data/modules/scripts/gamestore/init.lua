@@ -302,7 +302,7 @@ function parseBuyStoreOffer(playerId, msg)
 			local inbox = player:getSlotItem(CONST_SLOT_STORE_INBOX)
 			if inbox and inbox:getEmptySlots() > 0 then
 				local function isKegItem(itemId)
-					return itemId>=ITEM_KEG_START and itemId <= ITEM_KEG_END
+					return itemId >= ITEM_KEG_START and itemId <= ITEM_KEG_END
 				end
 
 				if(isKegItem(offer.thingId)) then
@@ -467,6 +467,8 @@ function parseBuyStoreOffer(playerId, msg)
 			end
 
 			player:teleportTo(player:getTown():getTemplePosition())
+			player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+			player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'You have been teleported to your hometown.')
 		elseif offer.type == GameStore.OfferTypes.OFFER_TYPE_PROMOTION then
 			if not GameStore.addPromotionToPlayer(playerId, offer.thingId) then
 				return false

@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -414,7 +414,7 @@ void ProtocolGame::onRecvFirstMessage(NetworkMessage& msg)
 		return;
 	}
 
-	if ((version != g_config.getNumber(ConfigManager::VERSION_MIN) && operatingSystem == 2) || (version != g_config.getNumber(ConfigManager::VERSION_MAX) && operatingSystem == 5)) {
+	if (version < g_config.getNumber(ConfigManager::VERSION_MIN) || version > g_config.getNumber(ConfigManager::VERSION_MAX)) {
 		std::ostringstream ss;
 		ss << "Only clients with protocol " << g_config.getString(ConfigManager::VERSION_STR) << " allowed!";
 		disconnectClient(ss.str());
@@ -2015,11 +2015,11 @@ void ProtocolGame::sendQuestLine(const Quest* quest)
 			msg.addString(mission.getDescription(player));
 		}
 	}
-	
+
 	if (player->operatingSystem == CLIENTOS_NEW_WINDOWS) {
 		sendQuestTracker();
 	}
-	
+
 	writeToOutputBuffer(msg);
 }
 

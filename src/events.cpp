@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright(C) 2017  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2017  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -124,8 +124,7 @@ bool Events::load()
 				info.playerOnEquipImbuement = event;
 			} else if (methodName == "onDeEquipImbuement") {
 				info.playerOnDeEquipImbuement = event;
-			}
-			else {
+			} else {
 				std::cout << "[Warning - Events::load] Unknown player method: " << methodName << std::endl;
 			}
 		} else if (className == "Monster") {
@@ -272,16 +271,14 @@ void Events::eventCreatureOnDrainHealth(Creature* creature, Creature* attacker, 
 	if (creature) {
 		LuaScriptInterface::pushUserdata<Creature>(L, creature);
 		LuaScriptInterface::setCreatureMetatable(L, -1, creature);
-	}
-	else {
+	} else {
 		lua_pushnil(L);
 	}
 
 	if (attacker) {
 		LuaScriptInterface::pushUserdata<Creature>(L, attacker);
 		LuaScriptInterface::setCreatureMetatable(L, -1, attacker);
-	}
-	else {
+	} else {
 		lua_pushnil(L);
 	}
 
@@ -294,8 +291,7 @@ void Events::eventCreatureOnDrainHealth(Creature* creature, Creature* attacker, 
 
 	if (scriptInterface.protectedCall(L, 8, 6) != 0) {
 		LuaScriptInterface::reportError(nullptr, LuaScriptInterface::popString(L));
-	}
-	else {
+	} else {
 		typePrimary = LuaScriptInterface::getNumber<CombatType_t>(L, -6);
 		damagePrimary = LuaScriptInterface::getNumber<int32_t>(L, -5);
 		typeSecondary = LuaScriptInterface::getNumber<CombatType_t>(L, -4);
