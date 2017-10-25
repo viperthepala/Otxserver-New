@@ -33,10 +33,10 @@ Versões 11.x: [Compilado](http://www.tibiaking.com/forum/forums/topic/82629-114
 
 # Sites Compativeis
 
-[Gesior by Leonardo Pereira](https://github.com/jlcvp/GesiorMonteiro).
+[Gesior by Leonardo Pereira](https://github.com/jlcvp/GesiorMonteiro/archive/master.zip).
 Originally by Monteiro, security fixes and features by Leonardo Pereira (jlcvp)
 
-[Gesior by Marco Oliveira](https://github.com/mudroock/Gesior-AAC).
+[Gesior by Marco Oliveira](https://github.com/mudroock/Gesior-AAC/archive/master.zip).
 Originally by Monteiro, layout/images and text adjustments by Marco Oliveira
 
 # Mapa Editor Compativel
