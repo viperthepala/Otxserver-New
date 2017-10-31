@@ -8842,13 +8842,21 @@ int LuaScriptInterface::luaPlayerSetBankBalance(lua_State* L)
 {
 	// player:setBankBalance(bankBalance)
 	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		player->setBankBalance(getNumber<uint64_t>(L, 2));
-		pushBoolean(L, true);
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
+	if (!player) {
+  		lua_pushnil(L);
+ 		return 1;
+  	}
+ 
+ 	int64_t balance = getNumber<int64_t>(L, 2);
+ 	if (balance < 0) {
+ 		reportErrorFunc("Invalid bank balance value.");
+ 		lua_pushnil(L);
+ 		return 1;
+ 	}
+ 
+ 	player->setBankBalance(balance);
+ 	pushBoolean(L, true);
+  	return 1;
 }
 
 int LuaScriptInterface::luaPlayerGetStorageValue(lua_State* L)
